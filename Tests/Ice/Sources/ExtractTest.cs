@@ -148,7 +148,7 @@ class ExtractTest : VmFixture
         );
 
         yield return new(
-            @"Preset\名称未設定フォルダ",
+            @"Preset\名称未設定フォルダー",
             new[] { "SampleMac.zip" },
             Preset.Extract.ToArguments(),
             new ExtractionSettingValue

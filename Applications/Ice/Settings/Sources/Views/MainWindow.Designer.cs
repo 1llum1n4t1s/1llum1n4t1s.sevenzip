@@ -618,7 +618,7 @@
             this.CompressOpenCheckBox.Name = "CompressOpenCheckBox";
             this.CompressOpenCheckBox.Size = new System.Drawing.Size(470, 20);
             this.CompressOpenCheckBox.TabIndex = 5;
-            this.CompressOpenCheckBox.Text = "圧縮後に保存先フォルダを開く";
+            this.CompressOpenCheckBox.Text = "圧縮後に保存先フォルダーを開く";
             this.CompressOpenCheckBox.UseVisualStyleBackColor = true;
             //
             // CompressOpenSmartCheckBox
@@ -702,7 +702,7 @@
             this.CompressSaveRadioButton.Size = new System.Drawing.Size(470, 20);
             this.CompressSaveRadioButton.TabIndex = 0;
             this.CompressSaveRadioButton.TabStop = true;
-            this.CompressSaveRadioButton.Text = "指定したフォルダ（省略時はデスクトップ）";
+            this.CompressSaveRadioButton.Text = "指定したフォルダー（省略時はデスクトップ）";
             this.CompressSaveRadioButton.UseVisualStyleBackColor = true;
             //
             // CompressSaveTextBox
@@ -734,7 +734,7 @@
             this.CompressSaveSourceRadioButton.Name = "CompressSaveSourceRadioButton";
             this.CompressSaveSourceRadioButton.Size = new System.Drawing.Size(470, 20);
             this.CompressSaveSourceRadioButton.TabIndex = 3;
-            this.CompressSaveSourceRadioButton.Text = "元のファイルと同じフォルダ";
+            this.CompressSaveSourceRadioButton.Text = "元のファイルと同じフォルダー";
             this.CompressSaveSourceRadioButton.UseVisualStyleBackColor = true;
             //
             // CompressSaveQueryRadioButton
@@ -862,7 +862,7 @@
             this.ExtractOpenCheckBox.Name = "ExtractOpenCheckBox";
             this.ExtractOpenCheckBox.Size = new System.Drawing.Size(470, 20);
             this.ExtractOpenCheckBox.TabIndex = 5;
-            this.ExtractOpenCheckBox.Text = "解凍後に保存先フォルダを開く";
+            this.ExtractOpenCheckBox.Text = "解凍後に保存先フォルダーを開く";
             this.ExtractOpenCheckBox.UseVisualStyleBackColor = true;
             //
             // ExtractFilterCheckBox
@@ -886,7 +886,7 @@
             this.ExtractCreateSmartCheckBox.Name = "ExtractCreateSmartCheckBox";
             this.ExtractCreateSmartCheckBox.Size = new System.Drawing.Size(453, 20);
             this.ExtractCreateSmartCheckBox.TabIndex = 2;
-            this.ExtractCreateSmartCheckBox.Text = "単一フォルダの場合は作成しない";
+            this.ExtractCreateSmartCheckBox.Text = "単一フォルダーの場合は作成しない";
             this.ExtractCreateSmartCheckBox.UseVisualStyleBackColor = true;
             //
             // ExtractCreateCheckBox
@@ -897,7 +897,7 @@
             this.ExtractCreateCheckBox.Name = "ExtractCreateCheckBox";
             this.ExtractCreateCheckBox.Size = new System.Drawing.Size(470, 20);
             this.ExtractCreateCheckBox.TabIndex = 1;
-            this.ExtractCreateCheckBox.Text = "フォルダを自動的に作成する";
+            this.ExtractCreateCheckBox.Text = "フォルダーを自動的に作成する";
             this.ExtractCreateCheckBox.UseVisualStyleBackColor = true;
             //
             // ExtractBurstCheckBox
@@ -956,7 +956,7 @@
             this.ExtractSaveRadioButton.Size = new System.Drawing.Size(470, 20);
             this.ExtractSaveRadioButton.TabIndex = 0;
             this.ExtractSaveRadioButton.TabStop = true;
-            this.ExtractSaveRadioButton.Text = "指定したフォルダ（省略時はデスクトップ）";
+            this.ExtractSaveRadioButton.Text = "指定したフォルダー（省略時はデスクトップ）";
             this.ExtractSaveRadioButton.UseVisualStyleBackColor = true;
             //
             // ExtractSaveTextBox
@@ -988,7 +988,7 @@
             this.ExtractSaveSourceRadioButton.Name = "ExtractSaveSourceRadioButton";
             this.ExtractSaveSourceRadioButton.Size = new System.Drawing.Size(470, 20);
             this.ExtractSaveSourceRadioButton.TabIndex = 3;
-            this.ExtractSaveSourceRadioButton.Text = "元のファイルと同じフォルダ";
+            this.ExtractSaveSourceRadioButton.Text = "元のファイルと同じフォルダー";
             this.ExtractSaveSourceRadioButton.UseVisualStyleBackColor = true;
             //
             // ExtractSaveQueryRadioButton
@@ -1173,7 +1173,7 @@
             this.UpdateCheckBox.Name = "UpdateCheckBox";
             this.UpdateCheckBox.Size = new System.Drawing.Size(472, 20);
             this.UpdateCheckBox.TabIndex = 8;
-            this.UpdateCheckBox.Text = "コンピュータの起動時にアップデートを確認する";
+            this.UpdateCheckBox.Text = "コンピューターの起動時にアップデートを確認する";
             this.UpdateCheckBox.UseVisualStyleBackColor = true;
             //
             // FilterGroupBox
