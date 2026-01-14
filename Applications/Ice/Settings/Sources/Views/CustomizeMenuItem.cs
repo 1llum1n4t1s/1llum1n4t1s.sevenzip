@@ -1,4 +1,4 @@
-﻿/* ------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------- */
 //
 // Copyright (c) 2010 CubeSoft, Inc.
 //
@@ -18,7 +18,7 @@
 using System;
 using System.Windows.Forms;
 
-namespace Cube.FileSystem.SevenZip.Ice.Settings
+namespace ILLUMIN4TI.SevenZip.Ice.Settings
 {
     /* --------------------------------------------------------------------- */
     ///

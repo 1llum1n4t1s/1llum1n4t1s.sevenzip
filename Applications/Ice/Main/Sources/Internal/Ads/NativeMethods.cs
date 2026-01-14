@@ -1,4 +1,4 @@
-﻿/* ------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------- */
 //
 // This file is part of Managed NTFS Data Streams project
 //
@@ -17,7 +17,7 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.FileSystem.SevenZip.Ice;
+namespace ILLUMIN4TI.SevenZip.Ice;
 
 using System;
 using System.Runtime.InteropServices;

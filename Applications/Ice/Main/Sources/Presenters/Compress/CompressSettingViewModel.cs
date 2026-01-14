@@ -1,4 +1,4 @@
-﻿/* ------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------- */
 //
 // Copyright (c) 2010 CubeSoft, Inc.
 //
@@ -20,7 +20,7 @@ using System.Threading;
 using Cube.Observable.Extensions;
 using Cube.Text.Extensions;
 
-namespace Cube.FileSystem.SevenZip.Ice;
+namespace ILLUMIN4TI.SevenZip.Ice;
 
 /* ------------------------------------------------------------------------- */
 ///

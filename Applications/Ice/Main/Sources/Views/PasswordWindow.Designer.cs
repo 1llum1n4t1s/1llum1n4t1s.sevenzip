@@ -1,4 +1,4 @@
-﻿namespace Cube.FileSystem.SevenZip.Ice
+namespace ILLUMIN4TI.SevenZip.Ice
 {
     partial class PasswordWindow
     {

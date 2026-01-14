@@ -4,7 +4,7 @@
         <Authors>clown;cube-soft</Authors>
         <Company>CubeSoft</Company>
         <Copyright>Copyright © 2010 CubeSoft, Inc.</Copyright>
-        <StartupObject>Cube.FileSystem.SevenZip.Tests.Program</StartupObject>
+        <StartupObject>ILLUMIN4TI.SevenZip.Tests.Program</StartupObject>
         <OutputType>Exe</OutputType>
         <TargetFramework>net10.0-windows</TargetFramework>
         <RuntimeIdentifiers>win-x86;win-x64</RuntimeIdentifiers>
@@ -29,7 +29,7 @@
         <SelfContained>false</SelfContained>
     </PropertyGroup>
     <ItemGroup>
-        <ProjectReference Include="..\..\Libraries\Core\Cube.FileSystem.SevenZip.csproj" />
+        <ProjectReference Include="..\..\Libraries\Core\ILLUMIN4TI.SevenZip.csproj" />
         <PackageReference Include="Cube.Private.Tests" Version="9.0.0" />
         <PackageReference Include="Microsoft.NET.Test.Sdk" Version="*" />
         <PackageReference Include="NUnit3TestAdapter" Version="*" />

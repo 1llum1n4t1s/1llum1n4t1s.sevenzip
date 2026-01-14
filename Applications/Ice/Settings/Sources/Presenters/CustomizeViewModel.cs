@@ -1,4 +1,4 @@
-﻿/* ------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------- */
 //
 // Copyright (c) 2010 CubeSoft, Inc.
 //
@@ -21,7 +21,7 @@ using System.Drawing;
 using System.Threading;
 using Cube.Icons;
 
-namespace Cube.FileSystem.SevenZip.Ice.Settings
+namespace ILLUMIN4TI.SevenZip.Ice.Settings
 {
     /* --------------------------------------------------------------------- */
     ///

@@ -1,4 +1,4 @@
-﻿/* ------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------- */
 //
 // Copyright (c) 2010 CubeSoft, Inc.
 //
@@ -18,7 +18,7 @@
 using System;
 using System.Runtime.InteropServices;
 
-namespace Cube.FileSystem.SevenZip.Ice.Associator.Shell32
+namespace ILLUMIN4TI.SevenZip.Ice.Associator.Shell32
 {
     /* --------------------------------------------------------------------- */
     ///

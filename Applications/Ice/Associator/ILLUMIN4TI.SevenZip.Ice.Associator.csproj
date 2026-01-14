@@ -37,7 +37,7 @@
         <SelfContained>false</SelfContained>
     </PropertyGroup>
     <ItemGroup>
-        <ProjectReference Include="..\Core\Cube.FileSystem.SevenZip.Ice.csproj" />
+        <ProjectReference Include="..\Core\ILLUMIN4TI.SevenZip.Ice.csproj" />
         <PackageReference Include="Cube.Logging.NLog" Version="9.0.0" />
     </ItemGroup>
     <ItemGroup>

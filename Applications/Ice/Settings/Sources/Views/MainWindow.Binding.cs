@@ -18,7 +18,7 @@
 using System.Windows.Forms;
 using Cube.Forms.Binding;
 
-namespace Cube.FileSystem.SevenZip.Ice.Settings
+namespace ILLUMIN4TI.SevenZip.Ice.Settings
 {
     partial class MainWindow
     {

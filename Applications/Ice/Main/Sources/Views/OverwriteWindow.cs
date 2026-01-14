@@ -1,4 +1,4 @@
-﻿/* ------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------- */
 //
 // Copyright (c) 2010 CubeSoft, Inc.
 //
@@ -22,7 +22,7 @@ using Cube.Forms;
 using Cube.Forms.Behaviors;
 using Cube.Icons;
 
-namespace Cube.FileSystem.SevenZip.Ice
+namespace ILLUMIN4TI.SevenZip.Ice
 {
     /* --------------------------------------------------------------------- */
     ///
