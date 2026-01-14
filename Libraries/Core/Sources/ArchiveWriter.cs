@@ -20,6 +20,8 @@ namespace ILLUMINATI.SevenZip;
 
 using System;
 using System.Collections.Generic;
+using Cube;
+using Cube.FileSystem;
 using Cube.Text.Extensions;
 
 /* ------------------------------------------------------------------------- */

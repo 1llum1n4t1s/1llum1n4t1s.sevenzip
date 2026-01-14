@@ -21,6 +21,8 @@ namespace ILLUMINATI.SevenZip;
 using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
+using Cube;
+using Cube.FileSystem;
 
 /* ------------------------------------------------------------------------- */
 ///
