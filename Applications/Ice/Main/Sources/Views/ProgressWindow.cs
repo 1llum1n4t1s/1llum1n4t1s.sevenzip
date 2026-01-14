@@ -1,4 +1,4 @@
-﻿/* ------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------- */
 //
 // Copyright (c) 2010 CubeSoft, Inc.
 //
@@ -62,6 +62,7 @@ namespace Cube.FileSystem.SevenZip.Ice
         /// </summary>
         ///
         /* ----------------------------------------------------------------- */
+        [System.ComponentModel.DefaultValue(0)]
         public int Value
         {
             get => MainProgressBar.Value;
@@ -81,6 +82,7 @@ namespace Cube.FileSystem.SevenZip.Ice
         /// </summary>
         ///
         /* ----------------------------------------------------------------- */
+        [System.ComponentModel.DefaultValue(100)]
         public int Unit
         {
             get => MainProgressBar.Maximum;
@@ -101,6 +103,7 @@ namespace Cube.FileSystem.SevenZip.Ice
         /// </summary>
         ///
         /* ----------------------------------------------------------------- */
+        [System.ComponentModel.DefaultValue(false)]
         public bool Cancelable
         {
             get => SuspendButton.Enabled;
@@ -125,6 +128,7 @@ namespace Cube.FileSystem.SevenZip.Ice
         /// </summary>
         ///
         /* ----------------------------------------------------------------- */
+        [System.ComponentModel.DefaultValue(false)]
         public bool Suspended
         {
             get => _taskbar.State == Forms.TaskbarProgressState.Paused;
