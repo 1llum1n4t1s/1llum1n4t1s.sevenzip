@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ILLUMIN4TI.SevenZip.Ice.Associator.Properties {
+namespace ILLUMINATI.SevenZip.Ice.Associator.Properties {
     using System;
 
 

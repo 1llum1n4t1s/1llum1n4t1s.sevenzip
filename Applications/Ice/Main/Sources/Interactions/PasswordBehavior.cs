@@ -18,7 +18,7 @@
 using System.Windows.Forms;
 using Cube.Forms.Behaviors;
 
-namespace ILLUMIN4TI.SevenZip.Ice
+namespace ILLUMINATI.SevenZip.Ice
 {
     /* --------------------------------------------------------------------- */
     ///

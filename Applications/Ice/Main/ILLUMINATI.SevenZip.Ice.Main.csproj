@@ -6,7 +6,7 @@
         <Product>CubeIce</Product>
         <Description>Program to compress or extract archives.</Description>
         <Copyright>Copyright © 2010 CubeSoft, Inc.</Copyright>
-        <RootNamespace>ILLUMIN4TI.SevenZip.Ice</RootNamespace>
+        <RootNamespace>ILLUMINATI.SevenZip.Ice</RootNamespace>
         <AssemblyName>cubeice</AssemblyName>
         <AssemblyTitle>CubeICE</AssemblyTitle>
         <OutputType>WinExe</OutputType>
@@ -40,7 +40,7 @@
         <SelfContained>false</SelfContained>
     </PropertyGroup>
     <ItemGroup>
-        <ProjectReference Include="..\Core\ILLUMIN4TI.SevenZip.Ice.csproj" />
+        <ProjectReference Include="..\Core\ILLUMINATI.SevenZip.Ice.csproj" />
         <PackageReference Include="Cube.Forms.Controls" Version="9.0.0" />
         <PackageReference Include="Cube.Logging.NLog" Version="9.0.0" />
         <PackageReference Include="Cube.FileSystem.AlphaFS" Version="9.0.0" />

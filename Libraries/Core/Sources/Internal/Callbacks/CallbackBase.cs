@@ -16,7 +16,7 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 /* ------------------------------------------------------------------------- */
-namespace ILLUMIN4TI.SevenZip;
+namespace ILLUMINATI.SevenZip;
 
 using System;
 using System.Collections.Generic;

@@ -18,7 +18,7 @@
 using System;
 using System.Windows.Forms;
 
-namespace ILLUMIN4TI.SevenZip.Ice.Settings
+namespace ILLUMINATI.SevenZip.Ice.Settings
 {
     /* --------------------------------------------------------------------- */
     ///

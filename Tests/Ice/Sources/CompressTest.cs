@@ -15,7 +15,7 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace ILLUMIN4TI.SevenZip.Ice.Tests;
+namespace ILLUMINATI.SevenZip.Ice.Tests;
 
 using System.Collections.Generic;
 using System.Linq;

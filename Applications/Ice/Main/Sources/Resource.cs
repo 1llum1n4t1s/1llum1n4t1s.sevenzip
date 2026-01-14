@@ -20,7 +20,7 @@ using System.Collections.Generic;
 using Cube.Collections;
 using Cube.Forms;
 
-namespace ILLUMIN4TI.SevenZip.Ice
+namespace ILLUMINATI.SevenZip.Ice
 {
     /* --------------------------------------------------------------------- */
     ///

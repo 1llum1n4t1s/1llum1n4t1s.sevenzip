@@ -19,7 +19,7 @@ using System;
 using System.Windows.Forms;
 using Cube.Forms.Binding;
 
-namespace ILLUMIN4TI.SevenZip.Ice
+namespace ILLUMINATI.SevenZip.Ice
 {
     /* --------------------------------------------------------------------- */
     ///

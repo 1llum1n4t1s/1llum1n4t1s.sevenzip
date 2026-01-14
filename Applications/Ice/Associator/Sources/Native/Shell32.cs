@@ -18,7 +18,7 @@
 using System;
 using System.Runtime.InteropServices;
 
-namespace ILLUMIN4TI.SevenZip.Ice.Associator.Shell32
+namespace ILLUMINATI.SevenZip.Ice.Associator.Shell32
 {
     /* --------------------------------------------------------------------- */
     ///

@@ -16,7 +16,7 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 /* ------------------------------------------------------------------------- */
-namespace ILLUMIN4TI.SevenZip.Ole32;
+namespace ILLUMINATI.SevenZip.Ole32;
 
 using System.Runtime.InteropServices;
 

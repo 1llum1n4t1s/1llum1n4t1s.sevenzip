@@ -1,4 +1,4 @@
-namespace ILLUMIN4TI.SevenZip.Ice.Settings
+namespace ILLUMINATI.SevenZip.Ice.Settings
 {
     partial class MainWindow
     {

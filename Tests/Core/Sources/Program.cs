@@ -15,7 +15,7 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace ILLUMIN4TI.SevenZip.Tests;
+namespace ILLUMINATI.SevenZip.Tests;
 
 using System;
 using NUnit.Framework;

@@ -8,7 +8,7 @@
         <PackageTags>Cube;7-Zip;7z;SevenZip;Zip</PackageTags>
         <PackageLicenseExpression>LGPL-3.0-or-later</PackageLicenseExpression>
         <PackageIcon>images\Icon.png</PackageIcon>
-        <PackageProjectUrl>https://github.com/cube-soft/ILLUMIN4TI.SevenZip</PackageProjectUrl>
+        <PackageProjectUrl>https://github.com/cube-soft/ILLUMINATI.SevenZip</PackageProjectUrl>
         <TargetFramework>net10.0-windows</TargetFramework>
         <LangVersion>latest</LangVersion>
         <Optimize>true</Optimize>

@@ -17,7 +17,7 @@
 /* ------------------------------------------------------------------------- */
 using System.Threading;
 
-namespace ILLUMIN4TI.SevenZip.Ice.Settings
+namespace ILLUMINATI.SevenZip.Ice.Settings
 {
     /* --------------------------------------------------------------------- */
     ///

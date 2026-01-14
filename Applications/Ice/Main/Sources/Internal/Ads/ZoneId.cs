@@ -15,7 +15,7 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace ILLUMIN4TI.SevenZip.Ice;
+namespace ILLUMINATI.SevenZip.Ice;
 
 using System.IO;
 using System.Linq;

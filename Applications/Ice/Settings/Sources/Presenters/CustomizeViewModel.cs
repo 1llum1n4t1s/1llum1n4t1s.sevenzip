@@ -21,7 +21,7 @@ using System.Drawing;
 using System.Threading;
 using Cube.Icons;
 
-namespace ILLUMIN4TI.SevenZip.Ice.Settings
+namespace ILLUMINATI.SevenZip.Ice.Settings
 {
     /* --------------------------------------------------------------------- */
     ///

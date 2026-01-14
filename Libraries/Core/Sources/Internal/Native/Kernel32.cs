@@ -16,7 +16,7 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 /* ------------------------------------------------------------------------- */
-namespace ILLUMIN4TI.SevenZip.Kernel32;
+namespace ILLUMINATI.SevenZip.Kernel32;
 
 using System;
 using System.Runtime.InteropServices;

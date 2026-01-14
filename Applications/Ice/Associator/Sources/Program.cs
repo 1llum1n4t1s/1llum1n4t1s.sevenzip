@@ -15,7 +15,7 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace ILLUMIN4TI.SevenZip.Ice.Associator;
+namespace ILLUMINATI.SevenZip.Ice.Associator;
 
 using System;
 using System.Linq;

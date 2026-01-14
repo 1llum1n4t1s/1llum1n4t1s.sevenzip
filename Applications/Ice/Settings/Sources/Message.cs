@@ -15,7 +15,7 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace ILLUMIN4TI.SevenZip.Ice.Settings;
+namespace ILLUMINATI.SevenZip.Ice.Settings;
 
 using Cube.Text.Extensions;
 

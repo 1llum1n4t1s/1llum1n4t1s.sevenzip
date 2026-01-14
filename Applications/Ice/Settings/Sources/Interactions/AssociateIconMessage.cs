@@ -18,7 +18,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 
-namespace ILLUMIN4TI.SevenZip.Ice.Settings
+namespace ILLUMINATI.SevenZip.Ice.Settings
 {
     /* --------------------------------------------------------------------- */
     ///

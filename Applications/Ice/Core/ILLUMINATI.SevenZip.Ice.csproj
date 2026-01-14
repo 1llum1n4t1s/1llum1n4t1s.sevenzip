@@ -20,7 +20,7 @@
         <DocumentationFile>bin\Any CPU\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
     </PropertyGroup>
     <ItemGroup>
-        <ProjectReference Include="..\..\..\Libraries\Core\ILLUMIN4TI.SevenZip.csproj" />
+        <ProjectReference Include="..\..\..\Libraries\Core\ILLUMINATI.SevenZip.csproj" />
         <PackageReference Include="Cube.Trick" Version="9.0.0" />
     </ItemGroup>
     <ItemGroup>

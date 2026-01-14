@@ -20,7 +20,7 @@ using System.Threading;
 using Cube.Observable.Extensions;
 using Cube.Text.Extensions;
 
-namespace ILLUMIN4TI.SevenZip.Ice;
+namespace ILLUMINATI.SevenZip.Ice;
 
 /* ------------------------------------------------------------------------- */
 ///

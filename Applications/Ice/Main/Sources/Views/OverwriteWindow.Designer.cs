@@ -1,4 +1,4 @@
-namespace ILLUMIN4TI.SevenZip.Ice
+namespace ILLUMINATI.SevenZip.Ice
 {
     partial class OverwriteWindow
     {
