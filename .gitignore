@@ -39,7 +39,14 @@
 [Tt]emp/
 
 .svn
-.vs
+.idea/
+.vs/
+.vscode/
+*.csproj.user
+*.suo
+bin/
+obj/
+
 
 ~$*
 _ReSharper*/
