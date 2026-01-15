@@ -39,6 +39,7 @@
 [Tt]emp/
 
 .svn
+# IDE設定
 .idea/
 .vs/
 .vscode/
