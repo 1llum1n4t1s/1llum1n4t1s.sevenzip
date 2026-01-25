@@ -1,36 +1,17 @@
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <PackageId>1llum1n4t1s.Sevenzip</PackageId>
-        <Version>1.0.1</Version>
-        <Authors>clown,cube-soft,ゆろち</Authors>
         <Company></Company>
         <Description>7-Zip wrapper library for .NET.</Description>
-        <Copyright>Copyright © 2010 CubeSoft, Inc., 2026 ゆろち</Copyright>
         <PackageTags>Cube;7-Zip;7z;SevenZip;Zip</PackageTags>
         <PackageLicenseExpression>LGPL-3.0-or-later</PackageLicenseExpression>
         <PackageIcon>images\Icon.png</PackageIcon>
-        <PackageProjectUrl>https://github.com/1llum1n4t1s/1llum1n4t1s.Sevenzip</PackageProjectUrl>
-        <TargetFramework>net10.0-windows</TargetFramework>
-        <LangVersion>latest</LangVersion>
-        <Optimize>true</Optimize>
-        <DisableImplicitNamespaceImports>true</DisableImplicitNamespaceImports>
-        <EnableDefaultNoneItems>false</EnableDefaultNoneItems>
-        <GenerateDocumentationFile>true</GenerateDocumentationFile>
-        <IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
-        <SignAssembly>true</SignAssembly>
-        <AssemblyOriginatorKeyFile>..\..\Cube.snk</AssemblyOriginatorKeyFile>
-        <DefineConstants Condition=" '$(Configuration)' == 'Debug' ">DEBUG;TRACE</DefineConstants>
-        <RepositoryUrl>https://github.com/1llum1n4t1s/1llum1n4t1s.Sevenzip</RepositoryUrl>
-    </PropertyGroup>
-    <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
-        <OutputPath>bin\Any CPU\$(Configuration)\</OutputPath>
-        <DocumentationFile>bin\Any CPU\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
     </PropertyGroup>
     <ItemGroup>
-        <ProjectReference Include="..\Cube.Core\Cube.Core.csproj" />
+        <ProjectReference Include="..\Cube.Core\Cube.Core.csproj" PrivateAssets="all" />
         <PackageReference Include="Cube.Native.SevenZip" Version="25.1.1" />
     </ItemGroup>
     <ItemGroup>
-        <None Include="..\..\Icon.png" Pack="true" PackagePath="images" />
+        <None Include="..\..\icon\app_icon.png" Pack="true" PackagePath="images\Icon.png" />
     </ItemGroup>
 </Project>

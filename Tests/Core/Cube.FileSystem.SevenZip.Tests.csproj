@@ -1,32 +1,11 @@
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <Version>1.0.1</Version>
-        <Authors>clown,cube-soft,ゆろち</Authors>
-        <Company>CubeSoft</Company>
-        <Copyright>Copyright © 2010 CubeSoft, Inc., 2026 ゆろち</Copyright>
         <StartupObject>Cube.FileSystem.SevenZip.Tests.Program</StartupObject>
         <OutputType>Exe</OutputType>
-        <TargetFramework>net10.0-windows</TargetFramework>
-        <RuntimeIdentifiers>win-x86;win-x64</RuntimeIdentifiers>
-        <LangVersion>latest</LangVersion>
-        <IsPackable>false</IsPackable>
-        <DisableImplicitNamespaceImports>true</DisableImplicitNamespaceImports>
-        <EnableDefaultNoneItems>false</EnableDefaultNoneItems>
-        <GenerateDocumentationFile>true</GenerateDocumentationFile>
-        <SatelliteResourceLanguages>_</SatelliteResourceLanguages>
-        <DefineConstants Condition=" '$(Configuration)' == 'Debug' ">DEBUG;TRACE</DefineConstants>
-    </PropertyGroup>
-    <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
-        <OutputPath>bin\Any CPU\$(Configuration)\</OutputPath>
-        <DocumentationFile>bin\Any CPU\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
-    </PropertyGroup>
-    <PropertyGroup Condition=" '$(Platform)' == 'x86' ">
-        <RuntimeIdentifier>win-x86</RuntimeIdentifier>
-        <SelfContained>false</SelfContained>
-    </PropertyGroup>
-    <PropertyGroup Condition=" '$(Platform)' == 'x64' ">
         <RuntimeIdentifier>win-x64</RuntimeIdentifier>
         <SelfContained>false</SelfContained>
+        <IsPackable>false</IsPackable>
+        <SatelliteResourceLanguages>_</SatelliteResourceLanguages>
     </PropertyGroup>
     <ItemGroup>
         <ProjectReference Include="..\..\Libraries\Core\Cube.FileSystem.SevenZip.csproj" />

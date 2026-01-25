@@ -1,0 +1,23 @@
+<Project>
+    <PropertyGroup>
+        <Platform Condition="'$(Platform)' == ''">x64</Platform>
+        <Platforms>x64</Platforms>
+        <Version>1.0.5</Version>
+        <Authors>clown,cube-soft,ゆろち</Authors>
+        <Copyright>Copyright © 2010 CubeSoft, Inc., 2026 ゆろち</Copyright>
+        <TargetFramework>net10.0-windows</TargetFramework>
+        <LangVersion>latest</LangVersion>
+        <Optimize>true</Optimize>
+        <DisableImplicitNamespaceImports>true</DisableImplicitNamespaceImports>
+        <EnableDefaultNoneItems>false</EnableDefaultNoneItems>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
+        <DefineConstants Condition=" '$(Configuration)' == 'Debug' ">DEBUG;TRACE</DefineConstants>
+        <RepositoryUrl>https://github.com/1llum1n4t1s/1llum1n4t1s.Sevenzip</RepositoryUrl>
+        <PackageProjectUrl>https://github.com/1llum1n4t1s/1llum1n4t1s.Sevenzip</PackageProjectUrl>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Platform)' == 'x64' ">
+        <OutputPath>bin\x64\$(Configuration)\</OutputPath>
+        <DocumentationFile>bin\x64\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
+    </PropertyGroup>
+</Project>

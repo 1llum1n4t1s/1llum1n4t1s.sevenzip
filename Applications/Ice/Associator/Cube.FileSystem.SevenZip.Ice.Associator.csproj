@@ -1,40 +1,17 @@
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <Version>1.0.1</Version>
-        <Authors>clown,cube-soft,ゆろち</Authors>
         <Company></Company>
         <Product>CubeIceAssociator</Product>
         <Description>Program to set up file associations and some other CubeICE settings.</Description>
-        <Copyright>Copyright © 2010 CubeSoft, Inc., 2026 ゆろち</Copyright>
         <AssemblyName>cubeice-associate</AssemblyName>
         <AssemblyTitle>CubeICE Associator</AssemblyTitle>
         <OutputType>WinExe</OutputType>
-        <TargetFramework>net10.0-windows</TargetFramework>
-        <Platforms>AnyCPU;x86;x64</Platforms>
-        <RuntimeIdentifiers>win-x86;win-x64</RuntimeIdentifiers>
-        <LangVersion>latest</LangVersion>
-        <IsPackable>false</IsPackable>
-        <Optimize>true</Optimize>
-        <DisableImplicitNamespaceImports>true</DisableImplicitNamespaceImports>
-        <EnableDefaultNoneItems>false</EnableDefaultNoneItems>
-        <GenerateDocumentationFile>true</GenerateDocumentationFile>
-        <IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
-        <ApplicationIcon>App.ico</ApplicationIcon>
-        <ApplicationManifest>App.manifest</ApplicationManifest>
-        <SatelliteResourceLanguages>_</SatelliteResourceLanguages>
-        <DefineConstants Condition=" '$(Configuration)' == 'Debug' ">DEBUG;TRACE</DefineConstants>
-    </PropertyGroup>
-    <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
-        <OutputPath>bin\Any CPU\$(Configuration)\</OutputPath>
-        <DocumentationFile>bin\Any CPU\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
-    </PropertyGroup>
-    <PropertyGroup Condition=" '$(Platform)' == 'x86' ">
-        <RuntimeIdentifier>win-x86</RuntimeIdentifier>
-        <SelfContained>false</SelfContained>
-    </PropertyGroup>
-    <PropertyGroup Condition=" '$(Platform)' == 'x64' ">
         <RuntimeIdentifier>win-x64</RuntimeIdentifier>
         <SelfContained>false</SelfContained>
+        <IsPackable>false</IsPackable>
+        <ApplicationIcon>..\..\..\icon\app.ico</ApplicationIcon>
+        <ApplicationManifest>App.manifest</ApplicationManifest>
+        <SatelliteResourceLanguages>_</SatelliteResourceLanguages>
     </PropertyGroup>
     <ItemGroup>
         <ProjectReference Include="..\Core\Cube.FileSystem.SevenZip.Ice.csproj" />
