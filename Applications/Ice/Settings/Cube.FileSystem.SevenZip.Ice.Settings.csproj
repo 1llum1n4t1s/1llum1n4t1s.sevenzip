@@ -6,20 +6,12 @@
         <AssemblyTitle>CubeICE Setting</AssemblyTitle>
         <OutputType>WinExe</OutputType>
         <UseWindowsForms>true</UseWindowsForms>
-        <Platforms>AnyCPU;x86;x64</Platforms>
-        <RuntimeIdentifiers>win-x86;win-x64</RuntimeIdentifiers>
+        <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+        <SelfContained>false</SelfContained>
         <IsPackable>false</IsPackable>
         <ApplicationIcon>..\..\..\icon\app.ico</ApplicationIcon>
         <ApplicationManifest>App.manifest</ApplicationManifest>
         <SatelliteResourceLanguages>_</SatelliteResourceLanguages>
-    </PropertyGroup>
-    <PropertyGroup Condition=" '$(Platform)' == 'x86' ">
-        <RuntimeIdentifier>win-x86</RuntimeIdentifier>
-        <SelfContained>false</SelfContained>
-    </PropertyGroup>
-    <PropertyGroup Condition=" '$(Platform)' == 'x64' ">
-        <RuntimeIdentifier>win-x64</RuntimeIdentifier>
-        <SelfContained>false</SelfContained>
     </PropertyGroup>
     <ItemGroup>
         <ProjectReference Include="..\Core\Cube.FileSystem.SevenZip.Ice.csproj" />

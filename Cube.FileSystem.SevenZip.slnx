@@ -1,36 +1,53 @@
 <Solution>
   <Configurations>
-    <Platform Name="Any CPU" />
     <Platform Name="x64" />
-    <Platform Name="x86" />
   </Configurations>
   <Folder Name="/Applications/">
     <Project Path="Applications/Ice/Associator/Cube.FileSystem.SevenZip.Ice.Associator.csproj">
       <Platform Solution="*|x64" Project="x64" />
-      <Platform Solution="*|x86" Project="x86" />
     </Project>
     <Project Path="Applications/Ice/Main/Cube.FileSystem.SevenZip.Ice.Main.csproj">
       <Platform Solution="*|x64" Project="x64" />
-      <Platform Solution="*|x86" Project="x86" />
     </Project>
     <Project Path="Applications/Ice/Settings/Cube.FileSystem.SevenZip.Ice.Settings.csproj">
       <Platform Solution="*|x64" Project="x64" />
-      <Platform Solution="*|x86" Project="x86" />
     </Project>
   </Folder>
   <Folder Name="/Libraries/">
-    <Project Path="Libraries/Cube.Core/Cube.Core.csproj" />
-    <Project Path="Libraries/Cube.FileSystem.AlphaFS/Cube.FileSystem.AlphaFS.csproj" />
-    <Project Path="Libraries/Cube.Logging.NLog/Cube.Logging.NLog.csproj" />
-    <Project Path="Libraries/Cube.Forms/Cube.Forms.csproj" />
-    <Project Path="Libraries/Cube.Forms.Controls/Cube.Forms.Controls.csproj" />
-    <Project Path="Libraries/Cube.Trick/Cube.Trick.csproj" />
-    <Project Path="Libraries/Cube.Private.Tests/Cube.Private.Tests.csproj" />
-    <Project Path="Applications/Ice/Core/Cube.FileSystem.SevenZip.Ice.csproj" />
-    <Project Path="Libraries/Core/Cube.FileSystem.SevenZip.csproj" />
+    <Project Path="Libraries/Cube.Core/Cube.Core.csproj">
+      <Platform Solution="*|x64" Project="x64" />
+    </Project>
+    <Project Path="Libraries/Cube.FileSystem.AlphaFS/Cube.FileSystem.AlphaFS.csproj">
+      <Platform Solution="*|x64" Project="x64" />
+    </Project>
+    <Project Path="Libraries/Cube.Logging.NLog/Cube.Logging.NLog.csproj">
+      <Platform Solution="*|x64" Project="x64" />
+    </Project>
+    <Project Path="Libraries/Cube.Forms/Cube.Forms.csproj">
+      <Platform Solution="*|x64" Project="x64" />
+    </Project>
+    <Project Path="Libraries/Cube.Forms.Controls/Cube.Forms.Controls.csproj">
+      <Platform Solution="*|x64" Project="x64" />
+    </Project>
+    <Project Path="Libraries/Cube.Trick/Cube.Trick.csproj">
+      <Platform Solution="*|x64" Project="x64" />
+    </Project>
+    <Project Path="Libraries/Cube.Private.Tests/Cube.Private.Tests.csproj">
+      <Platform Solution="*|x64" Project="x64" />
+    </Project>
+    <Project Path="Applications/Ice/Core/Cube.FileSystem.SevenZip.Ice.csproj">
+      <Platform Solution="*|x64" Project="x64" />
+    </Project>
+    <Project Path="Libraries/Core/Cube.FileSystem.SevenZip.csproj">
+      <Platform Solution="*|x64" Project="x64" />
+    </Project>
   </Folder>
   <Folder Name="/Tests/">
-    <Project Path="Tests/Core/Cube.FileSystem.SevenZip.Tests.csproj" />
-    <Project Path="Tests/Ice/Cube.FileSystem.SevenZip.Ice.Tests.csproj" />
+    <Project Path="Tests/Core/Cube.FileSystem.SevenZip.Tests.csproj">
+      <Platform Solution="*|x64" Project="x64" />
+    </Project>
+    <Project Path="Tests/Ice/Cube.FileSystem.SevenZip.Ice.Tests.csproj">
+      <Platform Solution="*|x64" Project="x64" />
+    </Project>
   </Folder>
 </Solution>
