@@ -11,7 +11,7 @@
 
 ---
 
-[1llum1n4t1s.Sevenzip](https://github.com/1llum1n4t1s/1llum1n4t1s.Sevenzip) は [7-Zip](http://www.7-zip.org/) の COM インターフェースを利用したラッパーライブラリです。アーカイブの圧縮・解凍を行う [CubeICE](https://www.cube-soft.jp/cubeice/) アプリケーションも含みます。ライブラリおよびアプリケーションは .NET 10 をターゲットとしています。ライセンスはプロジェクトにより GNU LGPLv3 または Apache 2.0 です。詳細は [License.md](https://github.com/1llum1n4t1s/1llum1n4t1s.Sevenzip/blob/master/License.md) を参照してください。
+[1llum1n4t1s.Sevenzip](https://github.com/1llum1n4t1s/1llum1n4t1s.Sevenzip) は [7-Zip](http://www.7-zip.org/) の COM インターフェースを利用したラッパーライブラリです。アーカイブの圧縮・解凍を行う [CubeICE](https://www.cube-soft.jp/cubeice/) アプリケーションも含みます。ライブラリおよびアプリケーションは .NET 10 をターゲットとしています。ライセンスはプロジェクトにより GNU LGPLv3 または Apache 2.0 です。詳細は [License.md](https://github.com/1llum1n4t1s/1llum1n4t1s.Sevenzip/blob/main/License.md) を参照してください。
 
 ## Usage
 
@@ -100,6 +100,6 @@ ArchiveWriter および ArchiveReader は、生成から破棄まで同一スレ
 | 7-Zip ラッパー・CubeICE | [cube-soft/cube.filesystem.sevenzip](https://github.com/cube-soft/cube.filesystem.sevenzip) | コアライブラリ: [GNU LGPLv3](https://www.gnu.org/licenses/lgpl-3.0.html)、その他: [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
 | ユーティリティ・MVVM 等 | [cube-soft/cube.core](https://github.com/cube-soft/cube.core) | [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
 
-各プロジェクトのライセンス表記および条件は、本リポジトリ内の [License.md](https://github.com/1llum1n4t1s/1llum1n4t1s.Sevenzip/blob/master/License.md) およびソリューション内の各ライセンスファイルを参照してください。  
+各プロジェクトのライセンス表記および条件は、本リポジトリ内の [License.md](https://github.com/1llum1n4t1s/1llum1n4t1s.Sevenzip/blob/main/License.md) およびソリューション内の各ライセンスファイルを参照してください。  
 Copyright © 2010 [CubeSoft, Inc.](https://www.cube-soft.jp/)
 Copyright © 2026 [ゆろち](https://github.com/1llum1n4t1s/)
