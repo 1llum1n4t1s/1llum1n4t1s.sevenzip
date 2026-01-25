@@ -1,10 +1,10 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <Version>9.5.0</Version>
         <Authors>clown;cube-soft</Authors>
         <Company>CubeSoft</Company>
         <Description>Wraps the AlphaFS package compatible with the Cube.FileSystem interface.</Description>
-        <Copyright>Copyright © 2010 CubeSoft, Inc.</Copyright>
+        <Copyright>Copyright © 2010 CubeSoft, Inc., 2026 ゆろち</Copyright>
         <PackageTags>Cube;IO;AlphaFS</PackageTags>
         <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
         <PackageReadmeFile>docs\Readme.md</PackageReadmeFile>

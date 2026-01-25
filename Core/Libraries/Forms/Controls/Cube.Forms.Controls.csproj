@@ -4,7 +4,7 @@
         <Authors>clown;cube-soft</Authors>
         <Company>CubeSoft</Company>
         <Description>Provides GUI components in WinForms applications.</Description>
-        <Copyright>Copyright © 2010 CubeSoft, Inc.</Copyright>
+        <Copyright>Copyright © 2010 CubeSoft, Inc., 2026 ゆろち</Copyright>
         <PackageTags>Cube;WinForms</PackageTags>
         <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
         <PackageProjectUrl>https://github.com/cube-soft/$(AssemblyName)</PackageProjectUrl>

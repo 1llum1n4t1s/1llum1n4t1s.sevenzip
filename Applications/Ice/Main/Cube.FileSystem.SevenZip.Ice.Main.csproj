@@ -5,7 +5,7 @@
         <Company>CubeSoft</Company>
         <Product>CubeIce</Product>
         <Description>Program to compress or extract archives.</Description>
-        <Copyright>Copyright © 2010 CubeSoft, Inc.</Copyright>
+        <Copyright>Copyright © 2010 CubeSoft, Inc., 2026 ゆろち</Copyright>
         <RootNamespace>Cube.FileSystem.SevenZip.Ice</RootNamespace>
         <AssemblyName>cubeice</AssemblyName>
         <AssemblyTitle>CubeICE</AssemblyTitle>

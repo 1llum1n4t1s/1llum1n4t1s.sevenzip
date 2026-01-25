@@ -102,4 +102,5 @@ ArchiveWriter および ArchiveReader は、生成から破棄まで同一スレ
 
 各プロジェクトのライセンス表記および条件は、本リポジトリ内の [License.md](https://github.com/1llum1n4t1s/1llum1n4t1s.Sevenzip/blob/main/License.md) およびソリューション内の各ライセンスファイルを参照してください。  
 Copyright © 2010 [CubeSoft, Inc.](https://www.cube-soft.jp/)
+
 Copyright © 2026 [ゆろち](https://github.com/1llum1n4t1s/)

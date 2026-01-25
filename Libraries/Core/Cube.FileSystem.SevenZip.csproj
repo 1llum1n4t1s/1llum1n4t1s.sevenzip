@@ -5,7 +5,7 @@
         <Authors>clown,cube-soft,ゆろち</Authors>
         <Company></Company>
         <Description>7-Zip wrapper library for .NET.</Description>
-        <Copyright>Copyright © 2010 CubeSoft, Inc.</Copyright>
+        <Copyright>Copyright © 2010 CubeSoft, Inc., 2026 ゆろち</Copyright>
         <PackageTags>Cube;7-Zip;7z;SevenZip;Zip</PackageTags>
         <PackageLicenseExpression>LGPL-3.0-or-later</PackageLicenseExpression>
         <PackageIcon>images\Icon.png</PackageIcon>
