@@ -13,5 +13,6 @@
     </ItemGroup>
     <ItemGroup>
         <None Include="..\..\icon\app_icon.png" Pack="true" PackagePath="images\Icon.png" />
+        <None Include="..\Cube.Core\bin\x64\$(Configuration)\$(TargetFramework)\Cube.Core.dll" Pack="true" PackagePath="lib\$(TargetFramework)\Cube.Core.dll" Visible="false" Link="Cube.Core.dll" />
     </ItemGroup>
 </Project>
