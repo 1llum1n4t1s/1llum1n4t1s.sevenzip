@@ -1,5 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
+        <PlatformTarget>x64</PlatformTarget>
         <Product>CubeIce</Product>
         <Description>Program to compress or extract archives.</Description>
         <RootNamespace>Cube.FileSystem.SevenZip.Ice</RootNamespace>
@@ -7,21 +8,14 @@
         <AssemblyTitle>CubeICE</AssemblyTitle>
         <OutputType>WinExe</OutputType>
         <UseWindowsForms>true</UseWindowsForms>
-        <Platforms>AnyCPU;x86;x64</Platforms>
-        <RuntimeIdentifiers>win-x86;win-x64</RuntimeIdentifiers>
+        <Platforms>x64</Platforms>
+        <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+        <SelfContained>false</SelfContained>
         <IsPackable>false</IsPackable>
         <ApplicationIcon>..\..\..\icon\app.ico</ApplicationIcon>
         <ApplicationManifest>App.manifest</ApplicationManifest>
         <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
         <SatelliteResourceLanguages>_</SatelliteResourceLanguages>
-    </PropertyGroup>
-    <PropertyGroup Condition=" '$(Platform)' == 'x86' ">
-        <RuntimeIdentifier>win-x86</RuntimeIdentifier>
-        <SelfContained>false</SelfContained>
-    </PropertyGroup>
-    <PropertyGroup Condition=" '$(Platform)' == 'x64' ">
-        <RuntimeIdentifier>win-x64</RuntimeIdentifier>
-        <SelfContained>false</SelfContained>
     </PropertyGroup>
     <ItemGroup>
         <ProjectReference Include="..\Core\Cube.FileSystem.SevenZip.Ice.csproj" />
