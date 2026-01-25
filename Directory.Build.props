@@ -1,5 +1,7 @@
 <Project>
     <PropertyGroup>
+        <Platform Condition="'$(Platform)' == ''">x64</Platform>
+        <Platforms>x64</Platforms>
         <Version>1.0.5</Version>
         <Authors>clown,cube-soft,ゆろち</Authors>
         <Copyright>Copyright © 2010 CubeSoft, Inc., 2026 ゆろち</Copyright>

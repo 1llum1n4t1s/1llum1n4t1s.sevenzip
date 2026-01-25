@@ -6,7 +6,6 @@
         <AssemblyTitle>CubeICE Setting</AssemblyTitle>
         <OutputType>WinExe</OutputType>
         <UseWindowsForms>true</UseWindowsForms>
-        <Platforms>x64</Platforms>
         <RuntimeIdentifier>win-x64</RuntimeIdentifier>
         <SelfContained>false</SelfContained>
         <IsPackable>false</IsPackable>

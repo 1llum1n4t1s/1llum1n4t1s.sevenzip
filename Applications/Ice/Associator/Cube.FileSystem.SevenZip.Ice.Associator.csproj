@@ -6,7 +6,6 @@
         <AssemblyName>cubeice-associate</AssemblyName>
         <AssemblyTitle>CubeICE Associator</AssemblyTitle>
         <OutputType>WinExe</OutputType>
-        <Platforms>x64</Platforms>
         <RuntimeIdentifier>win-x64</RuntimeIdentifier>
         <SelfContained>false</SelfContained>
         <IsPackable>false</IsPackable>
