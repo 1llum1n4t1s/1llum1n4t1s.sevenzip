@@ -15,14 +15,14 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.FileSystem.SevenZip.Ice;
-
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Serialization;
 using Cube.DataContract;
 using Cube.Text.Extensions;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
+namespace Cube.FileSystem.SevenZip.Ice;
 
 /* ------------------------------------------------------------------------- */
 ///
@@ -68,7 +68,7 @@ public sealed class SettingValue : SerializableBase
     [DataMember]
     public string Temp
     {
-        get => Get(System.IO.Path.GetTempPath);
+        get => Get(Path.GetTempPath);
         set => Set(value);
     }
 

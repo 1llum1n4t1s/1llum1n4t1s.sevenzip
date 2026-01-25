@@ -15,12 +15,12 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.Forms;
-
+using Cube.Forms.Controls.Extensions;
+using Cube.Forms.User32;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using Cube.Forms.Controls.Extensions;
+namespace Cube.Forms;
 
 /* ------------------------------------------------------------------------- */
 ///
@@ -181,8 +181,8 @@ public class SizeHacker : DisposableBase
             result != Position.TopLeft    && result != Position.TopRight &&
             result != Position.BottomLeft && result != Position.BottomRight) return;
 
-        _ = User32.NativeMethods.ReleaseCapture();
-        _ = User32.NativeMethods.SendMessage(form.Handle, 0xa1 /* WM_NCLBUTTONDOWN */, (IntPtr)result, IntPtr.Zero);
+        _ = NativeMethods.ReleaseCapture();
+        _ = NativeMethods.SendMessage(form.Handle, 0xa1 /* WM_NCLBUTTONDOWN */, (IntPtr)result, IntPtr.Zero);
     }
 
     /* --------------------------------------------------------------------- */

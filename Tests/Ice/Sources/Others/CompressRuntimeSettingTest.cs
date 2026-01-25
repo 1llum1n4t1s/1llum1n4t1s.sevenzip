@@ -15,9 +15,8 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.FileSystem.SevenZip.Ice.Tests;
-
 using NUnit.Framework;
+namespace Cube.FileSystem.SevenZip.Ice.Tests;
 
 /* ------------------------------------------------------------------------- */
 ///
@@ -29,7 +28,7 @@ using NUnit.Framework;
 ///
 /* ------------------------------------------------------------------------- */
 [TestFixture]
-class CompressRuntimeSettingTest
+internal class CompressRuntimeSettingTest
 {
     #region Tests
 

@@ -16,12 +16,12 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.FileSystem.SevenZip;
-
+using Cube.FileSystem.SevenZip.Kernel32;
+using Cube.Reflection.Extensions;
 using System;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
-using Cube.Reflection.Extensions;
+namespace Cube.FileSystem.SevenZip;
 
 /* ------------------------------------------------------------------------- */
 ///
@@ -48,7 +48,7 @@ internal sealed class SevenZipLibrary : DisposableBase
     public SevenZipLibrary()
     {
         var dll = Io.Combine(GetType().Assembly.GetDirectoryName(), "7z.dll");
-        _handle = Kernel32.NativeMethods.LoadLibrary(dll);
+        _handle = NativeMethods.LoadLibrary(dll);
         if (_handle.IsInvalid) throw new Win32Exception("LoadLibrary");
     }
 
@@ -88,7 +88,7 @@ internal sealed class SevenZipLibrary : DisposableBase
     {
         var iid  = typeof(IInArchive).GUID;
         var func = GetDelegate();
-        _ = func(ref clsid, ref iid, out object result);
+        _ = func(ref clsid, ref iid, out var result);
         return result as IInArchive;
     }
 
@@ -124,7 +124,7 @@ internal sealed class SevenZipLibrary : DisposableBase
     {
         var iid  = typeof(IOutArchive).GUID;
         var func = GetDelegate();
-        _ = func(ref clsid, ref iid, out object result);
+        _ = func(ref clsid, ref iid, out var result);
         return result as IOutArchive;
     }
 
@@ -163,7 +163,7 @@ internal sealed class SevenZipLibrary : DisposableBase
     /* --------------------------------------------------------------------- */
     private CreateObjectDelegate GetDelegate() =>
         Marshal.GetDelegateForFunctionPointer(
-            Kernel32.NativeMethods.GetProcAddress(_handle, "CreateObject"),
+            NativeMethods.GetProcAddress(_handle, "CreateObject"),
             typeof(CreateObjectDelegate)
         ) as CreateObjectDelegate;
 
@@ -177,7 +177,7 @@ internal sealed class SevenZipLibrary : DisposableBase
     ///
     /* --------------------------------------------------------------------- */
     [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    delegate int CreateObjectDelegate(
+    private delegate int CreateObjectDelegate(
         [In] ref Guid classID,
         [In] ref Guid interfaceID,
         [MarshalAs(UnmanagedType.Interface)] out object outObject

@@ -15,10 +15,10 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.FileSystem.SevenZip.Ice;
-
-using System.Linq;
+using Cube.FileSystem.SevenZip.Ice.Properties;
 using Cube.Text.Extensions;
+using System.Linq;
+namespace Cube.FileSystem.SevenZip.Ice;
 
 /* ------------------------------------------------------------------------- */
 ///
@@ -95,8 +95,8 @@ internal static class CompressExtension
     /* --------------------------------------------------------------------- */
     public static string GetText(this CompressFacade src) =>
         src.Destination.HasValue() ?
-        string.Format(Properties.Resources.MessageArchive, src.Destination) :
-        Properties.Resources.MessagePreArchive;
+        string.Format(Resources.MessageArchive, src.Destination) :
+        Resources.MessagePreArchive;
 
     #endregion
 }

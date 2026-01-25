@@ -16,13 +16,8 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.FileSystem.SevenZip;
-
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+namespace Cube.FileSystem.SevenZip;
 
 /* ------------------------------------------------------------------------- */
 ///

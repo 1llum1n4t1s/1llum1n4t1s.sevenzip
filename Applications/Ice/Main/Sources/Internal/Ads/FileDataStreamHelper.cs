@@ -17,14 +17,13 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.FileSystem.SevenZip.Ice;
-
+using Cube.Text.Extensions;
+using Microsoft.Win32.SafeHandles;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Runtime.InteropServices;
-using Cube.Text.Extensions;
-using Microsoft.Win32.SafeHandles;
+namespace Cube.FileSystem.SevenZip.Ice;
 
 /* ------------------------------------------------------------------------- */
 ///
@@ -200,8 +199,8 @@ internal static class FileDataStreamHelper
         if (handle == _invalid)
         {
             var code = Marshal.GetLastWin32Error();
-            if (IsIgnore(code)) return default;
-            else throw new FileDataStreamException(code, name);
+            if (IsIgnore(code)) return null;
+            throw new FileDataStreamException(code, name);
         }
         return dest;
     }
@@ -223,8 +222,8 @@ internal static class FileDataStreamHelper
         if (!NativeMethods.FindNextStreamW(handle, ptr))
         {
             var code = Marshal.GetLastWin32Error();
-            if (IsIgnore(code)) return default;
-            else throw new FileDataStreamException(code, null);
+            if (IsIgnore(code)) return null;
+            throw new FileDataStreamException(code, null);
         }
         return dest;
     }

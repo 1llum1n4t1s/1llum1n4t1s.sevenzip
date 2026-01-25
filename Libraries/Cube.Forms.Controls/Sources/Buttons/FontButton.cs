@@ -15,10 +15,10 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.Forms.Controls;
-
 using System;
 using System.ComponentModel;
+using System.Windows.Forms;
+namespace Cube.Forms.Controls;
 
 /* ------------------------------------------------------------------------- */
 ///
@@ -246,7 +246,7 @@ public class FontButton : Button
     {
         base.OnClick(e);
 
-        var dialog = new System.Windows.Forms.FontDialog
+        var dialog = new FontDialog
         {
             AllowScriptChange   = AllowScriptChange,
             AllowSimulations    = AllowSimulations,
@@ -268,7 +268,7 @@ public class FontButton : Button
         dialog.Apply += handler;
         var result = dialog.ShowDialog();
         dialog.Apply -= handler;
-        if (result == System.Windows.Forms.DialogResult.Cancel) return;
+        if (result == DialogResult.Cancel) return;
 
         ForeColor = dialog.Color;
         Font = dialog.Font;

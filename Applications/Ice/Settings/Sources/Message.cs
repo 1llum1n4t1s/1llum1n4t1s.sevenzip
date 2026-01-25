@@ -15,9 +15,9 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.FileSystem.SevenZip.Ice.Settings;
-
+using Cube.FileSystem.SevenZip.Ice.Settings.Properties;
 using Cube.Text.Extensions;
+namespace Cube.FileSystem.SevenZip.Ice.Settings;
 
 /* ------------------------------------------------------------------------- */
 ///
@@ -48,7 +48,7 @@ public static class Message
     /* --------------------------------------------------------------------- */
     public static OpenDirectoryMessage ForSaveDirectory(string src)
     {
-        var dest = new OpenDirectoryMessage(Properties.Resources.MessageSave) { NewButton = true };
+        var dest = new OpenDirectoryMessage(Resources.MessageSave) { NewButton = true };
         if (src.HasValue()) dest.Value = src;
         return dest;
     }

@@ -15,9 +15,8 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.Forms.Behaviors;
-
 using System;
+namespace Cube.Forms.Behaviors;
 
 /* ------------------------------------------------------------------------- */
 ///

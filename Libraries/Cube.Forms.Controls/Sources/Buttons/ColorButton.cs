@@ -15,13 +15,13 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.Forms.Controls;
-
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Linq;
+using System.Windows.Forms;
+namespace Cube.Forms.Controls;
 
 /* ------------------------------------------------------------------------- */
 ///
@@ -50,7 +50,7 @@ public class ColorButton : Button
         UseVisualStyleBackColor = false;
         BackColor = SystemColors.Control;
         ForeColor = BackColor;
-        FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+        FlatStyle = FlatStyle.Flat;
         FlatAppearance.BorderColor = SystemColors.ControlDark;
         FlatAppearance.BorderSize = 1;
     }
@@ -145,7 +145,7 @@ public class ColorButton : Button
     {
         base.OnClick(e);
 
-        var dialog = new System.Windows.Forms.ColorDialog
+        var dialog = new ColorDialog
         {
             Color          = BackColor,
             AnyColor       = AnyColor,
@@ -165,7 +165,7 @@ public class ColorButton : Button
             foreach (var color in dialog.CustomColors) CustomColors.Add(color);
         }
 
-        if (result == System.Windows.Forms.DialogResult.Cancel) return;
+        if (result == DialogResult.Cancel) return;
 
         BackColor = dialog.Color;
         ForeColor = BackColor;

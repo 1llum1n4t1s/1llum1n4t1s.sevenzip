@@ -15,13 +15,15 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.FileSystem.SevenZip.Ice.Associator;
-
-using System;
-using System.Linq;
 using Cube.Collections.Extensions;
+using Cube.FileSystem.SevenZip.Ice.Associator.Shell32;
+using Cube.Logging.NLog;
 using Cube.Reflection.Extensions;
 using Cube.Text.Extensions;
+using System;
+using System.IO;
+using System.Linq;
+namespace Cube.FileSystem.SevenZip.Ice.Associator;
 
 /* ------------------------------------------------------------------------- */
 ///
@@ -32,7 +34,7 @@ using Cube.Text.Extensions;
 /// </summary>
 ///
 /* ------------------------------------------------------------------------- */
-static class Program
+internal static class Program
 {
     #region Methods
 
@@ -46,9 +48,9 @@ static class Program
     ///
     /* --------------------------------------------------------------------- */
     [STAThread]
-    static void Main(string[] args) => Logger.Try(() =>
+    private static void Main(string[] args) => Logger.Try(() =>
     {
-        Logger.Configure(new Logging.NLog.LoggerSource());
+        Logger.Configure(new LoggerSource());
         Logger.Info(typeof(Program).Assembly);
         Logger.Info($"[ {args.Select(e => e.Quote()).Join(" ")} ]");
 
@@ -57,7 +59,7 @@ static class Program
         else settings.Load();
 
         var dir  = typeof(Program).Assembly.GetDirectoryName();
-        var exe  = System.IO.Path.Combine(dir, "cubeice.exe");
+        var exe  = Path.Combine(dir, "cubeice.exe");
         var icon = $"{exe},{settings.Value.Association.IconIndex}";
         var src  = settings.Value.Association.Value;
 
@@ -73,7 +75,7 @@ static class Program
 
         registrar.Update(src);
 
-        Shell32.NativeMethods.SHChangeNotify(
+        NativeMethods.SHChangeNotify(
             0x08000000, // SHCNE_ASSOCCHANGED
             0x00001000, // SHCNF_FLUSH
             IntPtr.Zero,
@@ -91,7 +93,7 @@ static class Program
     /// </summary>
     ///
     /* --------------------------------------------------------------------- */
-    static void Clear(SettingFolder settings)
+    private static void Clear(SettingFolder settings)
     {
         foreach (var key in settings.Value.Association.Value.Keys.ToArray())
         {

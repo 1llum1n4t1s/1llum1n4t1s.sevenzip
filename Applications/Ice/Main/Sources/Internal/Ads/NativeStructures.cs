@@ -17,10 +17,9 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.FileSystem.SevenZip.Ice;
-
 using System;
 using System.Runtime.InteropServices;
+namespace Cube.FileSystem.SevenZip.Ice;
 
 /* ------------------------------------------------------------------------- */
 ///
@@ -31,7 +30,7 @@ using System.Runtime.InteropServices;
 /// </summary>
 ///
 /* ------------------------------------------------------------------------- */
-public enum StreamInfoLevels : int
+public enum StreamInfoLevels
 {
     /// <summary>Standard</summary>
     FindStreamInfoStandard = 0,
@@ -48,7 +47,7 @@ public enum StreamInfoLevels : int
 /// </summary>
 ///
 /* ------------------------------------------------------------------------- */
-public enum FileCreationDisposition : int
+public enum FileCreationDisposition
 {
     /// <summary>None</summary>
     None = 0,
@@ -98,7 +97,7 @@ public enum FileAccessMode : uint
 ///
 /* ------------------------------------------------------------------------- */
 [Flags]
-public enum FileShareMode : int
+public enum FileShareMode
 {
     /// <summary>None</summary>
     None = 0,

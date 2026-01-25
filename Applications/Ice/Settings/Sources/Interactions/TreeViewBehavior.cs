@@ -15,15 +15,15 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.FileSystem.SevenZip.Ice.Settings;
-
+using Cube.FileSystem.SevenZip.Ice.Settings.Properties;
+using Cube.Forms.Controls.Extensions;
+using Cube.Generics.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
-using Cube.Forms.Controls.Extensions;
-using Cube.Generics.Extensions;
+namespace Cube.FileSystem.SevenZip.Ice.Settings;
 
 /* ------------------------------------------------------------------------- */
 ///
@@ -97,7 +97,7 @@ public class TreeViewBehavior
     /// </summary>
     ///
     /* --------------------------------------------------------------------- */
-    public bool Registered { get; private set; } = false;
+    public bool Registered { get; private set; }
 
     /* --------------------------------------------------------------------- */
     ///
@@ -192,8 +192,8 @@ public class TreeViewBehavior
         var dest = GetTargetNode();
         var src  = new TreeNode
         {
-            Text               = Properties.Resources.MenuNewCategory,
-            ToolTipText        = Properties.Resources.MenuNewCategory,
+            Text               = Resources.MenuNewCategory,
+            ToolTipText        = Resources.MenuNewCategory,
             ImageIndex         = 0,
             SelectedImageIndex = 0,
             Tag                = new Context(),
@@ -335,8 +335,8 @@ public class TreeViewBehavior
     {
         var dest = new TreeNode
         {
-            Text               = Properties.Resources.MenuTop,
-            ToolTipText        = Properties.Resources.MenuTop,
+            Text               = Resources.MenuTop,
+            ToolTipText        = Resources.MenuTop,
             ImageIndex         = 0,
             SelectedImageIndex = 0,
         };
@@ -461,7 +461,7 @@ public class TreeViewBehavior
     private void WhenItemDrag(object s, ItemDragEventArgs e)
     {
         var src = e.Item.TryCast<TreeNode>();
-        if (src.Text == Properties.Resources.MenuTop) return;
+        if (src.Text == Resources.MenuTop) return;
         Source.SelectedNode = src;
         Source.DoDragDrop(src, DragDropEffects.Move);
     }

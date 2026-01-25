@@ -16,11 +16,10 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.FileSystem.SevenZip;
-
+using Cube.Text.Extensions;
 using System;
 using System.Collections.Generic;
-using Cube.Text.Extensions;
+namespace Cube.FileSystem.SevenZip;
 
 /* ------------------------------------------------------------------------- */
 ///
@@ -132,7 +131,7 @@ internal abstract class CallbackBase : DisposableBase
     ///
     /* --------------------------------------------------------------------- */
     protected SevenZipCode Report(ProgressState state, Entity entity) =>
-        Report(Make(state, entity, default));
+        Report(Make(state, entity, null));
 
     /* --------------------------------------------------------------------- */
     ///
@@ -229,8 +228,8 @@ internal abstract class CallbackBase : DisposableBase
         {
             Exceptions.Push(e);
             if (_inner is not null) return Report(e, entity());
-            else if (e is SevenZipException se) return se.Code;
-            else return SevenZipCode.UnknownError;
+            if (e is SevenZipException se) return se.Code;
+            return SevenZipCode.UnknownError;
         }
     }
 

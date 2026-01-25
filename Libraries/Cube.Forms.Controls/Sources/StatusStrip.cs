@@ -15,10 +15,11 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.Forms.Controls;
-
+using Cube.Forms.User32;
 using System;
 using System.Drawing;
+using System.Windows.Forms;
+namespace Cube.Forms.Controls;
 
 /* ------------------------------------------------------------------------- */
 ///
@@ -73,12 +74,12 @@ public class StatusStrip : System.Windows.Forms.StatusStrip
     /// </summary>
     ///
     /* --------------------------------------------------------------------- */
-    protected override void OnMouseMove(System.Windows.Forms.MouseEventArgs e)
+    protected override void OnMouseMove(MouseEventArgs e)
     {
-        if (e.Button == System.Windows.Forms.MouseButtons.None &&
+        if (e.Button == MouseButtons.None &&
             IsNormalWindow() && IsSizingGrip(e.Location))
         {
-            Cursor = System.Windows.Forms.Cursors.SizeNWSE;
+            Cursor = Cursors.SizeNWSE;
         }
         else base.OnMouseMove(e);
     }
@@ -92,16 +93,16 @@ public class StatusStrip : System.Windows.Forms.StatusStrip
     /// </summary>
     ///
     /* --------------------------------------------------------------------- */
-    protected override void OnMouseDown(System.Windows.Forms.MouseEventArgs e)
+    protected override void OnMouseDown(MouseEventArgs e)
     {
         if (IsNormalWindow() && IsSizingGrip(e.Location))
         {
-            _ = User32.NativeMethods.ReleaseCapture();
+            _ = NativeMethods.ReleaseCapture();
 
             var form = FindForm();
             if (form is null) return;
 
-            _ = User32.NativeMethods.SendMessage(
+            _ = NativeMethods.SendMessage(
                 form.Handle,
                 0xa1 /* WM_NCLBUTTONDOWN */,
                 (IntPtr)Position.BottomRight,
@@ -122,7 +123,7 @@ public class StatusStrip : System.Windows.Forms.StatusStrip
     /// <param name="m">Window message.</param>
     ///
     /* --------------------------------------------------------------------- */
-    protected override void WndProc(ref System.Windows.Forms.Message m)
+    protected override void WndProc(ref Message m)
     {
         base.WndProc(ref m);
 
@@ -174,7 +175,7 @@ public class StatusStrip : System.Windows.Forms.StatusStrip
     {
         var form = FindForm();
         return form is not null &&
-               form.WindowState == System.Windows.Forms.FormWindowState.Normal;
+               form.WindowState == FormWindowState.Normal;
     }
 
     #endregion

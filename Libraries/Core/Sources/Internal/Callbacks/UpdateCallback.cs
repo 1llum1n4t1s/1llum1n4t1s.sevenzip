@@ -16,12 +16,11 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.FileSystem.SevenZip;
-
+using Cube.Text.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
-using Cube.Text.Extensions;
+namespace Cube.FileSystem.SevenZip;
 
 /* ------------------------------------------------------------------------- */
 ///
@@ -154,7 +153,7 @@ internal sealed class UpdateCallback : CallbackBase, IArchiveUpdateCallback, ICr
         indexInArchive = uint.MaxValue;
 
         var i = (int)index;
-        var e = (i >= 0 && i < _items.Count) ? _items[i] : default;
+        var e = (i >= 0 && i < _items.Count) ? _items[i] : null;
         return Report(ProgressState.Prepare, e);
     }
 
@@ -177,7 +176,7 @@ internal sealed class UpdateCallback : CallbackBase, IArchiveUpdateCallback, ICr
     public SevenZipCode GetProperty(uint index, ItemPropId pid, ref PropVariant value)
     {
         var i   = (int)index;
-        var src = (i >= 0 && i < _items.Count) ? _items[i] : default;
+        var src = (i >= 0 && i < _items.Count) ? _items[i] : null;
         if (src is null) return SevenZipCode.Unavailable;
 
         switch (pid)
@@ -350,7 +349,7 @@ internal sealed class UpdateCallback : CallbackBase, IArchiveUpdateCallback, ICr
     /* --------------------------------------------------------------------- */
     private ArchiveStreamReader Open(Entity src)
     {
-        if (!src.Exists || src.IsDirectory) return default;
+        if (!src.Exists || src.IsDirectory) return null;
         var dest = new ArchiveStreamReader(Io.Open(src.FullName));
         _streams.Add(dest);
         return dest;
@@ -365,7 +364,7 @@ internal sealed class UpdateCallback : CallbackBase, IArchiveUpdateCallback, ICr
     /// </summary>
     ///
     /* --------------------------------------------------------------------- */
-    private RawEntity Current() => (_index >= 0 && _index < _items.Count) ? _items[_index] : default;
+    private RawEntity Current() => (_index >= 0 && _index < _items.Count) ? _items[_index] : null;
 
     #endregion
 

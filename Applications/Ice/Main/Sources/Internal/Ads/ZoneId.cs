@@ -15,13 +15,12 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.FileSystem.SevenZip.Ice;
-
+using Cube.Text.Extensions;
 using System.IO;
 using System.Linq;
 using System.Security;
 using System.Text;
-using Cube.Text.Extensions;
+namespace Cube.FileSystem.SevenZip.Ice;
 
 /* ------------------------------------------------------------------------- */
 ///

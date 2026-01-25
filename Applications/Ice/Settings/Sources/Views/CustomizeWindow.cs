@@ -15,9 +15,9 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-using System.Windows.Forms;
+using Cube.Forms;
 using Cube.Forms.Behaviors;
-
+using System.Windows.Forms;
 namespace Cube.FileSystem.SevenZip.Ice.Settings
 {
     /* --------------------------------------------------------------------- */
@@ -29,7 +29,7 @@ namespace Cube.FileSystem.SevenZip.Ice.Settings
     /// </summary>
     ///
     /* --------------------------------------------------------------------- */
-    public partial class CustomizeWindow : Forms.Window
+    public partial class CustomizeWindow : Window
     {
         #region Constructors
 

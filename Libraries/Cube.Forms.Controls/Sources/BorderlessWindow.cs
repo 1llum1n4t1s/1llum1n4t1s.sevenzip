@@ -15,16 +15,16 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.Forms;
-
+using Cube.Forms.Controls;
+using Cube.Forms.Controls.Extensions;
+using Cube.Forms.User32;
+using Microsoft.Win32;
 using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
-using Cube.Forms.Controls;
-using Cube.Forms.Controls.Extensions;
-using Microsoft.Win32;
+namespace Cube.Forms;
 
 /* ------------------------------------------------------------------------- */
 ///
@@ -673,7 +673,7 @@ public class BorderlessWindow : Window
     /* --------------------------------------------------------------------- */
     private void PopupSystemMenu(Point absolute)
     {
-        var menu = User32.NativeMethods.GetSystemMenu(Handle, false);
+        var menu = NativeMethods.GetSystemMenu(Handle, false);
         if (menu == IntPtr.Zero) return;
 
         var enabled = 0x0000u; // MF_ENABLED
@@ -682,14 +682,14 @@ public class BorderlessWindow : Window
         var sizable = (Sizable && normal) ? enabled : grayed;
         var movable = (Caption is not null && normal) ? enabled : grayed;
 
-        _ = User32.NativeMethods.EnableMenuItem(menu, 0xf000 /* SC_SIZE */, sizable);
-        _ = User32.NativeMethods.EnableMenuItem(menu, 0xf010 /* SC_MOVE */, movable);
+        _ = NativeMethods.EnableMenuItem(menu, 0xf000 /* SC_SIZE */, sizable);
+        _ = NativeMethods.EnableMenuItem(menu, 0xf010 /* SC_MOVE */, movable);
 
-        var command = User32.NativeMethods.TrackPopupMenuEx(menu, 0x100 /* TPM_RETURNCMD */,
+        var command = NativeMethods.TrackPopupMenuEx(menu, 0x100 /* TPM_RETURNCMD */,
             absolute.X, absolute.Y, Handle, IntPtr.Zero);
         if (command == 0) return;
 
-        _ = User32.NativeMethods.PostMessage(Handle, 0x0112 /* WM_SYSCOMMAND */, new IntPtr(command), IntPtr.Zero);
+        _ = NativeMethods.PostMessage(Handle, 0x0112 /* WM_SYSCOMMAND */, new IntPtr(command), IntPtr.Zero);
     }
 
     /* --------------------------------------------------------------------- */
@@ -790,7 +790,7 @@ public class BorderlessWindow : Window
 
     #region Fields
     private bool _sizable = true;
-    private bool _fakeMode = false;
+    private bool _fakeMode;
     private CaptionControl _caption;
     #endregion
 }

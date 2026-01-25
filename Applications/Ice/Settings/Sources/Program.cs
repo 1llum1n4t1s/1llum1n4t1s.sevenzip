@@ -15,15 +15,15 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.FileSystem.SevenZip.Ice.Settings;
-
+using Cube.Collections;
+using Cube.Collections.Extensions;
+using Cube.Logging.NLog;
+using Cube.Text.Extensions;
 using System;
 using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
-using Cube.Collections;
-using Cube.Collections.Extensions;
-using Cube.Text.Extensions;
+namespace Cube.FileSystem.SevenZip.Ice.Settings;
 
 /* ------------------------------------------------------------------------- */
 ///
@@ -34,7 +34,7 @@ using Cube.Text.Extensions;
 /// </summary>
 ///
 /* ------------------------------------------------------------------------- */
-static class Program
+internal static class Program
 {
     #region Methods
 
@@ -48,9 +48,9 @@ static class Program
     ///
     /* --------------------------------------------------------------------- */
     [STAThread]
-    static void Main(string[] s) => Logger.Try(() =>
+    private static void Main(string[] s) => Logger.Try(() =>
     {
-        Logger.Configure(new Logging.NLog.LoggerSource());
+        Logger.Configure(new LoggerSource());
         Logger.ObserveTaskException();
         Logger.Info(typeof(Program).Assembly);
         Logger.Info($"[ {s.Select(e => e.Quote()).Join(" ")} ]");

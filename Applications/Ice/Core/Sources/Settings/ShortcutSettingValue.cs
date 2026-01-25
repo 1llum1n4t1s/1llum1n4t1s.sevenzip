@@ -15,15 +15,15 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.FileSystem.SevenZip.Ice;
-
+using Cube.Collections.Extensions;
+using Cube.DataContract;
+using Cube.FileSystem.SevenZip.Ice.Properties;
+using Cube.Reflection.Extensions;
+using Cube.Text.Extensions;
 using System;
 using System.Linq;
 using System.Runtime.Serialization;
-using Cube.Collections.Extensions;
-using Cube.DataContract;
-using Cube.Reflection.Extensions;
-using Cube.Text.Extensions;
+namespace Cube.FileSystem.SevenZip.Ice;
 
 /* ------------------------------------------------------------------------- */
 ///
@@ -87,15 +87,15 @@ public sealed class ShortcutSettingValue : SerializableBase
     /* --------------------------------------------------------------------- */
     public void Load()
     {
-        var b0 = new Shortcut { FullName = GetFileName(Properties.Resources.ScArcive) }.Exists;
+        var b0 = new Shortcut { FullName = GetFileName(Resources.ScArcive) }.Exists;
         if (b0) Preset |= Preset.Compress;
         else Preset &= ~Preset.Compress;
 
-        var b1 = new Shortcut { FullName = GetFileName(Properties.Resources.ScExtract) }.Exists;
+        var b1 = new Shortcut { FullName = GetFileName(Resources.ScExtract) }.Exists;
         if (b1) Preset |= Preset.Extract;
         else Preset &= ~Preset.Extract;
 
-        var b2 = new Shortcut { FullName = GetFileName(Properties.Resources.ScSettings) }.Exists;
+        var b2 = new Shortcut { FullName = GetFileName(Resources.ScSettings) }.Exists;
         if (b2) Preset |= Preset.Settings;
         else Preset &= ~Preset.Settings;
 
@@ -133,7 +133,7 @@ public sealed class ShortcutSettingValue : SerializableBase
     /* --------------------------------------------------------------------- */
     private void SaveCompressShortcut()
     {
-        var src  = GetFileName(Properties.Resources.ScArcive);
+        var src  = GetFileName(Resources.ScArcive);
         var dest = GetLink("cubeice.exe");
         var sc   = new Shortcut
         {
@@ -158,7 +158,7 @@ public sealed class ShortcutSettingValue : SerializableBase
     /* --------------------------------------------------------------------- */
     private void SaveExtractShortcut()
     {
-        var src  = GetFileName(Properties.Resources.ScExtract);
+        var src  = GetFileName(Resources.ScExtract);
         var dest = GetLink("cubeice.exe");
         var sc   = new Shortcut
         {
@@ -183,7 +183,7 @@ public sealed class ShortcutSettingValue : SerializableBase
     /* --------------------------------------------------------------------- */
     private void SaveSettingShortcut()
     {
-        var src  = GetFileName(Properties.Resources.ScSettings);
+        var src  = GetFileName(Resources.ScSettings);
         var dest = GetLink("cubeice-setting.exe");
         var sc   = new Shortcut
         {

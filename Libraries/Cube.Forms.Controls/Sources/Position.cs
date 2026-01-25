@@ -15,9 +15,8 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.Forms;
-
 using System.Windows.Forms;
+namespace Cube.Forms;
 
 /* ------------------------------------------------------------------------- */
 ///

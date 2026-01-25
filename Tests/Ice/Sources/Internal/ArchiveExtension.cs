@@ -15,15 +15,13 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.FileSystem.SevenZip.Ice.Tests;
-
-using System;
-using System.Threading;
-using Cube.Observable.Extensions;
 using Cube.Reflection.Extensions;
 using Cube.Tests;
 using Cube.Text.Extensions;
 using NUnit.Framework;
+using System;
+using System.Threading;
+namespace Cube.FileSystem.SevenZip.Ice.Tests;
 
 /* ------------------------------------------------------------------------- */
 ///
@@ -35,7 +33,7 @@ using NUnit.Framework;
 /// </summary>
 ///
 /* ------------------------------------------------------------------------- */
-static class ArchiveExtension
+internal static class ArchiveExtension
 {
     #region Methods
 

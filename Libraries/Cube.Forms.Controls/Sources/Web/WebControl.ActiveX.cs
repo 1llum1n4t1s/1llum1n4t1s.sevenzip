@@ -15,9 +15,8 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.Forms.Controls;
-
 using System.Runtime.InteropServices;
+namespace Cube.Forms.Controls;
 
 partial class WebControl
 {

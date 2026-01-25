@@ -16,11 +16,11 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.FileSystem.SevenZip;
-
+using Cube.Text.Extensions;
 using System;
 using System.Collections.Generic;
-using Cube.Text.Extensions;
+using System.IO;
+namespace Cube.FileSystem.SevenZip;
 
 /* ------------------------------------------------------------------------- */
 ///
@@ -127,7 +127,7 @@ public sealed class ArchiveWriter : DisposableBase
     {
         var e = new RawEntity(src, name);
         if (e.Exists) AddRecursive(e);
-        else throw new System.IO.FileNotFoundException(e.FullName);
+        else throw new FileNotFoundException(e.FullName);
     }
 
     /* --------------------------------------------------------------------- */
@@ -259,7 +259,7 @@ public sealed class ArchiveWriter : DisposableBase
     private void SaveAsSfx(string dest, IList<RawEntity> src, IProgress<Report> progress)
     {
         var sfx = (Options as SfxOption)?.Module;
-        if (!Io.Exists(sfx)) throw new System.IO.FileNotFoundException("SFX");
+        if (!Io.Exists(sfx)) throw new FileNotFoundException("SFX");
         var tmp = Io.Combine(Io.GetDirectoryName(dest), Guid.NewGuid().ToString("N"));
 
         try

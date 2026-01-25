@@ -15,11 +15,11 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.Forms.Extensions;
-
-using System;
-using System.Windows.Forms;
+using Cube.Forms.User32;
 using Cube.Text.Extensions;
+using System.Text;
+using System.Windows.Forms;
+namespace Cube.Forms.Extensions;
 
 /* ------------------------------------------------------------------------- */
 ///
@@ -66,7 +66,7 @@ public static class Methods
     /* --------------------------------------------------------------------- */
     public static void UpdateText(this Form src, string text, string product)
     {
-        var ss = new System.Text.StringBuilder();
+        var ss = new StringBuilder();
 
         _ = ss.Append(text);
         if (text.HasValue() && product.HasValue()) _ = ss.Append(" - ");
@@ -144,8 +144,8 @@ public static class Methods
         var size = src.ClientSize;
 
         // ReSharper disable CommentTypo
-        if (User32.NativeMethods.SetWindowPos(src.Handle,
-            (IntPtr)(-1), // HWND_TOPMOST
+        if (NativeMethods.SetWindowPos(src.Handle,
+            -1, // HWND_TOPMOST
             0, 0, 0, 0,
             0x0413 // SWP_NOACTIVATE | SWP_NOMOVE | SWP_NOSENDCHANGING | SWP_NOSIZE
         )) {

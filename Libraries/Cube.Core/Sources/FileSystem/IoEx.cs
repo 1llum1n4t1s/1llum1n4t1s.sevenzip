@@ -15,12 +15,11 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.FileSystem;
-
+using Cube.Text.Extensions;
 using System;
 using System.IO;
 using System.Linq;
-using Cube.Text.Extensions;
+namespace Cube.FileSystem;
 
 /* ------------------------------------------------------------------------- */
 ///
@@ -221,9 +220,9 @@ public static class IoEx
     /* --------------------------------------------------------------------- */
     public static Entity GetOrDefault(string path)
     {
-        try { return path.HasValue() ? new Entity(path) : default; }
+        try { return path.HasValue() ? new Entity(path) : null; }
         catch (Exception e) { Logger.Debug(e.Message); }
-        return default;
+        return null;
     }
 
     #endregion

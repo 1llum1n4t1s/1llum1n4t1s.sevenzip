@@ -15,13 +15,12 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.FileSystem;
-
+using Cube.Text.Extensions;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading;
-using Cube.Text.Extensions;
+namespace Cube.FileSystem;
 
 /* ------------------------------------------------------------------------- */
 ///

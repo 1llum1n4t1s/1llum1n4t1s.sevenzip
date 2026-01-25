@@ -15,12 +15,15 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.FileSystem.AlphaFS;
-
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
-using Alphaleonis.Win32.Filesystem;
+using Directory = Alphaleonis.Win32.Filesystem.Directory;
+using DirectoryInfo = Alphaleonis.Win32.Filesystem.DirectoryInfo;
+using File = Alphaleonis.Win32.Filesystem.File;
+using Path = Alphaleonis.Win32.Filesystem.Path;
+namespace Cube.FileSystem.AlphaFS;
 
 /* ------------------------------------------------------------------------- */
 ///
@@ -95,7 +98,7 @@ public class IoController : FileSystem.IoController
     /// <returns>Read-only stream.</returns>
     ///
     /* --------------------------------------------------------------------- */
-    public override System.IO.FileStream Open(string path) => File.OpenRead(path);
+    public override FileStream Open(string path) => File.OpenRead(path);
 
     /* --------------------------------------------------------------------- */
     ///
@@ -110,7 +113,7 @@ public class IoController : FileSystem.IoController
     /// <returns>FileStream object to write.</returns>
     ///
     /* --------------------------------------------------------------------- */
-    public override System.IO.FileStream Create(string path) => File.Create(path);
+    public override FileStream Create(string path) => File.Create(path);
 
     /* --------------------------------------------------------------------- */
     ///
@@ -137,7 +140,7 @@ public class IoController : FileSystem.IoController
     /// <param name="attr">Attributes to set.</param>
     ///
     /* --------------------------------------------------------------------- */
-    public override void SetAttributes(string path, System.IO.FileAttributes attr)
+    public override void SetAttributes(string path, FileAttributes attr)
     {
         if (Directory.Exists(path)) _ = new DirectoryInfo(path) { Attributes = attr };
         else if (File.Exists(path)) File.SetAttributes(path, attr);
@@ -375,7 +378,7 @@ public class IoController : FileSystem.IoController
     ///
     /* --------------------------------------------------------------------- */
     public override IEnumerable<string> GetFiles(string path, string pattern,
-        System.IO.SearchOption option) =>
+        SearchOption option) =>
         Directory.Exists(path) ?
         Directory.GetFiles(path, pattern, option) :
         Enumerable.Empty<string>();
@@ -416,7 +419,7 @@ public class IoController : FileSystem.IoController
     ///
     /* --------------------------------------------------------------------- */
     public override IEnumerable<string> GetDirectories(string path, string pattern,
-        System.IO.SearchOption option) =>
+        SearchOption option) =>
         Directory.Exists(path) ?
         Directory.GetDirectories(path, pattern, option) :
         Enumerable.Empty<string>();

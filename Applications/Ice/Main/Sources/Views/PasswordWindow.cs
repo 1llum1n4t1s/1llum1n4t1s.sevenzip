@@ -18,7 +18,6 @@
 using Cube.Forms;
 using Cube.Forms.Behaviors;
 using Cube.Icons;
-
 namespace Cube.FileSystem.SevenZip.Ice
 {
     /* --------------------------------------------------------------------- */

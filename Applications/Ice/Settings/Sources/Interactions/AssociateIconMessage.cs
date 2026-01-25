@@ -15,9 +15,9 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
+using Cube.FileSystem.SevenZip.Ice.Settings.Properties;
 using System.Collections.Generic;
 using System.Drawing;
-
 namespace Cube.FileSystem.SevenZip.Ice.Settings
 {
     /* --------------------------------------------------------------------- */
@@ -62,9 +62,9 @@ namespace Cube.FileSystem.SevenZip.Ice.Settings
         /* ----------------------------------------------------------------- */
         public IEnumerable<Image> Sources { get; } = new[]
         {
-            Properties.Resources.FileV3Icon,
-            Properties.Resources.FileV1Icon,
-            Properties.Resources.FileV2Icon,
+            Resources.FileV3Icon,
+            Resources.FileV1Icon,
+            Resources.FileV2Icon,
         };
 
         #endregion

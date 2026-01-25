@@ -15,8 +15,8 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.DataContract;
-
+using Cube.FileSystem;
+using Microsoft.Win32;
 using System.IO;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Json;
@@ -24,8 +24,7 @@ using System.Runtime.Versioning;
 using System.Text;
 using System.Threading;
 using System.Xml;
-using Cube.FileSystem;
-using Microsoft.Win32;
+namespace Cube.DataContract;
 
 /* ------------------------------------------------------------------------- */
 ///
@@ -91,7 +90,7 @@ public static class Proxy
                 IoEx.Save(dest, e => SerializeJson(e, src));
                 break;
             case Format.Registry:
-                using (var e = RootRegistryKey.CreateSubKey(dest)) Serialize(e, src);
+                using (var e = RootRegistryKey.CreateSubKey(dest)) e.Serialize(src);
                 break;
         }
     }
@@ -169,7 +168,7 @@ public static class Proxy
             case Format.Json:
                 return IoEx.Load(src, e => (T)new DataContractJsonSerializer(typeof(T)).ReadObject(e));
             case Format.Registry:
-                using (var e = RootRegistryKey.OpenSubKey(src, false)) return Deserialize<T>(e);
+                using (var e = RootRegistryKey.OpenSubKey(src, false)) return e.Deserialize<T>();
         }
         return default;
     }

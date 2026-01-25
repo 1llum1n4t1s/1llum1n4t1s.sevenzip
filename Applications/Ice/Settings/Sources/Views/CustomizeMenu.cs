@@ -15,13 +15,13 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.FileSystem.SevenZip.Ice.Settings;
-
+using Cube.FileSystem.SevenZip.Ice.Settings.Properties;
+using Cube.Forms.Controls.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
-using Cube.Forms.Controls.Extensions;
+namespace Cube.FileSystem.SevenZip.Ice.Settings;
 
 /* ------------------------------------------------------------------------- */
 ///
@@ -132,7 +132,7 @@ public class CustomizeMenu : ContextMenuStrip
     /// </summary>
     ///
     /* --------------------------------------------------------------------- */
-    public CustomizeMenuItem AddMenu { get; } = new(Properties.Resources.MenuAdd);
+    public CustomizeMenuItem AddMenu { get; } = new(Resources.MenuAdd);
 
     /* --------------------------------------------------------------------- */
     ///
@@ -143,7 +143,7 @@ public class CustomizeMenu : ContextMenuStrip
     /// </summary>
     ///
     /* --------------------------------------------------------------------- */
-    public CustomizeMenuItem RemoveMenu { get; } = new(Properties.Resources.MenuRemove);
+    public CustomizeMenuItem RemoveMenu { get; } = new(Resources.MenuRemove);
 
     /* --------------------------------------------------------------------- */
     ///
@@ -154,7 +154,7 @@ public class CustomizeMenu : ContextMenuStrip
     /// </summary>
     ///
     /* --------------------------------------------------------------------- */
-    public CustomizeMenuItem RenameMenu { get; } = new(Properties.Resources.MenuRename);
+    public CustomizeMenuItem RenameMenu { get; } = new(Resources.MenuRename);
 
     /* --------------------------------------------------------------------- */
     ///
@@ -165,7 +165,7 @@ public class CustomizeMenu : ContextMenuStrip
     /// </summary>
     ///
     /* --------------------------------------------------------------------- */
-    public CustomizeMenuItem UpMenu { get; } = new(Properties.Resources.MenuUp);
+    public CustomizeMenuItem UpMenu { get; } = new(Resources.MenuUp);
 
     /* --------------------------------------------------------------------- */
     ///
@@ -176,7 +176,7 @@ public class CustomizeMenu : ContextMenuStrip
     /// </summary>
     ///
     /* --------------------------------------------------------------------- */
-    public CustomizeMenuItem DownMenu { get; } = new(Properties.Resources.MenuDown);
+    public CustomizeMenuItem DownMenu { get; } = new(Resources.MenuDown);
 
     /* --------------------------------------------------------------------- */
     ///
@@ -187,7 +187,7 @@ public class CustomizeMenu : ContextMenuStrip
     /// </summary>
     ///
     /* --------------------------------------------------------------------- */
-    public CustomizeMenuItem NewCategoryMenu { get; } = new(Properties.Resources.MenuNewCategory);
+    public CustomizeMenuItem NewCategoryMenu { get; } = new(Resources.MenuNewCategory);
 
     #endregion
 
@@ -295,17 +295,7 @@ public class CustomizeMenu : ContextMenuStrip
     /// </summary>
     ///
     /* --------------------------------------------------------------------- */
-    private void InitializeMenu() => Items.AddRange(new ToolStripItem[]
-    {
-        AddMenu,
-        NewCategoryMenu,
-        new ToolStripSeparator(),
-        UpMenu,
-        DownMenu,
-        new ToolStripSeparator(),
-        RemoveMenu,
-        RenameMenu
-    });
+    private void InitializeMenu() => Items.AddRange(AddMenu, NewCategoryMenu, new ToolStripSeparator(), UpMenu, DownMenu, new ToolStripSeparator(), RemoveMenu, RenameMenu);
 
     /* --------------------------------------------------------------------- */
     ///

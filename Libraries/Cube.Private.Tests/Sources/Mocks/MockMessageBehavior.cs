@@ -15,9 +15,8 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.Tests.Mocks;
-
 using System;
+namespace Cube.Tests.Mocks;
 
 /* ------------------------------------------------------------------------- */
 ///

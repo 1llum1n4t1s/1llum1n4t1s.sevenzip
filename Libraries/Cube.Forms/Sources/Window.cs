@@ -15,11 +15,10 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.Forms;
-
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+namespace Cube.Forms;
 
 /* ------------------------------------------------------------------------- */
 ///
@@ -181,6 +180,6 @@ public class Window : Form, IBinder
     #endregion
 
     #region Fields
-    private bool _disposed = false;
+    private bool _disposed;
     #endregion
 }

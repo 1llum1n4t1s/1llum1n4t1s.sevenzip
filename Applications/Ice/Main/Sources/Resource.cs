@@ -15,11 +15,10 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
+using Cube.FileSystem.SevenZip.Ice.Properties;
+using Cube.Forms;
 using System;
 using System.Collections.Generic;
-using Cube.Collections;
-using Cube.Forms;
-
 namespace Cube.FileSystem.SevenZip.Ice
 {
     /* --------------------------------------------------------------------- */
@@ -50,7 +49,7 @@ namespace Cube.FileSystem.SevenZip.Ice
             { "Zip", Format.Zip },
             { "7z",  Format.SevenZip },
             { "Tar", Format.Tar },
-            { Properties.Resources.FormatSfx, Format.Sfx },
+            { Resources.FormatSfx, Format.Sfx },
         };
 
         /* ----------------------------------------------------------------- */
@@ -65,12 +64,12 @@ namespace Cube.FileSystem.SevenZip.Ice
         /* ----------------------------------------------------------------- */
         public static ComboListSource<CompressionLevel> CompressionLevels { get; } = new()
         {
-            { Properties.Resources.LevelNone,   CompressionLevel.None },
-            { Properties.Resources.LevelFast,   CompressionLevel.Fast },
-            { Properties.Resources.LevelLow,    CompressionLevel.Low },
-            { Properties.Resources.LevelNormal, CompressionLevel.Normal },
-            { Properties.Resources.LevelHigh,   CompressionLevel.High },
-            { Properties.Resources.LevelUltra,  CompressionLevel.Ultra },
+            { Resources.LevelNone,   CompressionLevel.None },
+            { Resources.LevelFast,   CompressionLevel.Fast },
+            { Resources.LevelLow,    CompressionLevel.Low },
+            { Resources.LevelNormal, CompressionLevel.Normal },
+            { Resources.LevelHigh,   CompressionLevel.High },
+            { Resources.LevelUltra,  CompressionLevel.Ultra },
         };
 
         /* ----------------------------------------------------------------- */
@@ -157,16 +156,16 @@ namespace Cube.FileSystem.SevenZip.Ice
         /// </summary>
         ///
         /* ----------------------------------------------------------------- */
-        public static Cube.Collections.OrderedDictionary<Format, FileDialogFilter> FileDialogFilters { get; } = new()
+        public static Collections.OrderedDictionary<Format, FileDialogFilter> FileDialogFilters { get; } = new()
         {
-            { Format.Zip,      new(Properties.Resources.FilterZip, ".zip") },
-            { Format.SevenZip, new(Properties.Resources.Filter7z,  ".7z") },
-            { Format.Tar,      new(Properties.Resources.FilterTar, ".tar") },
-            { Format.GZip,     new(Properties.Resources.FilterGz,  ".tar.gz", ".tgz") },
-            { Format.BZip2,    new(Properties.Resources.FilterBz2, ".tar.bz2", ".tar.bz", ".tbz2", ".tb2", ".tbz") },
-            { Format.XZ,       new(Properties.Resources.FilterXz,  ".tar.xz", ".txz") },
-            { Format.Sfx,      new(Properties.Resources.FilterSfx, ".exe") },
-            { Format.Unknown,  new(Properties.Resources.FilterAll, ".*") },
+            { Format.Zip,      new(Resources.FilterZip, ".zip") },
+            { Format.SevenZip, new(Resources.Filter7z,  ".7z") },
+            { Format.Tar,      new(Resources.FilterTar, ".tar") },
+            { Format.GZip,     new(Resources.FilterGz,  ".tar.gz", ".tgz") },
+            { Format.BZip2,    new(Resources.FilterBz2, ".tar.bz2", ".tar.bz", ".tbz2", ".tb2", ".tbz") },
+            { Format.XZ,       new(Resources.FilterXz,  ".tar.xz", ".txz") },
+            { Format.Sfx,      new(Resources.FilterSfx, ".exe") },
+            { Format.Unknown,  new(Resources.FilterAll, ".*") },
         };
 
         #endregion

@@ -15,10 +15,9 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.Forms;
-
 using System;
 using System.Windows.Forms;
+namespace Cube.Forms;
 
 #region TaskbarProgress
 

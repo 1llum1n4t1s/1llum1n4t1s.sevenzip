@@ -15,9 +15,9 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-using System.Windows.Forms;
+using Cube.FileSystem.SevenZip.Ice.Settings.Properties;
 using Cube.Forms.Binding;
-
+using System.Windows.Forms;
 namespace Cube.FileSystem.SevenZip.Ice.Settings
 {
     partial class MainWindow
@@ -123,39 +123,7 @@ namespace Cube.FileSystem.SevenZip.Ice.Settings
         /// <param name="start">Start tab index.</param>
         ///
         /* ----------------------------------------------------------------- */
-        private void BindAssociate(BindingSource src, int start) => AssociateMenuPanel.Controls.AddRange([
-            // well-known
-            src.Bind(nameof(AssociationSettingValue.Zip),      "*.zip",   start++),
-            src.Bind(nameof(AssociationSettingValue.Lzh),      "*.lzh",   start++),
-            src.Bind(nameof(AssociationSettingValue.Rar),      "*.rar",   start++),
-            src.Bind(nameof(AssociationSettingValue.SevenZip), "*.7z",    start++),
-            src.Bind(nameof(AssociationSettingValue.Zst),      "*.zst",   start++),
-            src.Bind(nameof(AssociationSettingValue.Iso),      "*.iso",   start++),
-            src.Bind(nameof(AssociationSettingValue.Tar),      "*.tar",   start++),
-            src.Bind(nameof(AssociationSettingValue.Gz),       "*.gz",    start++),
-            src.Bind(nameof(AssociationSettingValue.Tgz),      "*.tgz",   start++),
-            src.Bind(nameof(AssociationSettingValue.Bz2),      "*.bz2",   start++),
-            src.Bind(nameof(AssociationSettingValue.Tbz),      "*.tbz",   start++),
-            src.Bind(nameof(AssociationSettingValue.Xz),       "*.xz",    start++),
-            src.Bind(nameof(AssociationSettingValue.Txz),      "*.txz",   start++),
-
-            // others
-            src.Bind(nameof(AssociationSettingValue.Arj),      "*.arj",   start++),
-            src.Bind(nameof(AssociationSettingValue.Cab),      "*.cab",   start++),
-            src.Bind(nameof(AssociationSettingValue.Chm),      "*.chm",   start++),
-            src.Bind(nameof(AssociationSettingValue.Cpio),     "*.cpio",  start++),
-            src.Bind(nameof(AssociationSettingValue.Deb),      "*.deb",   start++),
-            src.Bind(nameof(AssociationSettingValue.Dmg),      "*.dmg",   start++),
-            src.Bind(nameof(AssociationSettingValue.Hfs),      "*.hfs",   start++),
-            src.Bind(nameof(AssociationSettingValue.Jar),      "*.jar",   start++),
-            src.Bind(nameof(AssociationSettingValue.Nupkg),    "*.nupkg", start++),
-            src.Bind(nameof(AssociationSettingValue.Rpm),      "*.rpm",   start++),
-            src.Bind(nameof(AssociationSettingValue.Vhd),      "*.vhd",   start++),
-            src.Bind(nameof(AssociationSettingValue.Vmdk),     "*.vmdk",  start++),
-            src.Bind(nameof(AssociationSettingValue.Wim),      "*.wim",   start++),
-            src.Bind(nameof(AssociationSettingValue.Xar),      "*.xar",   start++),
-            src.Bind(nameof(AssociationSettingValue.Z),        "*.z",     start++)
-        ]);
+        private void BindAssociate(BindingSource src, int start) => AssociateMenuPanel.Controls.AddRange(src.Bind(nameof(AssociationSettingValue.Zip),      "*.zip",   start++), src.Bind(nameof(AssociationSettingValue.Lzh),      "*.lzh",   start++), src.Bind(nameof(AssociationSettingValue.Rar),      "*.rar",   start++), src.Bind(nameof(AssociationSettingValue.SevenZip), "*.7z",    start++), src.Bind(nameof(AssociationSettingValue.Zst),      "*.zst",   start++), src.Bind(nameof(AssociationSettingValue.Iso),      "*.iso",   start++), src.Bind(nameof(AssociationSettingValue.Tar),      "*.tar",   start++), src.Bind(nameof(AssociationSettingValue.Gz),       "*.gz",    start++), src.Bind(nameof(AssociationSettingValue.Tgz),      "*.tgz",   start++), src.Bind(nameof(AssociationSettingValue.Bz2),      "*.bz2",   start++), src.Bind(nameof(AssociationSettingValue.Tbz),      "*.tbz",   start++), src.Bind(nameof(AssociationSettingValue.Xz),       "*.xz",    start++), src.Bind(nameof(AssociationSettingValue.Txz),      "*.txz",   start++), src.Bind(nameof(AssociationSettingValue.Arj),      "*.arj",   start++), src.Bind(nameof(AssociationSettingValue.Cab),      "*.cab",   start++), src.Bind(nameof(AssociationSettingValue.Chm),      "*.chm",   start++), src.Bind(nameof(AssociationSettingValue.Cpio),     "*.cpio",  start++), src.Bind(nameof(AssociationSettingValue.Deb),      "*.deb",   start++), src.Bind(nameof(AssociationSettingValue.Dmg),      "*.dmg",   start++), src.Bind(nameof(AssociationSettingValue.Hfs),      "*.hfs",   start++), src.Bind(nameof(AssociationSettingValue.Jar),      "*.jar",   start++), src.Bind(nameof(AssociationSettingValue.Nupkg),    "*.nupkg", start++), src.Bind(nameof(AssociationSettingValue.Rpm),      "*.rpm",   start++), src.Bind(nameof(AssociationSettingValue.Vhd),      "*.vhd",   start++), src.Bind(nameof(AssociationSettingValue.Vmdk),     "*.vmdk",  start++), src.Bind(nameof(AssociationSettingValue.Wim),      "*.wim",   start++), src.Bind(nameof(AssociationSettingValue.Xar),      "*.xar",   start++), src.Bind(nameof(AssociationSettingValue.Z),        "*.z",     start++));
 
         /* ----------------------------------------------------------------- */
         ///
@@ -172,25 +140,9 @@ namespace Cube.FileSystem.SevenZip.Ice.Settings
         /* ----------------------------------------------------------------- */
         private void BindContext(BindingSource src, int start)
         {
-            ContextCompressPanel.Controls.AddRange(new[]
-            {
-                src.Bind(Preset.CompressZip,         Properties.Resources.MenuZip,         start++),
-                src.Bind(Preset.CompressZipPassword, Properties.Resources.MenuZipPassword, start++),
-                src.Bind(Preset.Compress7z,          Properties.Resources.MenuSevenZip,    start++),
-                src.Bind(Preset.CompressBz2,         Properties.Resources.MenuBZip2,       start++),
-                src.Bind(Preset.CompressGz,          Properties.Resources.MenuGZip,        start++),
-                src.Bind(Preset.CompressXz,          Properties.Resources.MenuXZ,          start++),
-                src.Bind(Preset.CompressSfx,         Properties.Resources.MenuSfx,         start++),
-                src.Bind(Preset.CompressDetails,     Properties.Resources.MenuDetails,     start++),
-            });
+            ContextCompressPanel.Controls.AddRange(src.Bind(Preset.CompressZip,         Resources.MenuZip,         start++), src.Bind(Preset.CompressZipPassword, Resources.MenuZipPassword, start++), src.Bind(Preset.Compress7z,          Resources.MenuSevenZip,    start++), src.Bind(Preset.CompressBz2,         Resources.MenuBZip2,       start++), src.Bind(Preset.CompressGz,          Resources.MenuGZip,        start++), src.Bind(Preset.CompressXz,          Resources.MenuXZ,          start++), src.Bind(Preset.CompressSfx,         Resources.MenuSfx,         start++), src.Bind(Preset.CompressDetails,     Resources.MenuDetails,     start++));
 
-            ContextExtractPanel.Controls.AddRange(new[]
-            {
-                src.Bind(Preset.ExtractSource,      Properties.Resources.MenuHere,         start++),
-                src.Bind(Preset.ExtractDesktop,     Properties.Resources.MenuDesktop,      start++),
-                src.Bind(Preset.ExtractMyDocuments, Properties.Resources.MenuMyDocuments,  start++),
-                src.Bind(Preset.ExtractQuery,       Properties.Resources.MenuRuntime,      start++),
-            });
+            ContextExtractPanel.Controls.AddRange(src.Bind(Preset.ExtractSource,      Resources.MenuHere,         start++), src.Bind(Preset.ExtractDesktop,     Resources.MenuDesktop,      start++), src.Bind(Preset.ExtractMyDocuments, Resources.MenuMyDocuments,  start++), src.Bind(Preset.ExtractQuery,       Resources.MenuRuntime,      start++));
         }
     }
 }

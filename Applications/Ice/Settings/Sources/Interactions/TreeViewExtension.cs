@@ -15,11 +15,10 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.FileSystem.SevenZip.Ice.Settings;
-
+using Cube.Generics.Extensions;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using Cube.Generics.Extensions;
+namespace Cube.FileSystem.SevenZip.Ice.Settings;
 
 /* ------------------------------------------------------------------------- */
 ///

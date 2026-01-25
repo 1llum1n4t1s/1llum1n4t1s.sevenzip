@@ -15,11 +15,11 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.FileSystem.SevenZip.Tests;
-
-using System;
 using Cube.Tests;
 using NUnit.Framework;
+using System;
+using System.IO;
+namespace Cube.FileSystem.SevenZip.Tests;
 
 /* ------------------------------------------------------------------------- */
 ///
@@ -31,7 +31,7 @@ using NUnit.Framework;
 ///
 /* ------------------------------------------------------------------------- */
 [TestFixture]
-class ArchiveWriterExTest : FileFixture
+internal class ArchiveWriterExTest : FileFixture
 {
     #region Tests
 
@@ -123,7 +123,7 @@ class ArchiveWriterExTest : FileFixture
         {
             Filter = enabled ?
                      Filter.From(new[] { "Filter.txt", "FilterDirectory" }) :
-                     default,
+                     null,
         };
 
         using (var obj = new ArchiveWriter(Format.Zip, opts))
@@ -150,7 +150,7 @@ class ArchiveWriterExTest : FileFixture
     {
         using var obj = new ArchiveWriter(Format.Zip);
         obj.Add(GetSource("NotFound.txt"));
-    }, Throws.TypeOf<System.IO.FileNotFoundException>());
+    }, Throws.TypeOf<FileNotFoundException>());
 
     /* --------------------------------------------------------------------- */
     ///
@@ -171,7 +171,7 @@ class ArchiveWriterExTest : FileFixture
             using var obj = new ArchiveWriter(Format.Sfx, opts);
             obj.Add(GetSource("Sample.txt"));
             obj.Save(dest);
-        }, Throws.TypeOf<System.IO.FileNotFoundException>());
+        }, Throws.TypeOf<FileNotFoundException>());
     }
 
     #endregion

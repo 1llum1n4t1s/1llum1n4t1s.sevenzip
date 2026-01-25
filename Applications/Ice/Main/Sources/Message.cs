@@ -15,11 +15,11 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.FileSystem.SevenZip.Ice;
-
+using Cube.FileSystem.SevenZip.Ice.Properties;
+using Cube.Text.Extensions;
 using System;
 using System.Text;
-using Cube.Text.Extensions;
+namespace Cube.FileSystem.SevenZip.Ice;
 
 /* ------------------------------------------------------------------------- */
 ///
@@ -136,7 +136,7 @@ public static class Message
     /* --------------------------------------------------------------------- */
     public static OpenDirectoryMessage ForExtractLocation(SaveQuerySource src)
     {
-        var dest = new OpenDirectoryMessage(Properties.Resources.MessageExtractDestination) { NewButton = true };
+        var dest = new OpenDirectoryMessage(Resources.MessageExtractDestination) { NewButton = true };
         if (src.Source.HasValue()) dest.Value = Io.GetDirectoryName(src.Source);
         return dest;
     }
@@ -163,10 +163,10 @@ public static class Message
 
         if (src.Target is not null) _ = dest.AppendLine(src.Target.RawName);
 
-        return dest.AppendFormat(Properties.Resources.ErrorGeneric, e)
+        return dest.AppendFormat(Resources.ErrorGeneric, e)
                    .AppendLine()
                    .AppendLine()
-                   .Append(Properties.Resources.ErrorContinue)
+                   .Append(Resources.ErrorContinue)
                    .ToString();
     }
 
@@ -182,7 +182,7 @@ public static class Message
     private static string GetMessage(Exception src)
     {
         var dest = new StringBuilder();
-        return dest.AppendFormat(Properties.Resources.ErrorGeneric, src.GetType().Name)
+        return dest.AppendFormat(Resources.ErrorGeneric, src.GetType().Name)
                    .AppendLine()
                    .AppendLine()
                    .Append(src.Message)

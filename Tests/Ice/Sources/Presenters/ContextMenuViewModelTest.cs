@@ -15,11 +15,10 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.FileSystem.SevenZip.Ice.Tests;
-
-using System.Threading;
 using Cube.FileSystem.SevenZip.Ice.Settings;
 using NUnit.Framework;
+using System.Threading;
+namespace Cube.FileSystem.SevenZip.Ice.Tests;
 
 /* ------------------------------------------------------------------------- */
 ///
@@ -31,7 +30,7 @@ using NUnit.Framework;
 ///
 /* ------------------------------------------------------------------------- */
 [TestFixture]
-class ContextMenuViewModelTest : VmFixture
+internal class ContextMenuViewModelTest : VmFixture
 {
     #region Tests
 

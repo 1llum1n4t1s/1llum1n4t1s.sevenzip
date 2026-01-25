@@ -15,14 +15,13 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.DataContract;
-
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Runtime.Serialization;
+namespace Cube.DataContract;
 
 /* ------------------------------------------------------------------------- */
 ///

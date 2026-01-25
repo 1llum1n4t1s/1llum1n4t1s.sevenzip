@@ -15,10 +15,10 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.FileSystem.SevenZip.Ice;
-
-using System.Text;
 using Cube.ByteFormat;
+using Cube.FileSystem.SevenZip.Ice.Properties;
+using System.Text;
+namespace Cube.FileSystem.SevenZip.Ice;
 
 /* ------------------------------------------------------------------------- */
 ///
@@ -48,7 +48,7 @@ internal static class StringExtension
     /* --------------------------------------------------------------------- */
     public static StringBuilder AppendLine(this StringBuilder src, Entity entity) =>
         entity == null ?
-        src.AppendLine(Properties.Resources.MessageUnknownFile) :
+        src.AppendLine(Resources.MessageUnknownFile) :
         src.AppendLine(entity.FullName)
            .AppendBytes(entity)
            .AppendLine()
@@ -71,7 +71,7 @@ internal static class StringExtension
     /* --------------------------------------------------------------------- */
     private static StringBuilder AppendBytes(this StringBuilder src, Entity entity) =>
         src.AppendFormat("{0} : {1}",
-            Properties.Resources.MessageBytes,
+            Resources.MessageBytes,
             entity.Length.ToPrettyBytes()
         );
 
@@ -87,7 +87,7 @@ internal static class StringExtension
     /* --------------------------------------------------------------------- */
     private static StringBuilder AppendTime(this StringBuilder src, Entity entity) =>
         src.AppendFormat("{0} : {1}",
-            Properties.Resources.MessageLastWriteTime,
+            Resources.MessageLastWriteTime,
             entity.LastWriteTime.ToString("yyyy/MM/dd HH:mm:ss")
         );
 

@@ -15,10 +15,9 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.Forms;
-
 using System.ComponentModel;
 using System.Drawing;
+namespace Cube.Forms;
 
 #region ButtonStyle
 

@@ -15,13 +15,12 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.Forms.Behaviors;
-
+using Cube.Forms.Extensions;
+using Cube.Tasks.Extensions;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
-using Cube.Forms.Extensions;
-using Cube.Tasks.Extensions;
+namespace Cube.Forms.Behaviors;
 
 /* ------------------------------------------------------------------------- */
 ///
@@ -54,7 +53,7 @@ public class NoticeBehavior : MessageBehaviorBase<NoticeMessage>
     /// <param name="aggregator">Message aggregator.</param>
     ///
     /* --------------------------------------------------------------------- */
-    public NoticeBehavior(IAggregator aggregator) : this(default, aggregator) { }
+    public NoticeBehavior(IAggregator aggregator) : this(null, aggregator) { }
 
     /* --------------------------------------------------------------------- */
     ///

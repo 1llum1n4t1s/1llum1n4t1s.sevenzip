@@ -15,12 +15,10 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.FileSystem.SevenZip.Ice.Tests;
-
-using System;
-using Cube.FileSystem.SevenZip.Ice.Settings;
 using Cube.Tests;
 using NUnit.Framework;
+using System;
+namespace Cube.FileSystem.SevenZip.Ice.Tests;
 
 /* ------------------------------------------------------------------------- */
 ///
@@ -32,7 +30,7 @@ using NUnit.Framework;
 ///
 /* ------------------------------------------------------------------------- */
 [TestFixture]
-class SettingTest : FileFixture
+internal class SettingTest : FileFixture
 {
     #region Tests
 

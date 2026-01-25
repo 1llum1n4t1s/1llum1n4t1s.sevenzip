@@ -15,10 +15,9 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.FileSystem.SevenZip.Ice;
-
 using System;
 using System.Threading;
+namespace Cube.FileSystem.SevenZip.Ice;
 
 /* ------------------------------------------------------------------------- */
 ///
@@ -78,7 +77,7 @@ public sealed class SuspendableProgress<T> : IProgress<T>
     /* --------------------------------------------------------------------- */
     public void Report(T value)
     {
-        if (!_suspend.WaitOne()) Logger.Warn($"WaitOne:False");
+        if (!_suspend.WaitOne()) Logger.Warn("WaitOne:False");
         _cancel.ThrowIfCancellationRequested();
         _callback(value);
     }

@@ -15,10 +15,9 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.Collections;
-
 using System.Collections.Generic;
 using System.Linq;
+namespace Cube.Collections;
 
 #region IArgumentPreprocessor
 

@@ -15,11 +15,10 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.FileSystem.SevenZip.Ice;
-
+using Cube.Text.Extensions;
 using System;
 using System.Diagnostics;
-using Cube.Text.Extensions;
+namespace Cube.FileSystem.SevenZip.Ice;
 
 /* ------------------------------------------------------------------------- */
 ///
@@ -103,7 +102,7 @@ internal static class EntityExtension
                 Logger.Try(() => Io.SetAttributes(dest, src.Attributes));
             }
         }
-        else if (Io.Exists(dest)) Move(src, dest, query.Get(src, new(dest)));
+        else if (Io.Exists(dest)) src.Move(dest, query.Get(src, new(dest)));
         else Try(() => Io.Move(src.FullName, dest, true));
     }
 

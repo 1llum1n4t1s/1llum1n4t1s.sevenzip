@@ -16,11 +16,11 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.FileSystem.SevenZip;
-
+using Cube.FileSystem.SevenZip.Ole32;
 using System;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
+namespace Cube.FileSystem.SevenZip;
 
 /* ------------------------------------------------------------------------- */
 ///
@@ -92,7 +92,7 @@ internal struct PropVariant
     /// </summary>
     ///
     /* --------------------------------------------------------------------- */
-    public void Clear() => Ole32.NativeMethods.PropVariantClear(ref this);
+    public void Clear() => NativeMethods.PropVariantClear(ref this);
 
     #region Set
 

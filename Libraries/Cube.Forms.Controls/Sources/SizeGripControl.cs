@@ -15,12 +15,12 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.Forms.Controls;
-
+using Cube.Forms.User32;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
+namespace Cube.Forms.Controls;
 
 /* ------------------------------------------------------------------------- */
 ///
@@ -114,8 +114,8 @@ public class SizeGripControl : System.Windows.Forms.PictureBox
         var form = FindForm();
         if (form is not null && form.WindowState == FormWindowState.Normal)
         {
-            _= User32.NativeMethods.ReleaseCapture();
-            _= User32.NativeMethods.SendMessage(form.Handle, 0xa1 /* WM_NCLBUTTONDOWN */, (IntPtr)Position.BottomRight, IntPtr.Zero);
+            _= NativeMethods.ReleaseCapture();
+            _= NativeMethods.SendMessage(form.Handle, 0xa1 /* WM_NCLBUTTONDOWN */, (IntPtr)Position.BottomRight, IntPtr.Zero);
         }
         else base.OnMouseDown(e);
     }

@@ -15,14 +15,12 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.FileSystem.SevenZip.Ice.Tests;
-
-using System;
+using Cube.Tests.Mocks;
+using NUnit.Framework;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security;
-using Cube.Tests.Mocks;
-using NUnit.Framework;
+namespace Cube.FileSystem.SevenZip.Ice.Tests;
 
 /* ------------------------------------------------------------------------- */
 ///
@@ -35,7 +33,7 @@ using NUnit.Framework;
 /* ------------------------------------------------------------------------- */
 [TestFixture]
 [NonParallelizable]
-class ExtractTest : VmFixture
+internal class ExtractTest : VmFixture
 {
     #region Tests
 

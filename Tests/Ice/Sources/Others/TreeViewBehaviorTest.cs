@@ -15,13 +15,12 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.FileSystem.SevenZip.Ice.Tests;
-
+using Cube.FileSystem.SevenZip.Ice.Settings;
+using NUnit.Framework;
 using System;
 using System.Threading;
 using System.Windows.Forms;
-using Cube.FileSystem.SevenZip.Ice.Settings;
-using NUnit.Framework;
+namespace Cube.FileSystem.SevenZip.Ice.Tests;
 
 /* ------------------------------------------------------------------------- */
 ///
@@ -38,7 +37,7 @@ using NUnit.Framework;
 ///
 /* ------------------------------------------------------------------------- */
 [TestFixture]
-class TreeViewBehaviorTest
+internal class TreeViewBehaviorTest
 {
     #region Tests
 
@@ -54,7 +53,7 @@ class TreeViewBehaviorTest
     [Test, RequiresThread(ApartmentState.STA)]
     public void Create_Throws()
     {
-        Assert.That(() => new TreeViewBehavior(default), Throws.ArgumentException);
+        Assert.That(() => new TreeViewBehavior(null), Throws.ArgumentException);
     }
 
     /* --------------------------------------------------------------------- */

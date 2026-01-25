@@ -15,9 +15,9 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.Chrono.Extensions;
-
 using System;
+using System.Globalization;
+namespace Cube.Chrono.Extensions;
 
 /* ------------------------------------------------------------------------- */
 ///
@@ -109,9 +109,9 @@ public static class Methods
     public static DateTime ToUniversalTime(this string src, string format)
     {
         var dest = DateTime.ParseExact(src, format,
-                       System.Globalization.DateTimeFormatInfo.InvariantInfo,
-                       System.Globalization.DateTimeStyles.AssumeUniversal |
-                       System.Globalization.DateTimeStyles.AdjustToUniversal
+                       DateTimeFormatInfo.InvariantInfo,
+                       DateTimeStyles.AssumeUniversal |
+                       DateTimeStyles.AdjustToUniversal
                    );
         return new(dest.Ticks, DateTimeKind.Utc);
     }
@@ -173,8 +173,8 @@ public static class Methods
     public static DateTime ToLocalTime(this string src, string format)
     {
         var dest = DateTime.ParseExact(src, format,
-                       System.Globalization.DateTimeFormatInfo.InvariantInfo,
-                       System.Globalization.DateTimeStyles.AssumeLocal
+                       DateTimeFormatInfo.InvariantInfo,
+                       DateTimeStyles.AssumeLocal
                    );
         return new(dest.Ticks, DateTimeKind.Local);
     }

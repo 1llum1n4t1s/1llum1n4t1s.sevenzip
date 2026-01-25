@@ -15,14 +15,14 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.FileSystem.SevenZip.Ice;
-
+using Cube.FileSystem.SevenZip.Ice.Associator.Properties;
+using Cube.Text.Extensions;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Runtime.Versioning;
-using Cube.Text.Extensions;
-using Microsoft.Win32;
+namespace Cube.FileSystem.SevenZip.Ice;
 
 /* ------------------------------------------------------------------------- */
 ///
@@ -210,7 +210,7 @@ public class AssociateRegistrar
     /* --------------------------------------------------------------------- */
     private void Register(RegistryKey src, string id)
     {
-        src.SetValue("", $"{id} {Associator.Properties.Resources.SuffixFiletype}".ToUpperInvariant());
+        src.SetValue("", $"{id} {Resources.SuffixFiletype}".ToUpperInvariant());
 
         using (var sk = src.CreateSubKey("shell"))
         {

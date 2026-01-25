@@ -15,11 +15,11 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.FileSystem.SevenZip.Ice;
-
+using Cube.Collections.Extensions;
+using Cube.FileSystem.SevenZip.Ice.Properties;
 using System.Collections.Generic;
 using System.Linq;
-using Cube.Collections.Extensions;
+namespace Cube.FileSystem.SevenZip.Ice;
 
 /* ------------------------------------------------------------------------- */
 ///
@@ -51,9 +51,9 @@ public static class PresetExtension
     {
         var mask = Preset.CompressMask | Preset.ExtractMask | Preset.MailMask;
         if ((src & mask)            != 0) return Find(src, Names);
-        if ((src & Preset.Compress) != 0) return Properties.Resources.CtxArchive;
-        if ((src & Preset.Extract)  != 0) return Properties.Resources.CtxExtract;
-        if ((src & Preset.Mail)     != 0) return Properties.Resources.CtxMail;
+        if ((src & Preset.Compress) != 0) return Resources.CtxArchive;
+        if ((src & Preset.Extract)  != 0) return Resources.CtxExtract;
+        if ((src & Preset.Mail)     != 0) return Resources.CtxMail;
         return string.Empty;
     }
 
@@ -295,28 +295,28 @@ public static class PresetExtension
     private static Dictionary<Preset, string> Names { get; } = new()
     {
         // Extract
-        { Preset.ExtractSource,       Properties.Resources.CtxSource      },
-        { Preset.ExtractDesktop,      Properties.Resources.CtxDesktop     },
-        { Preset.ExtractMyDocuments,  Properties.Resources.CtxMyDocuments },
-        { Preset.ExtractQuery,        Properties.Resources.CtxQuery       },
+        { Preset.ExtractSource,       Resources.CtxSource      },
+        { Preset.ExtractDesktop,      Resources.CtxDesktop     },
+        { Preset.ExtractMyDocuments,  Resources.CtxMyDocuments },
+        { Preset.ExtractQuery,        Resources.CtxQuery       },
         // Compress
-        { Preset.CompressZip,         Properties.Resources.CtxZip         },
-        { Preset.CompressZipPassword, Properties.Resources.CtxZipPassword },
-        { Preset.Compress7z,          Properties.Resources.Ctx7z          },
-        { Preset.CompressBz2,         Properties.Resources.CtxBz2         },
-        { Preset.CompressGz,          Properties.Resources.CtxGz          },
-        { Preset.CompressXz,          Properties.Resources.CtxXz          },
-        { Preset.CompressSfx,         Properties.Resources.CtxSfx         },
-        { Preset.CompressDetails,     Properties.Resources.CtxDetails     },
+        { Preset.CompressZip,         Resources.CtxZip         },
+        { Preset.CompressZipPassword, Resources.CtxZipPassword },
+        { Preset.Compress7z,          Resources.Ctx7z          },
+        { Preset.CompressBz2,         Resources.CtxBz2         },
+        { Preset.CompressGz,          Resources.CtxGz          },
+        { Preset.CompressXz,          Resources.CtxXz          },
+        { Preset.CompressSfx,         Resources.CtxSfx         },
+        { Preset.CompressDetails,     Resources.CtxDetails     },
         // Mail
-        { Preset.MailZip,             Properties.Resources.CtxZip         },
-        { Preset.MailZipPassword,     Properties.Resources.CtxZipPassword },
-        { Preset.Mail7z,              Properties.Resources.Ctx7z          },
-        { Preset.MailBz2,             Properties.Resources.CtxBz2         },
-        { Preset.MailGz,              Properties.Resources.CtxGz          },
-        { Preset.MailXz,              Properties.Resources.CtxXz          },
-        { Preset.MailSfx,             Properties.Resources.CtxSfx         },
-        { Preset.MailDetails,         Properties.Resources.CtxDetails     },
+        { Preset.MailZip,             Resources.CtxZip         },
+        { Preset.MailZipPassword,     Resources.CtxZipPassword },
+        { Preset.Mail7z,              Resources.Ctx7z          },
+        { Preset.MailBz2,             Resources.CtxBz2         },
+        { Preset.MailGz,              Resources.CtxGz          },
+        { Preset.MailXz,              Resources.CtxXz          },
+        { Preset.MailSfx,             Resources.CtxSfx         },
+        { Preset.MailDetails,         Resources.CtxDetails     },
     };
 
     /* --------------------------------------------------------------------- */

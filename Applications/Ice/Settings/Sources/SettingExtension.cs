@@ -15,9 +15,9 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.FileSystem.SevenZip.Ice.Settings;
-
 using Cube.Reflection.Extensions;
+using System.Diagnostics;
+namespace Cube.FileSystem.SevenZip.Ice.Settings;
 
 /* ------------------------------------------------------------------------- */
 ///
@@ -68,7 +68,7 @@ public static class SettingExtension
         var dir = typeof(SettingExtension).Assembly.GetDirectoryName();
         var exe = Io.Combine(dir, "cubeice-associate.exe");
 
-        if (Io.Exists(exe)) System.Diagnostics.Process.Start(exe).WaitForExit();
+        if (Io.Exists(exe)) Process.Start(exe).WaitForExit();
         else Logger.Warn($"{exe} not found");
 
         src.Changed = false;

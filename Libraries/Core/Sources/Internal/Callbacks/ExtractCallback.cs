@@ -16,12 +16,11 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.FileSystem.SevenZip;
-
+using Cube.Text.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
-using Cube.Text.Extensions;
+namespace Cube.FileSystem.SevenZip;
 
 /* ------------------------------------------------------------------------- */
 ///
@@ -209,7 +208,7 @@ internal class ExtractCallback : PasswordCallback, IArchiveExtractCallback
         {
             if (_mode == AskMode.Extract) Finalize(_iterator.Current);
             Count++;
-            return Report(code, default);
+            return Report(code, null);
         }
         catch (Exception e) { return Report(code, e); }
     }
@@ -340,7 +339,7 @@ internal class ExtractCallback : PasswordCallback, IArchiveExtractCallback
     /// </summary>
     ///
     /* --------------------------------------------------------------------- */
-    private ArchiveEntity Current() => _iterator.Valid ? _iterator.Current : default;
+    private ArchiveEntity Current() => _iterator.Valid ? _iterator.Current : null;
 
     #endregion
 
@@ -348,6 +347,6 @@ internal class ExtractCallback : PasswordCallback, IArchiveExtractCallback
     private readonly ArchiveEnumerator _iterator;
     private readonly Dictionary<int, ArchiveStreamWriter> _streams = new();
     private AskMode _mode = AskMode.Extract;
-    private long _hack = 0;
+    private long _hack;
     #endregion
 }

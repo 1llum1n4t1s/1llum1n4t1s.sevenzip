@@ -15,15 +15,15 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.FileSystem.SevenZip.Tests;
-
+using Cube.Tests;
+using Cube.Text.Extensions;
+using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
-using Cube.Tests;
-using Cube.Text.Extensions;
-using NUnit.Framework;
+using System.Text;
+namespace Cube.FileSystem.SevenZip.Tests;
 
 /* ------------------------------------------------------------------------- */
 ///
@@ -35,7 +35,7 @@ using NUnit.Framework;
 ///
 /* ------------------------------------------------------------------------- */
 [TestFixture]
-class ArchiveReaderTest : FileFixture
+internal class ArchiveReaderTest : FileFixture
 {
     #region Tests
 
@@ -220,7 +220,7 @@ class ArchiveReaderTest : FileFixture
     {
         var src = GetSource("Expected", $"{filename}.txt");
         var dest = new Dictionary<string, Expected>();
-        foreach (var line in File.ReadLines(src, System.Text.Encoding.UTF8))
+        foreach (var line in File.ReadLines(src, Encoding.UTF8))
         {
             var row = ParseCsvLine(line);
             if (row.Count < 3) continue;

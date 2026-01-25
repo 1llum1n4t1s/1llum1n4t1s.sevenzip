@@ -15,10 +15,10 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.FileSystem.SevenZip.Ice.Tests;
-
-using System.Collections.Generic;
+using Cube.FileSystem.SevenZip.Ice.Settings;
 using Cube.Tests;
+using System.Collections.Generic;
+namespace Cube.FileSystem.SevenZip.Ice.Tests;
 
 /* ------------------------------------------------------------------------- */
 ///
@@ -30,7 +30,7 @@ using Cube.Tests;
 /// </summary>
 ///
 /* ------------------------------------------------------------------------- */
-abstract class VmFixture : FileFixture
+internal abstract class VmFixture : FileFixture
 {
     #region Methods
 
@@ -96,7 +96,7 @@ abstract class VmFixture : FileFixture
     /// <returns>SettingViewModel object.</returns>
     ///
     /* --------------------------------------------------------------------- */
-    protected Settings.SettingViewModel NewVM() => NewVM(NewSettings());
+    protected SettingViewModel NewVM() => NewVM(NewSettings());
 
     /* --------------------------------------------------------------------- */
     ///
@@ -112,7 +112,7 @@ abstract class VmFixture : FileFixture
     /// <returns>SettingViewModel object.</returns>
     ///
     /* --------------------------------------------------------------------- */
-    protected Settings.SettingViewModel NewVM(SettingFolder src) => new(src, new());
+    protected SettingViewModel NewVM(SettingFolder src) => new(src, new());
 
     /* --------------------------------------------------------------------- */
     ///

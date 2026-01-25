@@ -15,10 +15,9 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.Forms.Gdi32;
-
 using System;
 using System.Runtime.InteropServices;
+namespace Cube.Forms.Gdi32;
 
 /* ------------------------------------------------------------------------- */
 ///
@@ -49,6 +48,7 @@ internal static class NativeMethods
     #endregion
 
     #region Fields
-    const string LibName = "Gdi32.dll";
+
+    private const string LibName = "Gdi32.dll";
     #endregion
 }

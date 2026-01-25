@@ -15,13 +15,11 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.FileSystem.SevenZip.Ice.Tests;
-
-using System.Linq;
-using System.Threading.Tasks;
 using Cube.Collections.Extensions;
 using Cube.Tests;
 using NUnit.Framework;
+using System.Threading.Tasks;
+namespace Cube.FileSystem.SevenZip.Ice.Tests;
 
 /* ------------------------------------------------------------------------- */
 ///
@@ -34,7 +32,7 @@ using NUnit.Framework;
 /* ------------------------------------------------------------------------- */
 [TestFixture]
 [NonParallelizable]
-class ExtractViewModelTest : VmFixture
+internal class ExtractViewModelTest : VmFixture
 {
     #region Tests
 

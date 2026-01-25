@@ -15,13 +15,13 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-using System;
-using System.ComponentModel;
-using System.Text;
+using Cube.FileSystem.SevenZip.Ice.Properties;
 using Cube.Forms;
 using Cube.Forms.Behaviors;
 using Cube.Icons;
-
+using System;
+using System.ComponentModel;
+using System.Text;
 namespace Cube.FileSystem.SevenZip.Ice
 {
     /* --------------------------------------------------------------------- */
@@ -119,12 +119,12 @@ namespace Cube.FileSystem.SevenZip.Ice
         protected override void OnShown(EventArgs e)
         {
             DescriptionLabel.Text = new StringBuilder()
-                .AppendLine(Properties.Resources.MessageOverwrite)
+                .AppendLine(Resources.MessageOverwrite)
                 .AppendLine()
-                .AppendLine(Properties.Resources.MessageCurrent)
+                .AppendLine(Resources.MessageCurrent)
                 .AppendLine(Destination)
                 .AppendLine()
-                .AppendLine(Properties.Resources.MessageNewFile)
+                .AppendLine(Resources.MessageNewFile)
                 .AppendLine(Source)
                 .ToString();
 

@@ -15,9 +15,8 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.Text.Extensions;
-
 using System;
+namespace Cube.Text.Extensions;
 
 /* ------------------------------------------------------------------------- */
 ///

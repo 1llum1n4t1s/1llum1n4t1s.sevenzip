@@ -15,13 +15,13 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.FileSystem;
-
-using System.Collections.Generic;
-using System.Linq;
 using Cube.Collections;
 using Cube.Collections.Extensions;
 using Cube.Text.Extensions;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+namespace Cube.FileSystem;
 
 /* ------------------------------------------------------------------------- */
 ///
@@ -227,8 +227,8 @@ public sealed class SafePath(string src)
     /* --------------------------------------------------------------------- */
     public static IEnumerable<char> SeparatorChars { get; } =
     [
-        System.IO.Path.DirectorySeparatorChar,
-        System.IO.Path.AltDirectorySeparatorChar,
+        Path.DirectorySeparatorChar,
+        Path.AltDirectorySeparatorChar,
     ];
 
     /* --------------------------------------------------------------------- */
@@ -285,7 +285,7 @@ public sealed class SafePath(string src)
     /// </summary>
     ///
     /* --------------------------------------------------------------------- */
-    public static IEnumerable<char> InvalidChars { get; } = System.IO.Path.GetInvalidFileNameChars();
+    public static IEnumerable<char> InvalidChars { get; } = Path.GetInvalidFileNameChars();
 
     /* --------------------------------------------------------------------- */
     ///
@@ -370,7 +370,7 @@ public sealed class SafePath(string src)
         var seq  = name.Select(c => InvalidChars.Contains(c) ? EscapeChar : c);
         var esc  = new string(seq.ToArray());
         var dot  = esc == CurrentDirectorySymbol || esc == ParentDirectorySymbol;
-        var dest = dot ? esc : esc.TrimEnd([ ' ', '.' ]);
+        var dest = dot ? esc : esc.TrimEnd(' ', '.');
 
         return IsReserved(dest) ? $"{EscapeChar}{dest}" : dest;
     }
@@ -560,7 +560,7 @@ public sealed class SafePath(string src)
     private bool _allowDriveLetter = true;
     private bool _allowCurrentDirectory = true;
     private bool _allowParentDirectory = true;
-    private bool _allowInactivation = false;
+    private bool _allowInactivation;
     private bool _allowUnc = true;
     #endregion
 }

@@ -15,13 +15,12 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.Collections;
-
+using Cube.Collections.Extensions;
+using Cube.Text.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Cube.Collections.Extensions;
-using Cube.Text.Extensions;
+namespace Cube.Collections;
 
 /* ------------------------------------------------------------------------- */
 ///

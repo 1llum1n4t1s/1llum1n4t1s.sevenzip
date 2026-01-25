@@ -15,10 +15,10 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.FileSystem.SevenZip.Ice.Tests;
-
-using System;
+using Cube.Logging.NLog;
 using NUnit.Framework;
+using System;
+namespace Cube.FileSystem.SevenZip.Ice.Tests;
 
 /* ------------------------------------------------------------------------- */
 ///
@@ -30,7 +30,7 @@ using NUnit.Framework;
 ///
 /* ------------------------------------------------------------------------- */
 [SetUpFixture]
-static class Program
+internal static class Program
 {
     /* --------------------------------------------------------------------- */
     ///
@@ -44,7 +44,7 @@ static class Program
     [OneTimeSetUp]
     public static void OneTimeSetup()
     {
-        Logger.Configure(new Logging.NLog.LoggerSource());
+        Logger.Configure(new LoggerSource());
         Logger.ObserveTaskException();
         Logger.Info(typeof(Program).Assembly);
     }
@@ -59,5 +59,5 @@ static class Program
     ///
     /* --------------------------------------------------------------------- */
     [STAThread]
-    static void Main() { }
+    private static void Main() { }
 }

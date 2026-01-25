@@ -15,11 +15,10 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.Globalization;
-
 using System;
 using System.Runtime.CompilerServices;
 using System.Threading;
+namespace Cube.Globalization;
 
 /* ------------------------------------------------------------------------- */
 ///

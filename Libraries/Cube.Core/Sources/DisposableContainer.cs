@@ -15,11 +15,10 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube;
-
 using System;
 using System.Collections.Concurrent;
 using System.Linq;
+namespace Cube;
 
 /* ------------------------------------------------------------------------- */
 ///

@@ -16,10 +16,9 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.FileSystem.SevenZip;
-
 using System;
 using System.Runtime.InteropServices;
+namespace Cube.FileSystem.SevenZip;
 
 /* ------------------------------------------------------------------------- */
 ///
@@ -33,6 +32,6 @@ using System.Runtime.InteropServices;
 [StructLayout(LayoutKind.Sequential)]
 internal struct PropArray
 {
-    uint _cElems;
-    IntPtr _pElems;
+    private uint _cElems;
+    private IntPtr _pElems;
 }

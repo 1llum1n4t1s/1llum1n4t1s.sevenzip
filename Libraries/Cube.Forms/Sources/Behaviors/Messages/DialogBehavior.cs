@@ -15,11 +15,10 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.Forms.Behaviors;
-
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+namespace Cube.Forms.Behaviors;
 
 /* ------------------------------------------------------------------------- */
 ///

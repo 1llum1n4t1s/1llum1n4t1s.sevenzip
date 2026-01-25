@@ -17,7 +17,6 @@
 /* ------------------------------------------------------------------------- */
 using System;
 using System.Windows.Forms;
-
 namespace Cube.FileSystem.SevenZip.Ice
 {
     /* --------------------------------------------------------------------- */
@@ -71,8 +70,7 @@ namespace Cube.FileSystem.SevenZip.Ice
         /// </remarks>
         ///
         /* ----------------------------------------------------------------- */
-        public static void Bind(this BindingSource src, string name, Control view, string viewName) =>
-            Bind(src, name, view, viewName, DataSourceUpdateMode.OnPropertyChanged);
+        public static void Bind(this BindingSource src, string name, Control view, string viewName) => src.Bind(name, view, viewName, DataSourceUpdateMode.OnPropertyChanged);
 
         /* ----------------------------------------------------------------- */
         ///
@@ -92,8 +90,7 @@ namespace Cube.FileSystem.SevenZip.Ice
         /// </remarks>
         ///
         /* ----------------------------------------------------------------- */
-        public static void Bind(this BindingSource src, string name, RadioButton view, string viewName) =>
-            Bind(src, name, view, viewName, DataSourceUpdateMode.OnValidation);
+        public static void Bind(this BindingSource src, string name, RadioButton view, string viewName) => src.Bind(name, view, viewName, DataSourceUpdateMode.OnValidation);
 
         /* ----------------------------------------------------------------- */
         ///

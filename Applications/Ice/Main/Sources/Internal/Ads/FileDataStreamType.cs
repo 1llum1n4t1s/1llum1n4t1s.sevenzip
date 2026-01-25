@@ -28,7 +28,7 @@ namespace Cube.FileSystem.SevenZip.Ice;
 /// </summary>
 ///
 /* ------------------------------------------------------------------------- */
-public enum FileDataStreamType : int
+public enum FileDataStreamType
 {
     /// <summary>Unknown</summary>
     Unknown,

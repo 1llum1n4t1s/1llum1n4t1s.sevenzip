@@ -15,15 +15,14 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.DataContract;
-
+using Cube.DataContract.Internal;
+using Cube.Text.Extensions;
+using Microsoft.Win32;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.Versioning;
-using Cube.DataContract.Internal;
-using Cube.Text.Extensions;
-using Microsoft.Win32;
+namespace Cube.DataContract;
 
 /* ------------------------------------------------------------------------- */
 ///

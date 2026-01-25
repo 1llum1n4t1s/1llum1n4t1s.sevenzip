@@ -15,10 +15,9 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.Forms.UrlMon;
-
 using System.Runtime.InteropServices;
 using System.Text;
+namespace Cube.Forms.UrlMon;
 
 /* ------------------------------------------------------------------------- */
 ///
@@ -86,6 +85,7 @@ internal static class NativeMethods
     #endregion
 
     #region Fields
-    const string LibName = "urlmon.dll";
+
+    private const string LibName = "urlmon.dll";
     #endregion
 }

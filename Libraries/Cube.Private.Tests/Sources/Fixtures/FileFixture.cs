@@ -15,9 +15,8 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.Tests;
-
 using Cube.FileSystem;
+namespace Cube.Tests;
 
 /* ------------------------------------------------------------------------- */
 ///

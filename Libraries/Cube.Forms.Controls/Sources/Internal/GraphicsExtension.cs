@@ -15,11 +15,11 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.Forms.Drawing;
-
 using System;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Windows.Forms;
+namespace Cube.Forms.Drawing;
 
 /* ------------------------------------------------------------------------- */
 ///
@@ -177,7 +177,7 @@ internal static class GraphicsExtension
         var resize = new Bitmap(width, height);
         using (var igs = Graphics.FromImage(resize))
         {
-            igs.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
+            igs.InterpolationMode = InterpolationMode.HighQualityBicubic;
             igs.DrawImage(image, 0, 0, width, height);
         }
         gs.DrawImage(bounds, resize, ContentAlignment.MiddleCenter);
@@ -196,7 +196,7 @@ internal static class GraphicsExtension
     {
         using var brush = new TextureBrush(image)
         {
-            WrapMode = System.Drawing.Drawing2D.WrapMode.Tile
+            WrapMode = WrapMode.Tile
         };
         gs.FillRectangle(brush, bounds);
     }

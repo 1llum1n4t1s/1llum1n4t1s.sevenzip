@@ -15,9 +15,11 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-using System.Windows.Forms;
+using Cube.FileSystem.SevenZip.Ice.Settings.Properties;
+using Cube.Forms;
 using Cube.Forms.Behaviors;
-
+using Cube.Forms.Controls;
+using System.Windows.Forms;
 namespace Cube.FileSystem.SevenZip.Ice.Settings
 {
     /* --------------------------------------------------------------------- */
@@ -29,7 +31,7 @@ namespace Cube.FileSystem.SevenZip.Ice.Settings
     /// </summary>
     ///
     /* --------------------------------------------------------------------- */
-    public partial class MainWindow : Forms.Window
+    public partial class MainWindow : Window
     {
         #region Constructors
 
@@ -47,7 +49,7 @@ namespace Cube.FileSystem.SevenZip.Ice.Settings
             InitializeComponent();
 
             _version.Description = string.Empty;
-            _version.Image       = Properties.Resources.Logo;
+            _version.Image       = Resources.Logo;
             _version.Uri         = new("https://www.cube-soft.jp/");
             _version.Location    = new(40, 40);
             _version.Size        = new(400, 300);
@@ -98,13 +100,13 @@ namespace Cube.FileSystem.SevenZip.Ice.Settings
 
             _version.Product = vm.Product;
             _version.Version = vm.Version;
-            _tooltip.ToolTipTitle = Properties.Resources.MessageInvalidChars;
+            _tooltip.ToolTipTitle = Resources.MessageInvalidChars;
         }
 
         #endregion
 
         #region Fields
-        private readonly Forms.Controls.VersionControl _version = new();
+        private readonly VersionControl _version = new();
         private readonly ToolTip _tooltip = new();
         #endregion
     }

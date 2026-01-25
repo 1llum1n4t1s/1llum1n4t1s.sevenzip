@@ -15,11 +15,10 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.Tests;
-
+using Cube.Observable.Extensions;
 using System.ComponentModel;
 using System.Threading;
-using Cube.Observable.Extensions;
+namespace Cube.Tests;
 
 /* ------------------------------------------------------------------------- */
 ///
@@ -99,6 +98,6 @@ public class PropertyChangedCounter : DisposableBase
 
     #region Fields
     private readonly DisposableContainer _disposable = new();
-    private int _value = 0;
+    private int _value;
     #endregion
 }

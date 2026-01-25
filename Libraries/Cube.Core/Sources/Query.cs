@@ -15,9 +15,8 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube;
-
 using System;
+namespace Cube;
 
 #region IQuery<TSource, TValue>
 

@@ -15,13 +15,12 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.Collections;
-
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Linq;
+namespace Cube.Collections;
 
 /* ------------------------------------------------------------------------- */
 ///
@@ -109,7 +108,7 @@ public class OrderedDictionary<TKey, TValue> :
         {
             if (Equals(key, default(TKey))) throw new ArgumentNullException(nameof(key));
             if (ContainsKey(key)) return (TValue)_core[key];
-            else throw new KeyNotFoundException(key.ToString());
+            throw new KeyNotFoundException(key.ToString());
         }
 
         set

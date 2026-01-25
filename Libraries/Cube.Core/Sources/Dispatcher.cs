@@ -15,10 +15,9 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube;
-
 using System;
 using System.Threading;
+namespace Cube;
 
 #region Dispatcher
 

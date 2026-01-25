@@ -15,9 +15,8 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.Tests.Mocks;
-
 using System.Collections.Generic;
+namespace Cube.Tests.Mocks;
 
 /* ------------------------------------------------------------------------- */
 ///

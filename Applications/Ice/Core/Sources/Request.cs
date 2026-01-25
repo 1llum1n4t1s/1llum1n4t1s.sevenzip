@@ -15,12 +15,11 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.FileSystem.SevenZip.Ice;
-
+using Cube.Text.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Cube.Text.Extensions;
+namespace Cube.FileSystem.SevenZip.Ice;
 
 /* ------------------------------------------------------------------------- */
 ///
@@ -133,7 +132,7 @@ public class Request
     /// </summary>
     ///
     /* --------------------------------------------------------------------- */
-    public bool Password { get; private set; } = false;
+    public bool Password { get; private set; }
 
     /* --------------------------------------------------------------------- */
     ///
@@ -153,7 +152,7 @@ public class Request
     /// </remarks>
     ///
     /* --------------------------------------------------------------------- */
-    public bool SuppressRecursive { get; private set; } = false;
+    public bool SuppressRecursive { get; private set; }
 
     /* --------------------------------------------------------------------- */
     ///
@@ -200,7 +199,7 @@ public class Request
             if (Any(args[i])) // Represents the option.
             {
                 if (Any(args[i], "c", "x")) continue;
-                else if (Any(args[i], "p")) Password = true;
+                if (Any(args[i], "p")) Password = true;
                 else if (Any(args[i], "sr")) SuppressRecursive = true;
                 else if (Any(args[i], "o:", "out:")) ParseLocation(args[i]);
                 else if (Any(args[i], "save:", "drop:")) Directory = Tail(args[i]);

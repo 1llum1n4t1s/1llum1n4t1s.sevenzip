@@ -15,11 +15,11 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
+using Cube.Forms;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-
 namespace Cube.FileSystem.SevenZip.Ice.Settings
 {
     /* --------------------------------------------------------------------- */
@@ -31,7 +31,7 @@ namespace Cube.FileSystem.SevenZip.Ice.Settings
     /// </summary>
     ///
     /* --------------------------------------------------------------------- */
-    public partial class AssociateIconWindow : Forms.Window
+    public partial class AssociateIconWindow : Window
     {
         #region Constructors
 

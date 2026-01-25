@@ -16,9 +16,8 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.FileSystem.SevenZip;
-
 using System;
+namespace Cube.FileSystem.SevenZip;
 
 /* ------------------------------------------------------------------------- */
 ///
@@ -50,7 +49,7 @@ public static class ArchiveEntityExtension
         if (!src.IsDirectory) return;
         var path = Io.Combine(root, src.FullName);
         Io.CreateDirectory(path);
-        SetAttributes(src, root);
+        src.SetAttributes(root);
     }
 
     /* --------------------------------------------------------------------- */

@@ -15,9 +15,8 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.Tests.Mocks;
-
 using NUnit.Framework;
+namespace Cube.Tests.Mocks;
 
 /* ------------------------------------------------------------------------- */
 ///

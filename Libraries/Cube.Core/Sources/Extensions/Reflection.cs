@@ -15,13 +15,12 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.Reflection.Extensions;
-
+using Cube.FileSystem;
+using Cube.Text.Extensions;
 using System;
 using System.Reflection;
 using System.Runtime.InteropServices;
-using Cube.FileSystem;
-using Cube.Text.Extensions;
+namespace Cube.Reflection.Extensions;
 
 /* ------------------------------------------------------------------------- */
 ///
@@ -324,7 +323,7 @@ public static class Methods
     private static T Get<T>(this Assembly src) where T : class =>
         src is not null ?
         Attribute.GetCustomAttribute(src, typeof(T)) as T :
-        default;
+        null;
 
     /* --------------------------------------------------------------------- */
     ///

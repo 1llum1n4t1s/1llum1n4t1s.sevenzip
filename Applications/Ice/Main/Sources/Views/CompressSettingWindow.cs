@@ -15,11 +15,12 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.FileSystem.SevenZip.Ice;
-
-using System.Windows.Forms;
+using Cube.FileSystem.SevenZip.Ice.Properties;
+using Cube.Forms;
 using Cube.Forms.Behaviors;
 using Cube.Forms.Binding;
+using System.Windows.Forms;
+namespace Cube.FileSystem.SevenZip.Ice;
 
 /* ------------------------------------------------------------------------- */
 ///
@@ -30,7 +31,7 @@ using Cube.Forms.Binding;
 /// </summary>
 ///
 /* ------------------------------------------------------------------------- */
-public partial class CompressSettingWindow : Forms.Window
+public partial class CompressSettingWindow : Window
 {
     #region Constructors
 
@@ -117,7 +118,7 @@ public partial class CompressSettingWindow : Forms.Window
         CompressionLevelComboBox.Bind(Resource.CompressionLevels);
         CompressionMethodComboBox.Bind(Resource.GetCompressionMethods(vm.Format));
         CompressionMethodComboBox.SelectedIndex = 0;
-        PathToolTip.ToolTipTitle = Properties.Resources.MessageInvalidChars;
+        PathToolTip.ToolTipTitle = Resources.MessageInvalidChars;
     }
 
     #endregion

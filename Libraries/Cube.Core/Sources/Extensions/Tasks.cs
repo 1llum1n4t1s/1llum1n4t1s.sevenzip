@@ -15,10 +15,9 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.Tasks.Extensions;
-
 using System;
 using System.Threading.Tasks;
+namespace Cube.Tasks.Extensions;
 
 /* ------------------------------------------------------------------------- */
 ///

@@ -15,11 +15,10 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.Tests;
-
 using System;
 using System.Threading;
 using System.Threading.Tasks;
+namespace Cube.Tests;
 
 /* ------------------------------------------------------------------------- */
 ///

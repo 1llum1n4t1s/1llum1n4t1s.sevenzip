@@ -15,16 +15,17 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.Forms.Controls;
-
+using Cube.Forms.Controls.Properties;
+using Cube.Reflection.Extensions;
+using Cube.Text.Extensions;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
 using System.Reflection;
-using Cube.Reflection.Extensions;
-using Cube.Text.Extensions;
+using System.Windows.Forms;
+namespace Cube.Forms.Controls;
 
 /* ------------------------------------------------------------------------- */
 ///
@@ -235,7 +236,7 @@ public class VersionControl : ControlBase
     /// </summary>
     ///
     /* --------------------------------------------------------------------- */
-    private void Set(System.Windows.Forms.Label src, string value)
+    private void Set(Label src, string value)
     {
         if (!src.Text.Equals(value, StringComparison.InvariantCulture))
         {
@@ -259,9 +260,9 @@ public class VersionControl : ControlBase
 
         var index = 0;
 
-        _panel.Dock = System.Windows.Forms.DockStyle.Fill;
-        _panel.Margin = new System.Windows.Forms.Padding(0);
-        _panel.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+        _panel.Dock = DockStyle.Fill;
+        _panel.Margin = new Padding(0);
+        _panel.FixedPanel = FixedPanel.Panel1;
         _panel.IsSplitterFixed = true;
         _panel.Panel1MinSize = 0;
         _panel.Panel2MinSize = 0;
@@ -270,37 +271,37 @@ public class VersionControl : ControlBase
         _panel.Size = Size;
         _panel.SuspendLayout();
 
-        _image.Dock = System.Windows.Forms.DockStyle.Fill;
-        _image.Image = Properties.Resources.Logo;
-        _image.Margin = new System.Windows.Forms.Padding(0);
+        _image.Dock = DockStyle.Fill;
+        _image.Image = Resources.Logo;
+        _image.Margin = new Padding(0);
 
-        _contents.Dock = System.Windows.Forms.DockStyle.Fill;
-        _contents.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-        _contents.Margin = new System.Windows.Forms.Padding(0);
+        _contents.Dock = DockStyle.Fill;
+        _contents.FlowDirection = FlowDirection.TopDown;
+        _contents.Margin = new Padding(0);
         _contents.SuspendLayout();
 
         _info.AutoEllipsis = true;
         _info.AutoSize = true;
-        _info.Margin = new System.Windows.Forms.Padding(0);
+        _info.Margin = new Padding(0);
         _info.TabIndex = index++;
 
         _platform.AutoEllipsis = true;
         _platform.AutoSize = true;
         _platform.ForeColor = SystemColors.GrayText;
-        _platform.Margin = new System.Windows.Forms.Padding(0, Space, 0, 0);
+        _platform.Margin = new Padding(0, Space, 0, 0);
         _platform.TabIndex = index++;
         _platform.Text = Platform;
 
         _others.AutoEllipsis = true;
         _others.AutoSize = true;
         _others.ForeColor = SystemColors.GrayText;
-        _others.Margin = new System.Windows.Forms.Padding(0, Space, 0, 0);
+        _others.Margin = new Padding(0, Space, 0, 0);
         _others.TabIndex = index++;
         _others.Text = string.Empty;
         _others.Visible = false;
 
         _copyright.AutoSize = true;
-        _copyright.Margin = new System.Windows.Forms.Padding(0, Space, 0, 0);
+        _copyright.Margin = new Padding(0, Space, 0, 0);
         _copyright.TabIndex = index++;
         _copyright.LinkClicked += (_, _) =>
         {
@@ -321,7 +322,7 @@ public class VersionControl : ControlBase
         _panel.Panel2.Controls.Add(_contents);
 
         Controls.Add(_panel);
-        SetStyle(System.Windows.Forms.ControlStyles.Selectable, false);
+        SetStyle(ControlStyles.Selectable, false);
 
         _contents.ResumeLayout(false);
         _panel.ResumeLayout(false);
@@ -331,13 +332,13 @@ public class VersionControl : ControlBase
     #endregion
 
     #region Fields
-    private readonly System.Windows.Forms.SplitContainer _panel = new();
+    private readonly SplitContainer _panel = new();
     private readonly System.Windows.Forms.FlowLayoutPanel _contents = new();
     private readonly System.Windows.Forms.PictureBox _image = new();
-    private readonly System.Windows.Forms.Label _info = new();
-    private readonly System.Windows.Forms.Label _platform = new();
-    private readonly System.Windows.Forms.Label _others = new();
-    private readonly System.Windows.Forms.LinkLabel _copyright = new();
+    private readonly Label _info = new();
+    private readonly Label _platform = new();
+    private readonly Label _others = new();
+    private readonly LinkLabel _copyright = new();
     private string _product;
     private string _version;
     private bool _oneline = true;

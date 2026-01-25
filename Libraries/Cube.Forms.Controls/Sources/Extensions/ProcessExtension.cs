@@ -15,10 +15,10 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.Forms.Extensions;
-
+using Cube.Forms.User32;
 using System;
 using System.Diagnostics;
+namespace Cube.Forms.Extensions;
 
 /* ------------------------------------------------------------------------- */
 ///
@@ -46,10 +46,10 @@ public static class ProcessMethods
     {
         var h = src?.MainWindowHandle ?? IntPtr.Zero;
         if (h == IntPtr.Zero) return;
-        if (User32.NativeMethods.IsIconic(h))
+        if (NativeMethods.IsIconic(h))
         {
-            _ = User32.NativeMethods.ShowWindowAsync(h, 9); // SW_RESTORE
+            _ = NativeMethods.ShowWindowAsync(h, 9); // SW_RESTORE
         }
-        _ = User32.NativeMethods.SetForegroundWindow(h);
+        _ = NativeMethods.SetForegroundWindow(h);
     }
 }

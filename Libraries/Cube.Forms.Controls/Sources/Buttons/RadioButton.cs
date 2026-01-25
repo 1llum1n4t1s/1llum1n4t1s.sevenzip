@@ -15,10 +15,10 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.Forms.Controls;
-
 using System.ComponentModel;
 using System.Drawing;
+using System.Windows.Forms;
+namespace Cube.Forms.Controls;
 
 /* ------------------------------------------------------------------------- */
 ///
@@ -147,7 +147,7 @@ public class RadioButton : System.Windows.Forms.RadioButton
     /* --------------------------------------------------------------------- */
     [Browsable(false)]
     [EditorBrowsable(EditorBrowsableState.Never)]
-    public new System.Windows.Forms.FlatButtonAppearance FlatAppearance => base.FlatAppearance;
+    public new FlatButtonAppearance FlatAppearance => base.FlatAppearance;
 
     /* --------------------------------------------------------------------- */
     ///
@@ -160,7 +160,7 @@ public class RadioButton : System.Windows.Forms.RadioButton
     /* --------------------------------------------------------------------- */
     [Browsable(false)]
     [EditorBrowsable(EditorBrowsableState.Never)]
-    public new System.Windows.Forms.FlatStyle FlatStyle
+    public new FlatStyle FlatStyle
     {
         get => base.FlatStyle;
         set => base.FlatStyle = value;
@@ -247,7 +247,7 @@ public class RadioButton : System.Windows.Forms.RadioButton
     /* --------------------------------------------------------------------- */
     [Browsable(false)]
     [EditorBrowsable(EditorBrowsableState.Never)]
-    public new System.Windows.Forms.ImageList ImageList
+    public new ImageList ImageList
     {
         get => base.ImageList;
         set => base.ImageList = value;
@@ -282,7 +282,7 @@ public class RadioButton : System.Windows.Forms.RadioButton
     /* --------------------------------------------------------------------- */
     [Browsable(false)]
     [EditorBrowsable(EditorBrowsableState.Never)]
-    public new System.Windows.Forms.TextImageRelation TextImageRelation
+    public new TextImageRelation TextImageRelation
     {
         get => base.TextImageRelation;
         set => base.TextImageRelation = value;
@@ -321,7 +321,7 @@ public class RadioButton : System.Windows.Forms.RadioButton
     /* --------------------------------------------------------------------- */
     [Browsable(false)]
     [EditorBrowsable(EditorBrowsableState.Never)]
-    public new System.Windows.Forms.Appearance Appearance
+    public new Appearance Appearance
     {
         get => base.Appearance;
         set => base.Appearance = value;
@@ -378,6 +378,6 @@ public class RadioButton : System.Windows.Forms.RadioButton
     #endregion
 
     #region Fields
-    private readonly ButtonPainter _painter = null;
+    private readonly ButtonPainter _painter;
     #endregion
 }

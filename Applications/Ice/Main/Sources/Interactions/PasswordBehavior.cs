@@ -15,9 +15,8 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-using System.Windows.Forms;
 using Cube.Forms.Behaviors;
-
+using System.Windows.Forms;
 namespace Cube.FileSystem.SevenZip.Ice
 {
     /* --------------------------------------------------------------------- */

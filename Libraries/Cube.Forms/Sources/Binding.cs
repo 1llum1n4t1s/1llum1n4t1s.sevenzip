@@ -15,13 +15,12 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.Forms.Binding;
-
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
+namespace Cube.Forms.Binding;
 
 /* ------------------------------------------------------------------------- */
 ///
@@ -50,8 +49,7 @@ public static class Methods
     /// <param name="viewName">Property name of the view to bind.</param>
     ///
     /* --------------------------------------------------------------------- */
-    public static void Bind(this BindingSource src, string name, Control view, string viewName) =>
-        Bind(src, name, view, viewName, false);
+    public static void Bind(this BindingSource src, string name, Control view, string viewName) => src.Bind(name, view, viewName, false);
 
     /* --------------------------------------------------------------------- */
     ///
@@ -70,8 +68,7 @@ public static class Methods
     /// </param>
     ///
     /* --------------------------------------------------------------------- */
-    public static void Bind(this BindingSource src, string name, Control view, string viewName, bool oneway) => Bind(
-        src, name, view, viewName,
+    public static void Bind(this BindingSource src, string name, Control view, string viewName, bool oneway) => src.Bind(name, view, viewName,
         oneway ? DataSourceUpdateMode.Never : DataSourceUpdateMode.OnPropertyChanged
     );
 
@@ -147,8 +144,7 @@ public static class Methods
     /// </remarks>
     ///
     /* --------------------------------------------------------------------- */
-    public static BindingSource ToBindingSource(this INotifyCollectionChanged src) =>
-        ToBindingSource(src, SynchronizationContext.Current);
+    public static BindingSource ToBindingSource(this INotifyCollectionChanged src) => src.ToBindingSource(SynchronizationContext.Current);
 
     /* --------------------------------------------------------------------- */
     ///

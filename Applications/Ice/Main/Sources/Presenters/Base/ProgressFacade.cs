@@ -15,11 +15,11 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.FileSystem.SevenZip.Ice;
-
 using System;
 using System.Diagnostics;
 using System.Threading;
+using Timer = System.Timers.Timer;
+namespace Cube.FileSystem.SevenZip.Ice;
 
 /* ------------------------------------------------------------------------- */
 ///
@@ -313,7 +313,7 @@ public abstract class ProgressFacade : ObservableBase
     #endregion
 
     #region Fields
-    private readonly System.Timers.Timer _timer = new(100.0);
+    private readonly Timer _timer = new(100.0);
     private readonly Stopwatch _watch = new();
     private readonly ManualResetEvent _supender = new(true);
     private readonly CancellationTokenSource _cts = new();

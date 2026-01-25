@@ -15,12 +15,12 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
+using Cube.FileSystem.SevenZip.Ice.Settings.Properties;
+using Cube.Icons;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Threading;
-using Cube.Icons;
-
 namespace Cube.FileSystem.SevenZip.Ice.Settings
 {
     /* --------------------------------------------------------------------- */
@@ -73,10 +73,8 @@ namespace Cube.FileSystem.SevenZip.Ice.Settings
         /// </summary>
         ///
         /* ----------------------------------------------------------------- */
-        public IEnumerable<Context> Source { get; } = PresetExtension.ToContextCollection(
-            Preset.Compress | Preset.CompressMask |
-            Preset.Extract | Preset.ExtractMask
-        );
+        public IEnumerable<Context> Source { get; } = (Preset.Compress | Preset.CompressMask |
+                                                       Preset.Extract | Preset.ExtractMask).ToContextCollection();
 
         /* ----------------------------------------------------------------- */
         ///
@@ -101,8 +99,8 @@ namespace Cube.FileSystem.SevenZip.Ice.Settings
         public List<Image> Images { get; } = new()
         {
             StockIcon.Folder.GetImage(IconSize.Small),
-            Properties.Resources.Archive,
-            Properties.Resources.Extract,
+            Resources.Archive,
+            Resources.Extract,
             StockIcon.FolderOpen.GetImage(IconSize.Small),
         };
 

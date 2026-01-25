@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <Version>9.5.0</Version>
+        <Version>1.0.1</Version>
         <Authors>clown;cube-soft</Authors>
         <Company>CubeSoft</Company>
         <Description>Wraps the AlphaFS package compatible with the Cube.FileSystem interface.</Description>
@@ -25,7 +25,10 @@
         <DocumentationFile>bin\Any CPU\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
     </PropertyGroup>
     <ItemGroup>
+      <PackageReference Include="1llum1n4t1s.AlphaFS" Version="1.0.1" />
+      <PackageReference Include="StrongNamer" Version="0.2.5" PrivateAssets="All" />
+    </ItemGroup>
+    <ItemGroup>
         <ProjectReference Include="..\Cube.Core\Cube.Core.csproj" />
-        <PackageReference Include="AlphaFS" Version="2.2.6" />
     </ItemGroup>
 </Project>

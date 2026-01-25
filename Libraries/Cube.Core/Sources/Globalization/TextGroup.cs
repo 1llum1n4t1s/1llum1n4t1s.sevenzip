@@ -15,9 +15,8 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.Globalization;
-
 using System.Collections.Generic;
+namespace Cube.Globalization;
 
 /* ------------------------------------------------------------------------- */
 ///

@@ -16,11 +16,10 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.FileSystem.SevenZip.Kernel32;
-
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
+namespace Cube.FileSystem.SevenZip.Kernel32;
 
 /* ------------------------------------------------------------------------- */
 ///

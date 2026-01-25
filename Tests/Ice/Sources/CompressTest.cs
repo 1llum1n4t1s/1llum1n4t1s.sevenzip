@@ -15,12 +15,10 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.FileSystem.SevenZip.Ice.Tests;
-
+using NUnit.Framework;
 using System.Collections.Generic;
 using System.Linq;
-using Cube.FileSystem.SevenZip.Ice.Settings;
-using NUnit.Framework;
+namespace Cube.FileSystem.SevenZip.Ice.Tests;
 
 /* ------------------------------------------------------------------------- */
 ///
@@ -33,7 +31,7 @@ using NUnit.Framework;
 /* ------------------------------------------------------------------------- */
 [TestFixture]
 [NonParallelizable]
-class CompressTest : VmFixture
+internal class CompressTest : VmFixture
 {
     #region Tests
 

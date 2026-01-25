@@ -15,12 +15,12 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.FileSystem.SevenZip.Ice;
-
+using Cube.Text.Extensions;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
-using Cube.Text.Extensions;
+namespace Cube.FileSystem.SevenZip.Ice;
 
 /* ------------------------------------------------------------------------- */
 ///
@@ -216,8 +216,8 @@ public sealed class ExtractDirectory
     private string GetHint(Entity src)
     {
         var root = src.FullName.Split(
-            System.IO.Path.DirectorySeparatorChar,
-            System.IO.Path.AltDirectorySeparatorChar
+            Path.DirectorySeparatorChar,
+            Path.AltDirectorySeparatorChar
         )[0];
 
         return src.IsDirectory || root != src.Name ? root : WildCard;

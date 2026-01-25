@@ -16,11 +16,10 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.FileSystem.SevenZip;
-
 using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
+namespace Cube.FileSystem.SevenZip;
 
 /* ------------------------------------------------------------------------- */
 ///
@@ -47,7 +46,7 @@ internal class OpenCallback : PasswordCallback, IArchiveOpenCallback, IArchiveOp
     /// <param name="src">Path of the archived file.</param>
     ///
     /* --------------------------------------------------------------------- */
-    public OpenCallback(string src) : base(src, default) { }
+    public OpenCallback(string src) : base(src, null) { }
 
     #endregion
 
@@ -151,7 +150,7 @@ internal class OpenCallback : PasswordCallback, IArchiveOpenCallback, IArchiveOp
     /* --------------------------------------------------------------------- */
     public SevenZipCode GetStream(string name, out IInStream stream)
     {
-        stream = default;
+        stream = null;
 
         var src = Io.Exists(name) ? name : Combine(Io.GetDirectoryName(Source), name);
         if (Io.Exists(src))

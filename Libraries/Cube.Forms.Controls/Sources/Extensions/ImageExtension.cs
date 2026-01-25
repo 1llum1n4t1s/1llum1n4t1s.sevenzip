@@ -15,11 +15,10 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.Forms.Controls.Extensions;
-
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
+namespace Cube.Forms.Controls.Extensions;
 
 /* ------------------------------------------------------------------------- */
 ///
@@ -47,8 +46,7 @@ public static class ImageMethods
     /// <returns>ImageList object.</returns>
     ///
     /* --------------------------------------------------------------------- */
-    public static ImageList ToImageList(this IEnumerable<Image> src) =>
-        ToImageList(src, new(16, 16));
+    public static ImageList ToImageList(this IEnumerable<Image> src) => src.ToImageList(new(16, 16));
 
     /* --------------------------------------------------------------------- */
     ///
@@ -64,8 +62,7 @@ public static class ImageMethods
     /// <returns>ImageList object.</returns>
     ///
     /* --------------------------------------------------------------------- */
-    public static ImageList ToImageList(this IEnumerable<Image> src, Size size) =>
-        ToImageList(src, size, ColorDepth.Depth32Bit);
+    public static ImageList ToImageList(this IEnumerable<Image> src, Size size) => src.ToImageList(size, ColorDepth.Depth32Bit);
 
     /* --------------------------------------------------------------------- */
     ///
@@ -106,8 +103,7 @@ public static class ImageMethods
     /// <returns>ImageList object.</returns>
     ///
     /* --------------------------------------------------------------------- */
-    public static ImageList ToImageList(this IEnumerable<Icon> src) =>
-        ToImageList(src, new(16, 16));
+    public static ImageList ToImageList(this IEnumerable<Icon> src) => src.ToImageList(new(16, 16));
 
     /* --------------------------------------------------------------------- */
     ///
@@ -123,8 +119,7 @@ public static class ImageMethods
     /// <returns>ImageList object.</returns>
     ///
     /* --------------------------------------------------------------------- */
-    public static ImageList ToImageList(this IEnumerable<Icon> src, Size size) =>
-        ToImageList(src, size, ColorDepth.Depth32Bit);
+    public static ImageList ToImageList(this IEnumerable<Icon> src, Size size) => src.ToImageList(size, ColorDepth.Depth32Bit);
 
     /* --------------------------------------------------------------------- */
     ///

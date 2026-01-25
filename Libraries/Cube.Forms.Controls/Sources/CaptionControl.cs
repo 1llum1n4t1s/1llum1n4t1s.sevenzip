@@ -15,10 +15,10 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.Forms.Controls;
-
 using System;
 using System.ComponentModel;
+using System.Windows.Forms;
+namespace Cube.Forms.Controls;
 
 /* ------------------------------------------------------------------------- */
 ///
@@ -65,7 +65,7 @@ public class CaptionControl : ControlBase
     /// </summary>
     ///
     /* --------------------------------------------------------------------- */
-    public System.Windows.Forms.FormWindowState WindowState
+    public FormWindowState WindowState
     {
         get => _state;
         set
@@ -75,13 +75,13 @@ public class CaptionControl : ControlBase
 
             switch (value)
             {
-                case System.Windows.Forms.FormWindowState.Maximized:
+                case FormWindowState.Maximized:
                     OnMaximized(EventArgs.Empty);
                     break;
-                case System.Windows.Forms.FormWindowState.Minimized:
+                case FormWindowState.Minimized:
                     OnMinimized(EventArgs.Empty);
                     break;
-                case System.Windows.Forms.FormWindowState.Normal:
+                case FormWindowState.Normal:
                     OnNormalized(EventArgs.Empty);
                     break;
             }
@@ -99,7 +99,7 @@ public class CaptionControl : ControlBase
     /* --------------------------------------------------------------------- */
     [Browsable(false)]
     [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-    public System.Windows.Forms.Control MaximizeControl
+    public Control MaximizeControl
     {
         get => _maximize;
         protected set
@@ -124,7 +124,7 @@ public class CaptionControl : ControlBase
     /* --------------------------------------------------------------------- */
     [Browsable(false)]
     [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-    public System.Windows.Forms.Control MinimizeControl
+    public Control MinimizeControl
     {
         get => _minimize;
         protected set
@@ -149,7 +149,7 @@ public class CaptionControl : ControlBase
     /* --------------------------------------------------------------------- */
     [Browsable(false)]
     [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-    public System.Windows.Forms.Control CloseControl
+    public Control CloseControl
     {
         get => _close;
         protected set
@@ -380,9 +380,9 @@ public class CaptionControl : ControlBase
 
     #region Fields
     private bool _active = true;
-    private System.Windows.Forms.FormWindowState _state = System.Windows.Forms.FormWindowState.Normal;
-    private System.Windows.Forms.Control _maximize;
-    private System.Windows.Forms.Control _minimize;
-    private System.Windows.Forms.Control _close;
+    private FormWindowState _state = FormWindowState.Normal;
+    private Control _maximize;
+    private Control _minimize;
+    private Control _close;
     #endregion
 }

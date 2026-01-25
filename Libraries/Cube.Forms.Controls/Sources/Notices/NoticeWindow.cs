@@ -15,13 +15,14 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.Forms;
-
+using Cube.Forms.Controls;
+using Cube.Forms.Controls.Properties;
 using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
-using Cube.Forms.Controls;
+using TableLayoutPanel = Cube.Forms.Controls.TableLayoutPanel;
+namespace Cube.Forms;
 
 /* ------------------------------------------------------------------------- */
 ///
@@ -237,7 +238,7 @@ public class NoticeWindow : BorderlessWindow
         _image.Margin = new(0);
         _image.Style.Default.BorderSize = 0;
         _image.Style.Default.BackColor = Color.FromArgb(230, 230, 230);
-        _image.Style.Default.Image = Forms.Controls.Properties.Resources.Logo;
+        _image.Style.Default.Image = Resources.Logo;
         _image.Click += (_, _) => OnSelected(ValueEventArgs.Create(NoticeResult.Image));
         _image.ResumeLayout(false);
 
@@ -273,7 +274,7 @@ public class NoticeWindow : BorderlessWindow
         _close.Margin = new(0);
         _close.Style.Default.BackColor = SystemColors.Window;
         _close.Style.Default.BorderSize = 0;
-        _close.Style.Default.Image = Forms.Controls.Properties.Resources.CloseButton;
+        _close.Style.Default.Image = Resources.CloseButton;
         _close.Style.MouseOver.BackColor = Color.FromArgb(240, 240, 240);
         _close.Style.MouseOver.BorderColor = Color.FromArgb(230, 230, 230);
         _close.Style.MouseOver.BorderSize = 1;
@@ -313,7 +314,7 @@ public class NoticeWindow : BorderlessWindow
     #endregion
 
     #region Fields
-    private readonly Controls.TableLayoutPanel _panel = new();
+    private readonly TableLayoutPanel _panel = new();
     private readonly FlatButton _image = new();
     private readonly FlatButton _title = new();
     private readonly FlatButton _text = new();

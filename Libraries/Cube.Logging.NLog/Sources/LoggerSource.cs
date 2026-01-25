@@ -15,10 +15,10 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.Logging.NLog;
-
 using Cube.Text.Extensions;
+using NLog;
 using System;
+namespace Cube.Logging.NLog;
 
 /* ------------------------------------------------------------------------- */
 ///
@@ -49,7 +49,7 @@ public sealed class LoggerSource : ILoggerSource
     /* --------------------------------------------------------------------- */
     public void Log(string path, int number, LogLevel level, string message)
     {
-        var e = global::NLog.LogManager.GetLogger(GetLoggerName(path));
+        var e = LogManager.GetLogger(GetLoggerName(path));
         var m = $"({number}) {message}";
 
         switch (level)

@@ -15,10 +15,9 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.Observable.Extensions;
-
 using System;
 using System.ComponentModel;
+namespace Cube.Observable.Extensions;
 
 /* ------------------------------------------------------------------------- */
 ///

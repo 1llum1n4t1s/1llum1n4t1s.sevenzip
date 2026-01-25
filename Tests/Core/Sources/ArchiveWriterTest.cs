@@ -15,13 +15,12 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.FileSystem.SevenZip.Tests;
-
-using System;
-using System.Collections.Generic;
 using Cube.Reflection.Extensions;
 using Cube.Tests;
 using NUnit.Framework;
+using System;
+using System.Collections.Generic;
+namespace Cube.FileSystem.SevenZip.Tests;
 
 /* ------------------------------------------------------------------------- */
 ///
@@ -33,7 +32,7 @@ using NUnit.Framework;
 ///
 /* ------------------------------------------------------------------------- */
 [TestFixture]
-class ArchiveWriterTest : FileFixture
+internal class ArchiveWriterTest : FileFixture
 {
     #region Tests
 

@@ -15,12 +15,12 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.Forms;
-
+using Cube.Forms.Drawing;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
-using Cube.Forms.Drawing;
+using System.Windows.Forms;
+namespace Cube.Forms;
 
 #region ButtonPainter
 
@@ -49,7 +49,7 @@ internal class ButtonPainter
     /// <param name="src">View object.</param>
     ///
     /* --------------------------------------------------------------------- */
-    public ButtonPainter(System.Windows.Forms.ButtonBase src)
+    public ButtonPainter(ButtonBase src)
     {
         Source  = src;
         Content = src?.GetType().Name;
@@ -76,7 +76,7 @@ internal class ButtonPainter
     /// </summary>
     ///
     /* --------------------------------------------------------------------- */
-    public System.Windows.Forms.ButtonBase Source { get; }
+    public ButtonBase Source { get; }
 
     /* --------------------------------------------------------------------- */
     ///
@@ -110,7 +110,7 @@ internal class ButtonPainter
     /// </summary>
     ///
     /* --------------------------------------------------------------------- */
-    public bool Checked { get; protected set; } = false;
+    public bool Checked { get; protected set; }
 
     /* --------------------------------------------------------------------- */
     ///
@@ -121,7 +121,7 @@ internal class ButtonPainter
     /// </summary>
     ///
     /* --------------------------------------------------------------------- */
-    public bool MouseDown { get; protected set; } = false;
+    public bool MouseDown { get; protected set; }
 
     /* --------------------------------------------------------------------- */
     ///
@@ -133,7 +133,7 @@ internal class ButtonPainter
     /// </summary>
     ///
     /* --------------------------------------------------------------------- */
-    public bool MouseOver { get; protected set; } = false;
+    public bool MouseOver { get; protected set; }
 
     #endregion
 
@@ -148,7 +148,7 @@ internal class ButtonPainter
     /// </summary>
     ///
     /* --------------------------------------------------------------------- */
-    protected virtual void OnPaint(System.Windows.Forms.PaintEventArgs e)
+    protected virtual void OnPaint(PaintEventArgs e)
     {
         if (e is null || e.Graphics is null) return;
 
@@ -193,8 +193,8 @@ internal class ButtonPainter
     /// </summary>
     ///
     /* --------------------------------------------------------------------- */
-    protected virtual void OnMouseDown(System.Windows.Forms.MouseEventArgs e) =>
-        MouseDown = (e.Button == System.Windows.Forms.MouseButtons.Left);
+    protected virtual void OnMouseDown(MouseEventArgs e) =>
+        MouseDown = (e.Button == MouseButtons.Left);
 
     /* --------------------------------------------------------------------- */
     ///
@@ -205,7 +205,7 @@ internal class ButtonPainter
     /// </summary>
     ///
     /* --------------------------------------------------------------------- */
-    protected virtual void OnMouseUp(System.Windows.Forms.MouseEventArgs e)
+    protected virtual void OnMouseUp(MouseEventArgs e)
     {
         MouseDown = false;
         Source.Invalidate();
@@ -233,7 +233,7 @@ internal class ButtonPainter
         Source.BackgroundImage = null;
         Source.Image = null;
         Source.Text = string.Empty;
-        Source.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+        Source.FlatStyle = FlatStyle.Flat;
         Source.FlatAppearance.BorderColor = color;
         Source.FlatAppearance.BorderSize = 0;
         Source.FlatAppearance.CheckedBackColor = color;
@@ -410,7 +410,7 @@ internal class ButtonPainter
     /// </summary>
     ///
     /* --------------------------------------------------------------------- */
-    private Rectangle GetDrawBounds(Rectangle client, System.Windows.Forms.Padding padding)
+    private Rectangle GetDrawBounds(Rectangle client, Padding padding)
     {
         var x = client.Left + padding.Left;
         var y = client.Top + padding.Top;
@@ -452,10 +452,10 @@ internal sealed class RadioButtonPainter : ButtonPainter
     /// <param name="src">View object.</param>
     ///
     /* --------------------------------------------------------------------- */
-    public RadioButtonPainter(System.Windows.Forms.RadioButton src) : base(src)
+    public RadioButtonPainter(RadioButton src) : base(src)
     {
         src.CheckedChanged += WhenCheckedChanged;
-        src.Appearance = System.Windows.Forms.Appearance.Button;
+        src.Appearance = Appearance.Button;
         src.TextAlign = ContentAlignment.MiddleCenter;
     }
 
@@ -474,7 +474,7 @@ internal sealed class RadioButtonPainter : ButtonPainter
     /* --------------------------------------------------------------------- */
     private void WhenCheckedChanged(object s, EventArgs e)
     {
-        if (Source is not System.Windows.Forms.RadioButton control) return;
+        if (Source is not RadioButton control) return;
         Checked = control.Checked;
         control.Invalidate();
     }
@@ -511,10 +511,10 @@ internal sealed class ToggleButtonPainter : ButtonPainter
     /// <param name="src">View object.</param>
     ///
     /* --------------------------------------------------------------------- */
-    public ToggleButtonPainter(System.Windows.Forms.CheckBox src) : base(src)
+    public ToggleButtonPainter(CheckBox src) : base(src)
     {
         src.CheckedChanged += WhenCheckedChanged;
-        src.Appearance = System.Windows.Forms.Appearance.Button;
+        src.Appearance = Appearance.Button;
         src.TextAlign = ContentAlignment.MiddleCenter;
     }
 
@@ -533,7 +533,7 @@ internal sealed class ToggleButtonPainter : ButtonPainter
     /* --------------------------------------------------------------------- */
     private void WhenCheckedChanged(object s, EventArgs e)
     {
-        if (Source is not System.Windows.Forms.CheckBox control) return;
+        if (Source is not CheckBox control) return;
         Checked = control.Checked;
     }
 

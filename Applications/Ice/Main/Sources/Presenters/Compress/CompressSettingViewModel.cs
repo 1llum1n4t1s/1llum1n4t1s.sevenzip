@@ -15,11 +15,10 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-using System;
-using System.Threading;
 using Cube.Observable.Extensions;
 using Cube.Text.Extensions;
-
+using System;
+using System.Threading;
 namespace Cube.FileSystem.SevenZip.Ice;
 
 /* ------------------------------------------------------------------------- */

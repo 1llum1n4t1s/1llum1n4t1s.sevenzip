@@ -15,11 +15,10 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube;
-
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+namespace Cube;
 
 #region IObservePropertyChanged
 

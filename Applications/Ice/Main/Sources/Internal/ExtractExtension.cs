@@ -15,6 +15,7 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
+using Cube.FileSystem.SevenZip.Ice.Properties;
 namespace Cube.FileSystem.SevenZip.Ice
 {
     /* --------------------------------------------------------------------- */
@@ -82,7 +83,7 @@ namespace Cube.FileSystem.SevenZip.Ice
         public static string GetText(this ExtractFacade src) =>
             src.Report.Target != null ?
             src.Report.Target.FullName :
-            Properties.Resources.MessagePreExtract;
+            Resources.MessagePreExtract;
 
         #endregion
     }

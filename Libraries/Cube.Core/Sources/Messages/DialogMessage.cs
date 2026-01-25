@@ -15,13 +15,12 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube;
-
+using Cube.Reflection.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using Cube.Reflection.Extensions;
+namespace Cube;
 
 #region DialogMessage
 

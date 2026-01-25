@@ -15,11 +15,10 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.Globalization;
-
 using System;
 using System.Globalization;
 using System.Linq;
+namespace Cube.Globalization;
 
 /* ------------------------------------------------------------------------- */
 ///
@@ -71,7 +70,7 @@ public static class LanguageExtension
     public static CultureInfo ToCultureInfo(this Language src) => src switch
     {
         Language.Auto    => Locale.GetDefaultCultureInfo(),
-        Language.Unknown => default,
+        Language.Unknown => null,
         _ => new((int)src)
     };
 

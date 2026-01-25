@@ -16,10 +16,10 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.FileSystem.SevenZip;
-
-using System;
 using Cube.Text.Extensions;
+using System;
+using System.IO;
+namespace Cube.FileSystem.SevenZip;
 
 /* ------------------------------------------------------------------------- */
 ///
@@ -118,7 +118,7 @@ internal class ArchiveEntitySource : EntitySource
         Encrypted      = _core.Get<bool>(Index, ItemPropId.Encrypted);
         Exists         = true;
         IsDirectory    = _core.Get<bool>(Index, ItemPropId.IsDirectory);
-        Attributes     = (System.IO.FileAttributes)_core.Get<uint>(Index, ItemPropId.Attributes);
+        Attributes     = (FileAttributes)_core.Get<uint>(Index, ItemPropId.Attributes);
         Length         = (long)_core.Get<ulong>(Index, ItemPropId.Size);
         CreationTime   = _core.Get<DateTime>(Index, ItemPropId.CreationTime);
         LastWriteTime  = _core.Get<DateTime>(Index, ItemPropId.LastWriteTime);

@@ -15,9 +15,8 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.Forms;
-
 using System.Runtime.InteropServices;
+namespace Cube.Forms;
 
 /* ------------------------------------------------------------------------- */
 ///

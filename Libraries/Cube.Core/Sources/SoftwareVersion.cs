@@ -15,14 +15,13 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube;
-
+using Cube.Reflection.Extensions;
+using Cube.Text.Extensions;
 using System;
 using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
-using Cube.Reflection.Extensions;
-using Cube.Text.Extensions;
+namespace Cube;
 
 /* ------------------------------------------------------------------------- */
 ///

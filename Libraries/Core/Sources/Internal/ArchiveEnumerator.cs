@@ -16,11 +16,10 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.FileSystem.SevenZip;
-
 using System;
 using System.Collections;
 using System.Collections.Generic;
+namespace Cube.FileSystem.SevenZip;
 
 /* ------------------------------------------------------------------------- */
 ///
@@ -48,7 +47,7 @@ internal class ArchiveEnumerator : DisposableBase, IEnumerator<ArchiveEntity>
     ///
     /* --------------------------------------------------------------------- */
     public ArchiveEnumerator(IReadOnlyList<ArchiveEntity> src) :
-        this(src, default, src.Count) { }
+        this(src, null, src.Count) { }
 
     /* --------------------------------------------------------------------- */
     ///

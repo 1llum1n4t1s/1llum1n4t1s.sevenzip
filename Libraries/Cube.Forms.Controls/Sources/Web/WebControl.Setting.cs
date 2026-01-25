@@ -15,12 +15,12 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.Forms.Controls;
-
+using Cube.Forms.UrlMon;
+using Microsoft.Win32;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using Microsoft.Win32;
+namespace Cube.Forms.Controls;
 
 partial class WebControl
 {
@@ -247,7 +247,7 @@ partial class WebControl
     ///
     /* --------------------------------------------------------------------- */
     private static bool GetNavigationSounds() =>
-        UrlMon.NativeMethods.CoInternetIsFeatureEnabled(
+        NativeMethods.CoInternetIsFeatureEnabled(
             21,     // FEATURE_DISABLE_NAVIGATION_SOUNDS
             0x02    // SET_FEATURE_ON_PROCESS
         ) != 0;
@@ -262,7 +262,7 @@ partial class WebControl
     ///
     /* --------------------------------------------------------------------- */
     private static void SetNavigationSounds(bool enabled)=>
-        UrlMon.NativeMethods.CoInternetSetFeatureEnabled(
+        NativeMethods.CoInternetSetFeatureEnabled(
             21,     // FEATURE_DISABLE_NAVIGATION_SOUNDS
             0x02,   // SET_FEATURE_ON_PROCESS
             !enabled

@@ -15,10 +15,10 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.Forms.Controls;
-
 using System;
 using System.Drawing;
+using System.Windows.Forms;
+namespace Cube.Forms.Controls;
 
 /* ------------------------------------------------------------------------- */
 ///
@@ -71,7 +71,7 @@ public class Panel : System.Windows.Forms.Panel
     /// <param name="m">Window message.</param>
     ///
     /* --------------------------------------------------------------------- */
-    protected override void WndProc(ref System.Windows.Forms.Message m)
+    protected override void WndProc(ref Message m)
     {
         base.WndProc(ref m);
 

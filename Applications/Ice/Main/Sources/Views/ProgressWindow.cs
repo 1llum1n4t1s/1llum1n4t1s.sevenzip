@@ -15,10 +15,11 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
+using Cube.FileSystem.SevenZip.Ice.Properties;
+using Cube.Forms;
+using Cube.Forms.Behaviors;
 using System.ComponentModel;
 using System.Windows.Forms;
-using Cube.Forms.Behaviors;
-
 namespace Cube.FileSystem.SevenZip.Ice
 {
     /* --------------------------------------------------------------------- */
@@ -31,7 +32,7 @@ namespace Cube.FileSystem.SevenZip.Ice
     /// </summary>
     ///
     /* --------------------------------------------------------------------- */
-    public partial class ProgressWindow : Forms.Window
+    public partial class ProgressWindow : Window
     {
         #region Constructors
 
@@ -132,15 +133,15 @@ namespace Cube.FileSystem.SevenZip.Ice
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public bool Suspended
         {
-            get => _taskbar.State == Forms.TaskbarProgressState.Paused;
+            get => _taskbar.State == TaskbarProgressState.Paused;
             set
             {
                 _taskbar.State = value ?
-                    Forms.TaskbarProgressState.Paused :
-                    Forms.TaskbarProgressState.Normal;
+                    TaskbarProgressState.Paused :
+                    TaskbarProgressState.Normal;
                 SuspendButton.Text = value ?
-                    Properties.Resources.MenuResume :
-                    Properties.Resources.MenuSuspend;
+                    Resources.MenuResume :
+                    Resources.MenuSuspend;
             }
         }
 
@@ -211,7 +212,7 @@ namespace Cube.FileSystem.SevenZip.Ice
         #endregion
 
         #region Fields
-        private readonly Forms.TaskbarProgress _taskbar;
+        private readonly TaskbarProgress _taskbar;
         #endregion
     }
 }

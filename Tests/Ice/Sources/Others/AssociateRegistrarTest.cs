@@ -15,12 +15,11 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.FileSystem.SevenZip.Ice.Tests;
-
-using System;
-using System.Linq;
 using Cube.Tests;
 using NUnit.Framework;
+using System;
+using System.Linq;
+namespace Cube.FileSystem.SevenZip.Ice.Tests;
 
 /* ------------------------------------------------------------------------- */
 ///
@@ -32,7 +31,7 @@ using NUnit.Framework;
 ///
 /* ------------------------------------------------------------------------- */
 [TestFixture]
-class AssociateRegistrarTest : FileFixture
+internal class AssociateRegistrarTest : FileFixture
 {
     #region Tests
 

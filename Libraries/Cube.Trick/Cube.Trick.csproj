@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <Version>1.0.1</Version>
+        <Authors>clown;cube-soft</Authors>
+        <Company>CubeSoft</Company>
+        <Description>Contains experimental and undocumented functions.</Description>
+        <Copyright>Copyright © 2010 CubeSoft, Inc., 2026 ゆろち</Copyright>
+        <PackageTags>Cube</PackageTags>
+        <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+        <PackageProjectUrl>https://github.com/cube-soft/Cube.Core</PackageProjectUrl>
+        <IsPackable>false</IsPackable>
+        <RootNamespace>Cube</RootNamespace>
+        <TargetFramework>net10.0-windows</TargetFramework>
+        <LangVersion>latest</LangVersion>
+        <Optimize>true</Optimize>
+        <DisableImplicitNamespaceImports>true</DisableImplicitNamespaceImports>
+        <EnableDefaultNoneItems>false</EnableDefaultNoneItems>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
+        <SignAssembly>true</SignAssembly>
+        <AssemblyOriginatorKeyFile>..\..\Cube.snk</AssemblyOriginatorKeyFile>
+        <DefineConstants Condition=" '$(Configuration)' == 'Debug' ">DEBUG;TRACE</DefineConstants>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+        <OutputPath>bin\Any CPU\$(Configuration)\</OutputPath>
+        <DocumentationFile>bin\Any CPU\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
+    </PropertyGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\Cube.Core\Cube.Core.csproj" />
+        <PackageReference Include="System.Drawing.Common" Version="10.0.2" />
+    </ItemGroup>
+</Project>

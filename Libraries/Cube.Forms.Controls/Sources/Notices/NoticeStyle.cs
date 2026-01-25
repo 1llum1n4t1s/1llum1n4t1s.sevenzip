@@ -15,9 +15,8 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube;
-
 using System.Drawing;
+namespace Cube;
 
 #region NoticeStyle
 

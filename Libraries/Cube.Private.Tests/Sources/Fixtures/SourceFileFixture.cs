@@ -15,11 +15,10 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.Tests;
-
 using Cube.FileSystem;
 using Cube.Reflection.Extensions;
 using NUnit.Framework;
+namespace Cube.Tests;
 
 /* ------------------------------------------------------------------------- */
 ///

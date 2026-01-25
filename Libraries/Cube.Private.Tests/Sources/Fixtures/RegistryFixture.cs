@@ -15,12 +15,11 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.Tests;
-
 using Cube.DataContract;
 using Cube.FileSystem;
 using Microsoft.Win32;
 using NUnit.Framework;
+namespace Cube.Tests;
 
 /* ------------------------------------------------------------------------- */
 ///

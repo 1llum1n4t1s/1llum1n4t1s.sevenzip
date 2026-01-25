@@ -15,10 +15,9 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.FileSystem.AlphaFS;
-
 using Alphaleonis.Win32.Filesystem;
 using Cube.Generics.Extensions;
+namespace Cube.FileSystem.AlphaFS;
 
 /* ------------------------------------------------------------------------- */
 ///

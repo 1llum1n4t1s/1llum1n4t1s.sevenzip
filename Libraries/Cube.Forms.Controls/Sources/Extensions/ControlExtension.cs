@@ -15,14 +15,12 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.Forms.Controls.Extensions;
-
 using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Reflection;
 using System.Windows.Forms;
-using Cube.Forms;
+namespace Cube.Forms.Controls.Extensions;
 
 /* ------------------------------------------------------------------------- */
 ///

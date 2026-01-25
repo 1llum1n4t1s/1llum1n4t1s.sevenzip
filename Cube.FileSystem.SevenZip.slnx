@@ -24,6 +24,7 @@
     <Project Path="Libraries/Cube.Logging.NLog/Cube.Logging.NLog.csproj" />
     <Project Path="Libraries/Cube.Forms/Cube.Forms.csproj" />
     <Project Path="Libraries/Cube.Forms.Controls/Cube.Forms.Controls.csproj" />
+    <Project Path="Libraries/Cube.Trick/Cube.Trick.csproj" />
     <Project Path="Libraries/Cube.Private.Tests/Cube.Private.Tests.csproj" />
     <Project Path="Applications/Ice/Core/Cube.FileSystem.SevenZip.Ice.csproj" />
     <Project Path="Libraries/Core/Cube.FileSystem.SevenZip.csproj" />

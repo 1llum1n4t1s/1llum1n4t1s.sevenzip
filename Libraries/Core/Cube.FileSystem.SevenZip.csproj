@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <PackageId>1llum1n4t1s.Sevenzip</PackageId>
-        <Version>1.0.0</Version>
+        <Version>1.0.1</Version>
         <Authors>clown,cube-soft,ゆろち</Authors>
         <Company></Company>
         <Description>7-Zip wrapper library for .NET.</Description>

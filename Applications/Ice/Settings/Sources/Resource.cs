@@ -15,8 +15,8 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
+using Cube.FileSystem.SevenZip.Ice.Settings.Properties;
 using Cube.Forms;
-
 namespace Cube.FileSystem.SevenZip.Ice.Settings
 {
     /* --------------------------------------------------------------------- */
@@ -44,13 +44,13 @@ namespace Cube.FileSystem.SevenZip.Ice.Settings
         /* ----------------------------------------------------------------- */
         public static ComboListSource<Preset> Shortcuts { get; } = new()
         {
-            { Properties.Resources.MenuZip,         Preset.CompressZip },
-            { Properties.Resources.MenuZipPassword, Preset.CompressZipPassword },
-            { Properties.Resources.MenuSevenZip,    Preset.Compress7z },
-            { Properties.Resources.MenuBZip2,       Preset.CompressBz2 },
-            { Properties.Resources.MenuGZip,        Preset.CompressGz },
-            { Properties.Resources.MenuSfx,         Preset.CompressSfx },
-            { Properties.Resources.MenuDetails,     Preset.CompressDetails },
+            { Resources.MenuZip,         Preset.CompressZip },
+            { Resources.MenuZipPassword, Preset.CompressZipPassword },
+            { Resources.MenuSevenZip,    Preset.Compress7z },
+            { Resources.MenuBZip2,       Preset.CompressBz2 },
+            { Resources.MenuGZip,        Preset.CompressGz },
+            { Resources.MenuSfx,         Preset.CompressSfx },
+            { Resources.MenuDetails,     Preset.CompressDetails },
         };
 
         /* ----------------------------------------------------------------- */
@@ -65,12 +65,12 @@ namespace Cube.FileSystem.SevenZip.Ice.Settings
         /* ----------------------------------------------------------------- */
         public static ComboListSource<CompressionLevel> CompressionLevels { get; } = new()
         {
-            { Properties.Resources.LevelNone,   CompressionLevel.None },
-            { Properties.Resources.LevelFast,   CompressionLevel.Fast },
-            { Properties.Resources.LevelLow,    CompressionLevel.Low },
-            { Properties.Resources.LevelNormal, CompressionLevel.Normal },
-            { Properties.Resources.LevelHigh,   CompressionLevel.High },
-            { Properties.Resources.LevelUltra,  CompressionLevel.Ultra },
+            { Resources.LevelNone,   CompressionLevel.None },
+            { Resources.LevelFast,   CompressionLevel.Fast },
+            { Resources.LevelLow,    CompressionLevel.Low },
+            { Resources.LevelNormal, CompressionLevel.Normal },
+            { Resources.LevelHigh,   CompressionLevel.High },
+            { Resources.LevelUltra,  CompressionLevel.Ultra },
         };
 
         /* ----------------------------------------------------------------- */
@@ -85,8 +85,8 @@ namespace Cube.FileSystem.SevenZip.Ice.Settings
         /* ----------------------------------------------------------------- */
         public static ComboListSource<bool> IoHandlers { get; } = new()
         {
-            { Properties.Resources.MenuNormal,   false },
-            { Properties.Resources.MenuExtended,  true },
+            { Resources.MenuNormal,   false },
+            { Resources.MenuExtended,  true },
         };
 
         #endregion

@@ -15,11 +15,10 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.Forms.Behaviors;
-
 using System;
 using System.Linq;
 using System.Windows.Forms;
+namespace Cube.Forms.Behaviors;
 
 /* ------------------------------------------------------------------------- */
 ///
@@ -204,6 +203,6 @@ public class PathLintBehavior : DisposableBase
     #region Fields
     private readonly TextBox _source;
     private readonly ToolTip _tips;
-    private bool _focus = false;
+    private bool _focus;
     #endregion
 }

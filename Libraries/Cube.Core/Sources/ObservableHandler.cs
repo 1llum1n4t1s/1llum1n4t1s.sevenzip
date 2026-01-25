@@ -15,9 +15,8 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube;
-
 using System.Collections.Generic;
+namespace Cube;
 
 /* ------------------------------------------------------------------------- */
 ///

@@ -15,11 +15,11 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.FileSystem.SevenZip.Ice;
-
+using Cube.FileSystem.SevenZip.Ice.Properties;
+using Cube.Observable.Extensions;
 using System;
 using System.Threading;
-using Cube.Observable.Extensions;
+namespace Cube.FileSystem.SevenZip.Ice;
 
 /* ------------------------------------------------------------------------- */
 ///
@@ -105,7 +105,7 @@ public abstract class ProgressViewModel : PresentableBase<ProgressFacade>
             var src = Math.Max((int)(Facade.Report.GetRatio() * Unit), 1);
             var cmp = Get<int>();
             if (src > cmp) { _ = Set(src); return src; }
-            else return cmp;
+            return cmp;
         }
     }
 
@@ -164,7 +164,7 @@ public abstract class ProgressViewModel : PresentableBase<ProgressFacade>
     ///
     /* --------------------------------------------------------------------- */
     public string Elapsed => string.Format("{0} : {1}",
-        Properties.Resources.MessageElapseTime,
+        Resources.MessageElapseTime,
         Resource.GetTimeString(Facade.Elapsed)
     );
 
@@ -178,7 +178,7 @@ public abstract class ProgressViewModel : PresentableBase<ProgressFacade>
     ///
     /* --------------------------------------------------------------------- */
     public string Remaining => string.Format("{0} : {1}",
-        Properties.Resources.MessageRemainTime,
+        Resources.MessageRemainTime,
         Resource.GetTimeString(Facade.Remaining)
     );
 
@@ -193,7 +193,7 @@ public abstract class ProgressViewModel : PresentableBase<ProgressFacade>
     ///
     /* --------------------------------------------------------------------- */
     public string Count => string.Format("{0} : {1:#,0} / {2:#,0}",
-        Properties.Resources.MessageCount,
+        Resources.MessageCount,
         Facade.Report.Count,
         Facade.Report.TotalCount
     );

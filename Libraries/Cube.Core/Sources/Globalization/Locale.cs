@@ -15,12 +15,11 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.Globalization;
-
+using Cube.Collections;
 using System;
 using System.Globalization;
 using System.Threading;
-using Cube.Collections;
+namespace Cube.Globalization;
 
 /* ------------------------------------------------------------------------- */
 ///

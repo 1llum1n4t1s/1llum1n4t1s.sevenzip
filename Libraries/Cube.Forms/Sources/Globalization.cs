@@ -15,12 +15,11 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.Forms.Globalization;
-
+using Cube.Globalization;
 using System.ComponentModel;
 using System.Threading;
 using System.Windows.Forms;
-using Cube.Globalization;
+namespace Cube.Forms.Globalization;
 
 /* ------------------------------------------------------------------------- */
 ///

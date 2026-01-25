@@ -15,12 +15,11 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.DataContract.Internal;
-
 using System;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Runtime.Serialization;
+namespace Cube.DataContract.Internal;
 
 /* ------------------------------------------------------------------------- */
 ///

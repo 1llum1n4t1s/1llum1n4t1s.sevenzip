@@ -16,7 +16,6 @@
 //
 /* ------------------------------------------------------------------------- */
 using System;
-
 namespace Cube.FileSystem.SevenZip.Ice
 {
     /* --------------------------------------------------------------------- */
@@ -63,7 +62,7 @@ namespace Cube.FileSystem.SevenZip.Ice
             var delta = value - prev.TotalSeconds;
 
             if (delta >= 0.0 && delta < unit * 2) return prev; // hack (see remarks)
-            else return TimeSpan.FromSeconds(((long)value / unit + 1) * unit);
+            return TimeSpan.FromSeconds(((long)value / unit + 1) * unit);
         }
 
         /* ----------------------------------------------------------------- */

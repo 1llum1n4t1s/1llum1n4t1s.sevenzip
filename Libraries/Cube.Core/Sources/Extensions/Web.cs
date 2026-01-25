@@ -15,14 +15,14 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.Web.Extensions;
-
-using System;
-using System.Collections.Generic;
 using Cube.Chrono.Extensions;
 using Cube.Collections.Extensions;
 using Cube.Reflection.Extensions;
 using Cube.Text.Extensions;
+using System;
+using System.Collections.Generic;
+using System.Reflection;
+namespace Cube.Web.Extensions;
 
 /* ------------------------------------------------------------------------- */
 ///
@@ -52,7 +52,7 @@ public static class Methods
     ///
     /* --------------------------------------------------------------------- */
     public static Uri ToUri(this string src) =>
-       !src.HasValue()       ? default :
+       !src.HasValue()       ? null :
         src.Contains("://")  ? new(src) :
         src.StartsWith("//") ? new("http:" + src) :
         src.StartsWith("/")  ? new("http://localhost" + src) :
@@ -103,8 +103,7 @@ public static class Methods
     /// <returns>Combined Uri object.</returns>
     ///
     /* --------------------------------------------------------------------- */
-    public static Uri With<T>(this Uri src, string key, T value) =>
-        With(src, new Dictionary<string, string> {{ key, value.ToString() }});
+    public static Uri With<T>(this Uri src, string key, T value) => src.With(new Dictionary<string, string> {{ key, value.ToString() }});
 
     /* --------------------------------------------------------------------- */
     ///
@@ -120,8 +119,7 @@ public static class Methods
     /// <returns>Combined Uri object.</returns>
     ///
     /* --------------------------------------------------------------------- */
-    public static Uri With(this Uri src, DateTime time) =>
-        With(src, "ts", time.ToUnixTime());
+    public static Uri With(this Uri src, DateTime time) => src.With("ts", time.ToUnixTime());
 
     /* --------------------------------------------------------------------- */
     ///
@@ -137,8 +135,7 @@ public static class Methods
     /// <returns>Combined Uri object.</returns>
     ///
     /* --------------------------------------------------------------------- */
-    public static Uri With(this Uri src, SoftwareVersion version) =>
-        With(src, "ver", version.ToString(3, false));
+    public static Uri With(this Uri src, SoftwareVersion version) => src.With("ver", version.ToString(3, false));
 
     /* --------------------------------------------------------------------- */
     ///
@@ -155,8 +152,7 @@ public static class Methods
     /// <returns>Combined Uri object.</returns>
     ///
     /* --------------------------------------------------------------------- */
-    public static Uri With(this Uri src, System.Reflection.Assembly asm) =>
-        With(src, asm.GetSoftwareVersion());
+    public static Uri With(this Uri src, Assembly asm) => src.With(asm.GetSoftwareVersion());
 
     /* --------------------------------------------------------------------- */
     ///
@@ -181,7 +177,7 @@ public static class Methods
         if (utm.Campaign.HasValue()) query.Add("utm_campaign", utm.Campaign);
         if (utm.Term.HasValue())     query.Add("utm_term", utm.Term);
         if (utm.Content.HasValue())  query.Add("utm_content", utm.Content);
-        return With(src, query);
+        return src.With(query);
     }
 
     #endregion

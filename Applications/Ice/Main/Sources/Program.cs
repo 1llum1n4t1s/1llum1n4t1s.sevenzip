@@ -15,15 +15,15 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.FileSystem.SevenZip.Ice;
-
+using Cube.Collections.Extensions;
+using Cube.Logging.NLog;
+using Cube.Text.Extensions;
 using System;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using Cube.Collections.Extensions;
-using Cube.Text.Extensions;
+namespace Cube.FileSystem.SevenZip.Ice;
 
 /* ------------------------------------------------------------------------- */
 ///
@@ -34,7 +34,7 @@ using Cube.Text.Extensions;
 /// </summary>
 ///
 /* ------------------------------------------------------------------------- */
-static class Program
+internal static class Program
 {
     #region Methods
 
@@ -48,11 +48,11 @@ static class Program
     ///
     /* --------------------------------------------------------------------- */
     [STAThread]
-    static void Main(string[] args) => Logger.Try(() =>
+    private static void Main(string[] args) => Logger.Try(() =>
     {
         if (args.Length <= 0) return;
 
-        Logger.Configure(new Logging.NLog.LoggerSource());
+        Logger.Configure(new LoggerSource());
         Logger.ObserveTaskException();
         Logger.Info(typeof(Program).Assembly);
         Logger.Info($"[ {args.Select(e => e.Quote()).Join(" ")} ]");
@@ -78,8 +78,6 @@ static class Program
                 if (IsBurst(src, ss)) Burst(src);
                 else Show(view, new ExtractViewModel(src, ss));
                 break;
-            default:
-                break;
         }
     });
 
@@ -92,7 +90,7 @@ static class Program
     /// </summary>
     ///
     /* --------------------------------------------------------------------- */
-    static void Show(ProgressWindow view, ProgressViewModel vm)
+    private static void Show(ProgressWindow view, ProgressViewModel vm)
     {
         view.Bind(vm);
         Application.Run(view);
@@ -108,7 +106,7 @@ static class Program
     /// </summary>
     ///
     /* --------------------------------------------------------------------- */
-    static void Burst(Request src)
+    private static void Burst(Request src)
     {
         var exec = Source.Assembly.Location;
         var args = new StringBuilder();
@@ -130,7 +128,7 @@ static class Program
     /// </summary>
     ///
     /* --------------------------------------------------------------------- */
-    static bool IsBurst(Request src, SettingFolder ss) =>
+    private static bool IsBurst(Request src, SettingFolder ss) =>
         src.Sources.Count() > 1 && ss.Value.Extraction.Bursty && !src.SuppressRecursive;
 
     #endregion

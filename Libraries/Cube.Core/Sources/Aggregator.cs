@@ -15,11 +15,10 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube;
-
+using Cube.Collections;
 using System;
 using System.Collections;
-using Cube.Collections;
+namespace Cube;
 
 #region IAggregator
 

@@ -16,9 +16,9 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.FileSystem.SevenZip;
-
+using Cube.FileSystem.SevenZip.Kernel32;
 using Microsoft.Win32.SafeHandles;
+namespace Cube.FileSystem.SevenZip;
 
 /* ------------------------------------------------------------------------- */
 ///
@@ -51,5 +51,5 @@ internal sealed class SafeLibraryHandle : SafeHandleZeroOrMinusOneIsInvalid
     /// </summary>
     ///
     /* --------------------------------------------------------------------- */
-    protected override bool ReleaseHandle() => Kernel32.NativeMethods.FreeLibrary(handle);
+    protected override bool ReleaseHandle() => NativeMethods.FreeLibrary(handle);
 }

@@ -15,12 +15,13 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.Forms.Controls;
-
+using Cube.Forms.UrlMon;
+using Cube.Text.Extensions;
 using System;
 using System.IO;
 using System.Text;
-using Cube.Text.Extensions;
+namespace Cube.Forms.Controls;
+
 using WF = System.Windows.Forms;
 
 /* ------------------------------------------------------------------------- */
@@ -316,7 +317,7 @@ public partial class WebControl : WF.WebBrowser
     {
         var sb     = new StringBuilder(2048);
         var size   = 0;
-        var result = UrlMon.NativeMethods.UrlMkGetSessionOption(
+        var result = NativeMethods.UrlMkGetSessionOption(
             0x10000001, // URLMON_OPTION_USERAGENT,
             sb, sb.Capacity, ref size, 0
         );
@@ -336,7 +337,7 @@ public partial class WebControl : WF.WebBrowser
     /* --------------------------------------------------------------------- */
     private void SetUserAgent(ref string dest, string value)
     {
-        var result = UrlMon.NativeMethods.UrlMkSetSessionOption(
+        var result = NativeMethods.UrlMkSetSessionOption(
             0x10000001, // URLMON_OPTION_USERAGENT,
             value, value.Length, 0
         );

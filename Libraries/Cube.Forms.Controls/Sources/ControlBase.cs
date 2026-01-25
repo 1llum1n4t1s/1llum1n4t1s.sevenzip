@@ -15,10 +15,10 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
-namespace Cube.Forms.Controls;
-
 using System;
 using System.Drawing;
+using System.Windows.Forms;
+namespace Cube.Forms.Controls;
 
 /* ------------------------------------------------------------------------- */
 ///
@@ -29,7 +29,7 @@ using System.Drawing;
 /// </summary>
 ///
 /* ------------------------------------------------------------------------- */
-public class ControlBase : System.Windows.Forms.UserControl
+public class ControlBase : UserControl
 {
     #region Constructors
 
@@ -90,7 +90,7 @@ public class ControlBase : System.Windows.Forms.UserControl
     /// <param name="m">Window message.</param>
     ///
     /* --------------------------------------------------------------------- */
-    protected override void WndProc(ref System.Windows.Forms.Message m)
+    protected override void WndProc(ref Message m)
     {
         base.WndProc(ref m);
 
