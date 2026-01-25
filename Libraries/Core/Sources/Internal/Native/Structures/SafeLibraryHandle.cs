@@ -1,4 +1,4 @@
-﻿/* ------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------- */
 //
 // Copyright (c) 2010 CubeSoft, Inc.
 //
@@ -18,7 +18,6 @@
 /* ------------------------------------------------------------------------- */
 namespace Cube.FileSystem.SevenZip;
 
-using System.Runtime.ConstrainedExecution;
 using Microsoft.Win32.SafeHandles;
 
 /* ------------------------------------------------------------------------- */
@@ -52,6 +51,5 @@ internal sealed class SafeLibraryHandle : SafeHandleZeroOrMinusOneIsInvalid
     /// </summary>
     ///
     /* --------------------------------------------------------------------- */
-    [ReliabilityContract(Consistency.WillNotCorruptState, Cer.Success)]
     protected override bool ReleaseHandle() => Kernel32.NativeMethods.FreeLibrary(handle);
 }

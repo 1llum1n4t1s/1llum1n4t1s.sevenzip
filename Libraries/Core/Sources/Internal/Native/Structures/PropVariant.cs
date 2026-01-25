@@ -1,4 +1,4 @@
-﻿/* ------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------- */
 //
 // Copyright (c) 2010 CubeSoft, Inc.
 //
@@ -20,6 +20,7 @@ namespace Cube.FileSystem.SevenZip;
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 /* ------------------------------------------------------------------------- */
 ///
@@ -30,6 +31,7 @@ using System.Runtime.InteropServices;
 /// </summary>
 ///
 /* ------------------------------------------------------------------------- */
+[SupportedOSPlatform("windows")]
 [StructLayout(LayoutKind.Explicit)]
 internal struct PropVariant
 {

@@ -1,4 +1,4 @@
-﻿/* ------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------- */
 //
 // Copyright (c) 2010 CubeSoft, Inc.
 //
@@ -157,7 +157,7 @@ namespace Cube.FileSystem.SevenZip.Ice
         /// </summary>
         ///
         /* ----------------------------------------------------------------- */
-        public static OrderedDictionary<Format, FileDialogFilter> FileDialogFilters { get; } = new()
+        public static Cube.Collections.OrderedDictionary<Format, FileDialogFilter> FileDialogFilters { get; } = new()
         {
             { Format.Zip,      new(Properties.Resources.FilterZip, ".zip") },
             { Format.SevenZip, new(Properties.Resources.Filter7z,  ".7z") },

@@ -1,4 +1,4 @@
-﻿/* ------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------- */
 //
 // Copyright (c) 2010 CubeSoft, Inc.
 //
@@ -20,9 +20,9 @@ namespace Cube.FileSystem.SevenZip.Tests;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.IO;
 using Cube.Tests;
 using Cube.Text.Extensions;
-using Microsoft.VisualBasic.FileIO;
 using NUnit.Framework;
 
 /* ------------------------------------------------------------------------- */
@@ -219,25 +219,57 @@ class ArchiveReaderTest : FileFixture
     private IDictionary<string, Expected> GetAnswer(string filename)
     {
         var src = GetSource("Expected", $"{filename}.txt");
-        var csv = new TextFieldParser(src, System.Text.Encoding.UTF8)
-        {
-            Delimiters                = new[] { "," },
-            HasFieldsEnclosedInQuotes = true,
-            TextFieldType             = FieldType.Delimited,
-            TrimWhiteSpace            = true,
-        };
-
         var dest = new Dictionary<string, Expected>();
-        while (!csv.EndOfData)
+        foreach (var line in File.ReadLines(src, System.Text.Encoding.UTF8))
         {
-            var row = csv.ReadFields();
-            dest.Add(row[0], new Expected
+            var row = ParseCsvLine(line);
+            if (row.Count < 3) continue;
+            dest.Add(row[0].Trim(), new Expected
             {
-                Length = long.Parse(row[1]),
-                Crc    = uint.Parse(row[2])
+                Length = long.Parse(row[1].Trim()),
+                Crc    = uint.Parse(row[2].Trim())
             });
         }
         return dest;
+    }
+
+    /// <summary>
+    /// Parses a CSV line (comma-delimited, fields may be enclosed in double quotes).
+    /// </summary>
+    private static IList<string> ParseCsvLine(string line)
+    {
+        var fields = new List<string>();
+        var i = 0;
+        while (i < line.Length)
+        {
+            if (line[i] == '"')
+            {
+                var start = i + 1;
+                i = start;
+                while (i < line.Length)
+                {
+                    if (line[i] == '"')
+                    {
+                        if (i + 1 < line.Length && line[i + 1] == '"') { i += 2; continue; }
+                        fields.Add(line[start..i].Replace("\"\"", "\""));
+                        i++;
+                        if (i < line.Length && line[i] == ',') i++;
+                        break;
+                    }
+                    i++;
+                }
+                continue;
+            }
+            var comma = line.IndexOf(',', i);
+            if (comma < 0)
+            {
+                fields.Add(line[i..].Trim());
+                break;
+            }
+            fields.Add(line[i..comma].Trim());
+            i = comma + 1;
+        }
+        return fields;
     }
 
     /* --------------------------------------------------------------------- */

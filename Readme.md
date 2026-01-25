@@ -1,21 +1,25 @@
-Cube.FileSystem.SevenZip
-====
+# 1llum1n4t1s.Sevenzip
 
-[![Package](https://badgen.net/nuget/v/cube.filesystem.sevenzip)](https://www.nuget.org/packages/cube.filesystem.sevenzip/)
-[![AppVeyor](https://badgen.net/appveyor/ci/clown/cube-filesystem-sevenzip)](https://ci.appveyor.com/project/clown/cube-filesystem-sevenzip)
-[![Codecov](https://badgen.net/codecov/c/github/cube-soft/cube.filesystem.sevenzip)](https://codecov.io/gh/cube-soft/cube.filesystem.sevenzip)
+**リポジトリ:** [https://github.com/1llum1n4t1s/1llum1n4t1s.Sevenzip](https://github.com/1llum1n4t1s/1llum1n4t1s.Sevenzip)
 
-Cube.FileSystem.SevenZip is a wrapper library of the [7-Zip](http://www.7-zip.org/) via COM interface. The project also has an application for compressing or extracting archives, which name is [CubeICE](https://www.cube-soft.jp/cubeice/). Libraries and applications are available for .NET Framework 3.5, 4.5 or later. Note that some projects are licensed under the GNU LGPLv3 and the others under the Apache 2.0. See [License.md](https://github.com/cube-soft/Cube.FileSystem.SevenZip/blob/master/License.md) for more information.
+> **これは [Cube.FileSystem.SevenZip](https://github.com/cube-soft/cube.filesystem.sevenzip) のフォークです。** ソースコードは上記リポジトリで公開しています。  
+> 元リポジトリとの主な違いは以下のとおりです。
+> - **.NET 10** 対応（ターゲットを net10.0 / net10.0-windows に変更）
+> - CI を AppVeyor から **GitHub Actions** に移行
+> - NuGet パッケージ名を **1llum1n4t1s.Sevenzip** として公開
+> - [Cube.Core](https://github.com/cube-soft/cube.core) や Cube.FileSystem.AlphaFS、Cube.Logging.NLog、Cube.Forms などを NuGet 参照ではなく **ソリューション内のプロジェクトとして組み込み**
+
+---
+
+[1llum1n4t1s.Sevenzip](https://github.com/1llum1n4t1s/1llum1n4t1s.Sevenzip) は [7-Zip](http://www.7-zip.org/) の COM インターフェースを利用したラッパーライブラリです。アーカイブの圧縮・解凍を行う [CubeICE](https://www.cube-soft.jp/cubeice/) アプリケーションも含みます。ライブラリおよびアプリケーションは .NET 10 をターゲットとしています。ライセンスはプロジェクトにより GNU LGPLv3 または Apache 2.0 です。詳細は [License.md](https://github.com/1llum1n4t1s/1llum1n4t1s.Sevenzip/blob/master/License.md) を参照してください。
 
 ## Usage
 
-You can install the library through the NuGet package.
-Add dependencies in your project file or select it from the NuGet packages UI on Visual Studio.
+NuGet パッケージでインストールできます。パッケージ ID は **1llum1n4t1s.Sevenzip** です。プロジェクトファイルに依存関係を追加するか、Visual Studio の NuGet パッケージ UI から選択してください。ソースからビルドする場合は [リポジトリ](https://github.com/1llum1n4t1s/1llum1n4t1s.Sevenzip) をクローンしてください。
 
 ### Examples for archiving files
 
-A simple example for archiving files is as follows.
-Note that the statement "using Cube.FileSystem.SevenZip;" has been omitted in all samples.
+圧縮の簡単な例は以下のとおりです。サンプルでは `using Cube.FileSystem.SevenZip;` は省略しています。
 
 ```cs
 // Set only what you need.
@@ -34,15 +38,13 @@ using (var writer = new ArchiveWriter(Format.Zip, options))
 {
     writer.Add(@"path\to\file");
     writer.Add(@"path\to\directory_including_files");
-    
+
     var progress = new Progress<Report>(e => DoSomething(e));
     writer.Save(@"path\to\save.zip", progress);
 }
 ```
 
-You create an ArchiveWriter object with an archiving format (e.g. Zip, SevenZip, ...),
-add files and/or directories you want to archive, set some additional options, and finally call the Save method.
-When you create Tar based archives, you can use a TarOption object for selecting a compression method.
+ArchiveWriter にアーカイブ形式（Zip, SevenZip など）とオプションを指定し、追加したいファイル・ディレクトリを Add したうえで Save を呼び出します。Tar 系のアーカイブでは TarOption で圧縮方式（GZip, BZip2, XZ, Copy）を指定できます。
 
 ```cs
 var options = new CompressionOption
@@ -61,10 +63,7 @@ using (var writer = new ArchiveWriter(Format.Tar, options))
 
 ### Examples for extracting archives
 
-If you want to extract all files from the archive, you create an ArchiveReader object
-and call the Extract method. The 2nd argument of the constructor, that means the
-password of the archive, can be set string or Cube.Query&lt;string&gt; object.
-The latter is mainly used for implementing the interactive mode.
+アーカイブを解凍するには ArchiveReader を作成し、Save を呼び出します。コンストラクタの第2引数（パスワード）には文字列または `Cube.Query<string>` を指定できます。後者は対話的にパスワードを求める場合に利用します。
 
 ```cs
 // Set password directly or using Query<string>
@@ -85,24 +84,22 @@ using (var reader = new ArchiveReader(@"path\to\archive", password, options))
 }
 ```
 
-Note that ArchiveWriter and ArchiveReader classes need to execute in the same thread from constructing to destroying.
-Use Task.Run() in the whole transaction if you need to archive or extract files asynchronously.
+ArchiveWriter および ArchiveReader は、生成から破棄まで同一スレッドで実行する必要があります。非同期に圧縮・解凍したい場合は、一連の処理全体を `Task.Run()` で実行してください。
 
 ## Dependencies
 
-* [7-Zip](https://www.7-zip.org/) ... [Cube.Native.SevenZip](https://github.com/cube-soft/Cube.Native.SevenZip) is optimized for Japanese encoding.
-* [AlphaFS](https://alphafs.alphaleonis.com/) ... [Cube.FileSystem.AlphaFS](https://www.nuget.org/packages/Cube.FileSystem.AlphaFS/) is a wrapper library for using AlphaFS in Cube projects.
-
-## Contributing
-
-1. Fork [Cube.FileSystem.SevenZip](https://github.com/cube-soft/Cube.FileSystem.SevenZip/fork) repository.
-2. Create a feature branch from the master (e.g. git checkout -b my-new-feature origin/master). Note that the master branch may refer some pre-released NuGet packages. Try the [rake clean](https://github.com/cube-soft/Cube.FileSystem.SevenZip/blob/master/Rakefile) command when build errors occur.
-3. Commit your changes.
-4. Rebase your local changes against the master branch.
-5. Run the dotnet test command or the Visual Studio (NUnit 3 test adapter) and confirm that it passes.
-6. Create new Pull Request.
+* [7-Zip](https://www.7-zip.org/) … [Cube.Native.SevenZip](https://github.com/cube-soft/Cube.Native.SevenZip) は日本語エンコーディングに最適化されています。
+* [AlphaFS](https://alphafs.alphaleonis.com/) … 本ソリューション内の Cube.FileSystem.AlphaFS プロジェクトが AlphaFS をラップしています（長いパス対応など）。
 
 ## License
- 
-Copyright © 2010 [CubeSoft, Inc.](http://www.cube-soft.jp/)
-See [License.md](https://github.com/cube-soft/Cube.FileSystem.SevenZip/blob/master/License.md) for more information.
+
+[本リポジトリ](https://github.com/1llum1n4t1s/1llum1n4t1s.Sevenzip) は次のオリジナルプロジェクトをベースにしています。
+
+| 由来 | リポジトリ | ライセンス |
+|------|------------|------------|
+| 7-Zip ラッパー・CubeICE | [cube-soft/cube.filesystem.sevenzip](https://github.com/cube-soft/cube.filesystem.sevenzip) | コアライブラリ: [GNU LGPLv3](https://www.gnu.org/licenses/lgpl-3.0.html)、その他: [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
+| ユーティリティ・MVVM 等 | [cube-soft/cube.core](https://github.com/cube-soft/cube.core) | [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
+
+各プロジェクトのライセンス表記および条件は、本リポジトリ内の [License.md](https://github.com/1llum1n4t1s/1llum1n4t1s.Sevenzip/blob/master/License.md) およびソリューション内の各ライセンスファイルを参照してください。  
+Copyright © 2010 [CubeSoft, Inc.](https://www.cube-soft.jp/)
+Copyright © 2026 [ゆろち](https://github.com/1llum1n4t1s/)

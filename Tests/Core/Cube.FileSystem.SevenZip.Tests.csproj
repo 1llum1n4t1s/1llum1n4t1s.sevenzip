@@ -1,13 +1,13 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <Version>9.0.0</Version>
-        <Authors>clown;cube-soft</Authors>
+        <Authors>clown,cube-soft,ゆろち</Authors>
         <Company>CubeSoft</Company>
         <Copyright>Copyright © 2010 CubeSoft, Inc.</Copyright>
         <StartupObject>Cube.FileSystem.SevenZip.Tests.Program</StartupObject>
         <OutputType>Exe</OutputType>
-        <TargetFramework>net47</TargetFramework>
-        <RuntimeIdentifiers>win7-x86;win7-x64</RuntimeIdentifiers>
+        <TargetFramework>net10.0-windows</TargetFramework>
+        <RuntimeIdentifiers>win-x86;win-x64</RuntimeIdentifiers>
         <LangVersion>latest</LangVersion>
         <IsPackable>false</IsPackable>
         <DisableImplicitNamespaceImports>true</DisableImplicitNamespaceImports>
@@ -17,25 +17,23 @@
         <DefineConstants Condition=" '$(Configuration)' == 'Debug' ">DEBUG;TRACE</DefineConstants>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
-        <Prefer32Bit>true</Prefer32Bit>
         <OutputPath>bin\Any CPU\$(Configuration)\</OutputPath>
         <DocumentationFile>bin\Any CPU\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Platform)' == 'x86' ">
-        <RuntimeIdentifier>win7-x86</RuntimeIdentifier>
+        <RuntimeIdentifier>win-x86</RuntimeIdentifier>
         <SelfContained>false</SelfContained>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Platform)' == 'x64' ">
-        <RuntimeIdentifier>win7-x64</RuntimeIdentifier>
+        <RuntimeIdentifier>win-x64</RuntimeIdentifier>
         <SelfContained>false</SelfContained>
     </PropertyGroup>
     <ItemGroup>
         <ProjectReference Include="..\..\Libraries\Core\Cube.FileSystem.SevenZip.csproj" />
-        <PackageReference Include="Cube.Private.Tests" Version="9.0.0" />
+        <ProjectReference Include="..\..\Libraries\Cube.Private.Tests\Cube.Private.Tests.csproj" />
         <PackageReference Include="Microsoft.NET.Test.Sdk" Version="*" />
         <PackageReference Include="NUnit3TestAdapter" Version="*" />
         <PackageReference Include="Appveyor.TestLogger" Version="*" />
-        <Reference Include="Microsoft.VisualBasic" />
     </ItemGroup>
     <ItemGroup>
         <None Include="NLog.config" CopyToOutputDirectory="Always" />

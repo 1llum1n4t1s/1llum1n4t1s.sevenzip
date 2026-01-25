@@ -2,6 +2,7 @@ License
 ====
 
 Copyright © 2010 [CubeSoft, Inc.](https://www.cube-soft.jp/)
+Copyright © 2026 [ゆろち](https://github.com/1llum1n4t1s/)
 
 [Cube.FileSystem.SevenZip](https://github.com/cube-soft/Cube.FileSystem.SevenZip/tree/master/Libraries/Core) package is licensed under the [GNU LGPLv3](https://github.com/cube-soft/Cube.FileSystem.SevenZip/blob/master/Libraries/Core/License.txt) and the other projects are under the [Apache 2.0](https://github.com/cube-soft/Cube.FileSystem.SevenZip/blob/master/Applications/License.txt).
 

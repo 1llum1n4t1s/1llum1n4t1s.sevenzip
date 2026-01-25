@@ -1,4 +1,4 @@
-﻿/* ------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------- */
 //
 // Copyright (c) 2010 CubeSoft, Inc.
 //
@@ -18,6 +18,7 @@
 namespace Cube.FileSystem.SevenZip.Ice;
 
 using System.Reflection;
+using System.Runtime.Versioning;
 using Cube.Reflection.Extensions;
 
 /* ------------------------------------------------------------------------- */
@@ -29,6 +30,7 @@ using Cube.Reflection.Extensions;
 /// </summary>
 ///
 /* ------------------------------------------------------------------------- */
+[SupportedOSPlatform("windows")]
 public class SettingFolder : SettingFolder<SettingValue>
 {
     #region Constructors

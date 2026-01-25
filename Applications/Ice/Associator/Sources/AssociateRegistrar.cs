@@ -1,4 +1,4 @@
-﻿/* ------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------- */
 //
 // Copyright (c) 2010 CubeSoft, Inc.
 //
@@ -20,6 +20,7 @@ namespace Cube.FileSystem.SevenZip.Ice;
 using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using System.Runtime.Versioning;
 using Cube.Text.Extensions;
 using Microsoft.Win32;
 
@@ -37,6 +38,7 @@ using Microsoft.Win32;
 /// </remarks>
 ///
 /* ------------------------------------------------------------------------- */
+[SupportedOSPlatform("windows")]
 public class AssociateRegistrar
 {
     #region Constructors

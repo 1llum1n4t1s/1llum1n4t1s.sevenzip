@@ -1,4 +1,4 @@
-﻿/* ------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------- */
 //
 // Copyright (c) 2010 CubeSoft, Inc.
 //
@@ -15,6 +15,7 @@
 // limitations under the License.
 //
 /* ------------------------------------------------------------------------- */
+using System.ComponentModel;
 using System.Windows.Forms;
 using Cube.Forms.Behaviors;
 
@@ -62,6 +63,7 @@ namespace Cube.FileSystem.SevenZip.Ice
         /// </summary>
         ///
         /* ----------------------------------------------------------------- */
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public int Value
         {
             get => MainProgressBar.Value;
@@ -81,6 +83,7 @@ namespace Cube.FileSystem.SevenZip.Ice
         /// </summary>
         ///
         /* ----------------------------------------------------------------- */
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public int Unit
         {
             get => MainProgressBar.Maximum;
@@ -101,6 +104,7 @@ namespace Cube.FileSystem.SevenZip.Ice
         /// </summary>
         ///
         /* ----------------------------------------------------------------- */
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public bool Cancelable
         {
             get => SuspendButton.Enabled;
@@ -125,6 +129,7 @@ namespace Cube.FileSystem.SevenZip.Ice
         /// </summary>
         ///
         /* ----------------------------------------------------------------- */
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public bool Suspended
         {
             get => _taskbar.State == Forms.TaskbarProgressState.Paused;
