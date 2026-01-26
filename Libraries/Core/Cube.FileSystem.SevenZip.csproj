@@ -6,6 +6,7 @@
         <PackageTags>Cube;7-Zip;7z;SevenZip;Zip</PackageTags>
         <PackageLicenseExpression>LGPL-3.0-or-later</PackageLicenseExpression>
         <PackageIcon>images\Icon.png</PackageIcon>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
     </PropertyGroup>
     <ItemGroup>
         <ProjectReference Include="..\Cube.Core\Cube.Core.csproj" PrivateAssets="all" />
@@ -13,6 +14,7 @@
     </ItemGroup>
     <ItemGroup>
         <None Include="..\..\icon\app_icon.png" Pack="true" PackagePath="images\Icon.png" />
+        <None Include="..\..\Readme.md" Pack="true" PackagePath="README.md" />
         <None Include="..\Cube.Core\bin\x64\$(Configuration)\$(TargetFramework)\Cube.Core.dll" Pack="true" PackagePath="lib\$(TargetFramework)\Cube.Core.dll" Visible="false" Link="Cube.Core.dll" />
     </ItemGroup>
 </Project>
