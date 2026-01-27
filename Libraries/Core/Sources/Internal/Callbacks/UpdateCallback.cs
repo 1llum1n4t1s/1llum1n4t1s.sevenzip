@@ -1,4 +1,4 @@
-﻿/* ------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------- */
 //
 // Copyright (c) 2010 CubeSoft, Inc.
 //
@@ -153,8 +153,16 @@ internal sealed class UpdateCallback : CallbackBase, IArchiveUpdateCallback, ICr
         indexInArchive = uint.MaxValue;
 
         var i = (int)index;
+        var indexChanged = _processedItemIndex != i;
+        if (indexChanged)
+        {
+            _processedItemIndex = i;
+            _processedItemCount = i + 1;
+            Count = _processedItemCount;
+        }
+
         var e = (i >= 0 && i < _items.Count) ? _items[i] : null;
-        return Report(ProgressState.Prepare, e);
+        return indexChanged ? Report(ProgressState.Prepare, e) : SevenZipCode.Success;
     }
 
     /* --------------------------------------------------------------------- */
@@ -178,6 +186,14 @@ internal sealed class UpdateCallback : CallbackBase, IArchiveUpdateCallback, ICr
         var i   = (int)index;
         var src = (i >= 0 && i < _items.Count) ? _items[i] : null;
         if (src is null) return SevenZipCode.Unavailable;
+
+        var indexChanged = _processedItemIndex != i;
+        if (indexChanged)
+        {
+            _processedItemIndex = i;
+            _processedItemCount = i + 1;
+            Count = _processedItemCount;
+        }
 
         switch (pid)
         {
@@ -214,7 +230,7 @@ internal sealed class UpdateCallback : CallbackBase, IArchiveUpdateCallback, ICr
                 break;
         }
 
-        return Report(ProgressState.Prepare, src);
+        return indexChanged ? Report(ProgressState.Prepare, src) : SevenZipCode.Success;
     }
 
     /* --------------------------------------------------------------------- */
@@ -263,7 +279,6 @@ internal sealed class UpdateCallback : CallbackBase, IArchiveUpdateCallback, ICr
     /* --------------------------------------------------------------------- */
     public SevenZipCode SetOperationResult(SevenZipCode code)
     {
-        Count++;
         if (code != SevenZipCode.Success) Logger.Warn($"[{code}] Index:{_index}, Name:{Current()?.RawName ?? ""}");
         return code == SevenZipCode.Success ?
                Report(ProgressState.Success, Current()) :
@@ -372,5 +387,7 @@ internal sealed class UpdateCallback : CallbackBase, IArchiveUpdateCallback, ICr
     private readonly List<ArchiveStreamReader> _streams = [];
     private readonly IList<RawEntity> _items;
     private int _index = -1;
+    private int _processedItemCount = 0;
+    private int _processedItemIndex = -1;
     #endregion
 }

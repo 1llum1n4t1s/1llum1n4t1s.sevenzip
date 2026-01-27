@@ -1,4 +1,4 @@
-﻿/* ------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------- */
 //
 // Copyright (c) 2010 CubeSoft, Inc.
 //
@@ -40,10 +40,25 @@ public static class ReportExtension
     ///
     /* --------------------------------------------------------------------- */
     public static double GetRatio(this Report src) {
-        var c0 = src.Bytes / Math.Max(src.TotalBytes, 1.0);
-        var c1 = src.Count / Math.Max(src.TotalCount, 1.0);
+        const double PrepareRatio = 0.1;
+        const double ProgressRatio = 1.0 - PrepareRatio;
 
-        return src.TotalBytes <=   0 ? c1 :
-               src.TotalCount <  100 ? c0 : Math.Min(c0, c1);
+        if (src.State == ProgressState.Prepare)
+        {
+            var c1 = src.Count / Math.Max(src.TotalCount, 1.0);
+            return c1 * PrepareRatio;
+        }
+
+        if (src.State == ProgressState.Progress)
+        {
+            var c0 = src.TotalBytes > 0 ? src.Bytes / Math.Max(src.TotalBytes, 1.0) : 0.0;
+            return PrepareRatio + (c0 * ProgressRatio);
+        }
+
+        var c0_orig = src.Bytes / Math.Max(src.TotalBytes, 1.0);
+        var c1_orig = src.Count / Math.Max(src.TotalCount, 1.0);
+
+        return src.TotalBytes <=   0 ? c1_orig :
+               src.TotalCount <  100 ? c0_orig : Math.Min(c0_orig, c1_orig);
     }
 }
