@@ -153,16 +153,14 @@ internal sealed class UpdateCallback : CallbackBase, IArchiveUpdateCallback, ICr
         indexInArchive = uint.MaxValue;
 
         var i = (int)index;
-        var indexChanged = _processedItemIndex != i;
-        if (indexChanged)
+        var e = (i >= 0 && i < _items.Count) ? _items[i] : null;
+
+        if (UpdateItemProgress(index))
         {
-            _processedItemIndex = i;
-            _processedItemCount = i + 1;
-            Count = _processedItemCount;
+            return Report(ProgressState.Prepare, e);
         }
 
-        var e = (i >= 0 && i < _items.Count) ? _items[i] : null;
-        return indexChanged ? Report(ProgressState.Prepare, e) : SevenZipCode.Success;
+        return SevenZipCode.Success;
     }
 
     /* --------------------------------------------------------------------- */
@@ -187,13 +185,7 @@ internal sealed class UpdateCallback : CallbackBase, IArchiveUpdateCallback, ICr
         var src = (i >= 0 && i < _items.Count) ? _items[i] : null;
         if (src is null) return SevenZipCode.Unavailable;
 
-        var indexChanged = _processedItemIndex != i;
-        if (indexChanged)
-        {
-            _processedItemIndex = i;
-            _processedItemCount = i + 1;
-            Count = _processedItemCount;
-        }
+        var indexChanged = UpdateItemProgress(index);
 
         switch (pid)
         {
@@ -230,7 +222,12 @@ internal sealed class UpdateCallback : CallbackBase, IArchiveUpdateCallback, ICr
                 break;
         }
 
-        return indexChanged ? Report(ProgressState.Prepare, src) : SevenZipCode.Success;
+        if (indexChanged)
+        {
+            return Report(ProgressState.Prepare, src);
+        }
+
+        return SevenZipCode.Success;
     }
 
     /* --------------------------------------------------------------------- */
@@ -380,6 +377,32 @@ internal sealed class UpdateCallback : CallbackBase, IArchiveUpdateCallback, ICr
     ///
     /* --------------------------------------------------------------------- */
     private RawEntity Current() => (_index >= 0 && _index < _items.Count) ? _items[_index] : null;
+
+    /* --------------------------------------------------------------------- */
+    ///
+    /// UpdateItemProgress
+    ///
+    /// <summary>
+    /// Updates the progress count when the item index changes.
+    /// </summary>
+    ///
+    /// <param name="index">Index of the item.</param>
+    ///
+    /// <returns>true if the index changed; otherwise false.</returns>
+    ///
+    /* --------------------------------------------------------------------- */
+    private bool UpdateItemProgress(uint index)
+    {
+        var i = (int)index;
+        if (_processedItemIndex != i)
+        {
+            _processedItemIndex = i;
+            _processedItemCount = i + 1;
+            Count = _processedItemCount;
+            return true;
+        }
+        return false;
+    }
 
     #endregion
 

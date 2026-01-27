@@ -32,6 +32,28 @@ public static class ReportExtension
 {
     /* --------------------------------------------------------------------- */
     ///
+    /// PrepareWeightRatio
+    ///
+    /// <summary>
+    /// Gets the weight ratio for Prepare stage (0.0 to 1.0).
+    /// </summary>
+    ///
+    /* --------------------------------------------------------------------- */
+    public static readonly double PrepareWeightRatio = 0.1;
+
+    /* --------------------------------------------------------------------- */
+    ///
+    /// ProgressWeightRatio
+    ///
+    /// <summary>
+    /// Gets the weight ratio for Progress stage (1.0 - PrepareWeightRatio).
+    /// </summary>
+    ///
+    /* --------------------------------------------------------------------- */
+    private static double ProgressWeightRatio => 1.0 - PrepareWeightRatio;
+
+    /* --------------------------------------------------------------------- */
+    ///
     /// GetRatio
     ///
     /// <summary>
@@ -40,23 +62,20 @@ public static class ReportExtension
     ///
     /* --------------------------------------------------------------------- */
     public static double GetRatio(this Report src) {
-        const double PrepareRatio = 0.1;
-        const double ProgressRatio = 1.0 - PrepareRatio;
-
         if (src.State == ProgressState.Prepare)
         {
-            var c1 = src.Count / Math.Max(src.TotalCount, 1.0);
-            return c1 * PrepareRatio;
+            var c1 = src.TotalCount > 0 ? src.Count / (double)src.TotalCount : 0.0;
+            return c1 * PrepareWeightRatio;
         }
 
         if (src.State == ProgressState.Progress)
         {
-            var c0 = src.TotalBytes > 0 ? src.Bytes / Math.Max(src.TotalBytes, 1.0) : 0.0;
-            return PrepareRatio + (c0 * ProgressRatio);
+            var c0 = src.TotalBytes > 0 ? src.Bytes / (double)src.TotalBytes : 0.0;
+            return PrepareWeightRatio + (c0 * ProgressWeightRatio);
         }
 
-        var c0_orig = src.Bytes / Math.Max(src.TotalBytes, 1.0);
-        var c1_orig = src.Count / Math.Max(src.TotalCount, 1.0);
+        var c0_orig = src.TotalBytes > 0 ? src.Bytes / (double)src.TotalBytes : 0.0;
+        var c1_orig = src.TotalCount > 0 ? src.Count / (double)src.TotalCount : 0.0;
 
         return src.TotalBytes <=   0 ? c1_orig :
                src.TotalCount <  100 ? c0_orig : Math.Min(c0_orig, c1_orig);
