@@ -47,7 +47,13 @@ public static class ReportExtension
         {
             return Math.Min(src.Bytes / (double)src.TotalBytes, 1.0);
         }
-
+        
+        // Fallback to file count when TotalBytes is 0 (e.g., directory-only operations)
+        if (src.TotalCount > 0)
+        {
+            return Math.Min(src.Count / (double)src.TotalCount, 1.0);
+        }
+        
         return 1.0;
     }
 }
